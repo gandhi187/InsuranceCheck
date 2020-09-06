@@ -7,6 +7,8 @@ from .validateCountry import *
 from rasa_sdk.events import SlotSet
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
+from rasa_sdk.knowledge_base import *
+from rasa_sdk import utils
 
 class InsuranceCheck(FormAction):
 
@@ -21,21 +23,32 @@ class InsuranceCheck(FormAction):
 
         if tracker.get_slot('travel_days') is None:
             print ("none", tracker.get_slot('travel_days'))
-            return ["destination", "travel_days"]
+            return ["destination", "travel_days","occasion","moreTravel"]
         elif  (int) (tracker.get_slot('travel_days')) <= 30:
             print("Reisegepäck")
-            return ["destination", "travel_days","luggage","financeLoss"]
+            return ["destination", "travel_days","luggage","financeLoss","occasion","moreTravel"]
         elif (int) (tracker.get_slot('travel_days')) >= 30: 
-            return ["destination", "travel_days"]
+            return ["destination", "travel_days","occasion","moreTravel"]
      
 
-    # def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        """A dictionary to map required slots to
+            - an extracted entity
+            - intent: value pairs
+            - a whole message
+            or a list of them, where a first match will be picked"""
+        return {
+            
+            "occasion":[
+                self.from_intent(intent="affirm", value=True),
+                self.from_intent(intent="deny", value=False),
 
-    #     return {
-    #         "age":[
-    #             self.from_intent(intent="inform")
-    #         ]
-    #     }
+            ],
+            "moreTravel": [
+                self.from_intent(intent="affirm", value=True),
+                self.from_intent(intent="deny", value=False),
+            ]
+                }
 
 
     def validate_travel_days(
@@ -144,11 +157,82 @@ class FetchTravelWarning(Action):
         travelWarningRating = data['data']['situation']['rating']
         print (travelWarningRating)
         
-        dispatcher.utter_message("In " + destination + " lautet die Reisewarnung: " + travelWarningRating + " \n Reisewarnung-Stufe " + str(travelWarningRating) + " von 5")
+        dispatcher.utter_message("In " + destination + " lautet die Reisewarnung: " + travelWarningText + " \n Reisewarnung-Stufe " + str(travelWarningRating) + " von 5")
 
         return [SlotSet("travelWarning",travelWarningRating)]
 
+
+"""
+Custom Actions to query the Knowledge-Base (JSON-Object)
+
+"""
 class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
     def __init__(self):
         knowledge_base = InMemoryKnowledgeBase("data/knowledgebase.json")
         super().__init__(knowledge_base)
+
+
+
+    async def utter_objects(
+        self,
+        dispatcher: CollectingDispatcher,
+        object_type: Text,
+        objects: List[Dict[Text, Any]],
+    ) -> None:
+        """
+        Utters a response to the user that lists all found objects.
+
+        Args:
+            dispatcher: the dispatcher
+            object_type: the object type
+            objects: the list of objects
+        """
+        if objects:
+            dispatcher.utter_message(
+                text=f"Folgendes ist in der '{object_type}' versichert:"
+            )
+
+            if utils.is_coroutine_action(
+                self.knowledge_base.get_representation_function_of_object
+            ):
+                repr_function = await self.knowledge_base.get_representation_function_of_object(
+                    object_type
+                )
+            else:
+                repr_function = self.knowledge_base.get_representation_function_of_object(
+                    object_type
+                )
+
+            for i, obj in enumerate(objects, 1):
+                dispatcher.utter_message(text=f"{i}: {repr_function(obj)}")
+        else:
+            dispatcher.utter_message(
+                text=f"Ich konnte leider nichts zu  '{object_type}' finden."
+            )
+
+    def utter_attribute_value(
+        self,
+        dispatcher: CollectingDispatcher,
+        object_name: Text,
+        attribute_name: Text,
+        attribute_value: Text,
+    ) -> None:
+        """
+        Utters a response that informs the user about the attribute value of the
+        attribute of interest.
+
+        Args:
+            dispatcher: the dispatcher
+            object_name: the name of the object
+            attribute_name: the name of the attribute
+            attribute_value: the value of the attribute
+        """
+        if attribute_value:
+            dispatcher.utter_message(
+                text=f" Für '{object_name}' ist '{attribute_value}'  '{attribute_name}' ."
+            )
+        else:
+            dispatcher.utter_message(
+                text=f"Leider konnte ich unter dem Schlagwort '{attribute_name}' zu '{object_name}' nichts finden."
+            )
+

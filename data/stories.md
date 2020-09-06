@@ -12,12 +12,13 @@
 ## happy_path
 > check_affirm
   - form{"name": null}
+  - action_fetch_continent
   - utter_slot_values
   - utter_goodbye
 
 ## check_stop
 > check_affirm
-* out_of_scope
+* out_of_scope   
   - utter_ask_continue
 * deny
     - action_deactivate_form
@@ -35,6 +36,8 @@
 * affirm
   - insurance_check
   - form{"name": null}
+  - action_fetch_continent
+  - utter_slot_values
   - utter_goodbye
 
 ## ask_insurance

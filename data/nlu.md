@@ -217,6 +217,8 @@
 
 ## intent:travel_days
 - [20](travel_days) Tage
+- [3](travel_days) Tage
+- [8](travel_days) Tage 
 - Ich vereise [10](travel_days) Tage
 - [15](travel_days)
 
@@ -242,7 +244,12 @@
 - Was ist im [ersten](mention:1) [versichert](attribute:versichert) ? 
 - Was ist im [letzten](mention:LAST) [versichert](attribute:versichert) ? 
 - Was [versichert](attribute:versichert) in [Krankenhaus](Auslandsreisekrankenversicherung)?
-- Was ist mit [Krankenhaus](Auslandsreisekrankenversicherung)?
+- Was ist mit [Krankenhaus](Auslandsreisekrankenversicherung) -Aufenthalten?
+- Wie ist das im [Krankenhaus](Auslandsreisekrankenversicherung) ? 
+- Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung) ? 
+- Werden meine [Medikamente](Auslandsreisekrankenversicherung) bezahlt ? 
+- Was ist mit [Schwangerschaftskomplikationen](Auslandsreisekrankenversicherung)?
+- Ist der [Rücktransport](Auslandsreisekrankenversicherung) mitversichert ?
 
 ## intent:corona
 - Wie viele Corona Fallzahlen ? 

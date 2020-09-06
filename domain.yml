@@ -33,6 +33,7 @@ entities:
 - attribute
 - Auslandsreisekrankenversicherung
 - versichert
+- moreTravel
 forms:
 - insurance_check
 intents:
@@ -99,6 +100,20 @@ responses:
     text: 'Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ? '
   utter_ask_travel_days:
   - text: Wie viele Tage wirst du verreisen ?
+  utter_ask_moreTravel:
+  - buttons:
+    - payload: '/affirm'
+      title: Ja
+    - payload: '/deny'
+      title: Nein
+    text: Wirst du dieses Jahr noch öfters verreisen ?= 
+  utter_ask_occasion:
+  - buttons:
+    - payload: '/affirm'
+      title: Ja
+    - payload: '/deny'
+      title: Nein
+    text: Verreist du geschäftlich ? 
   utter_explain_age:
   - text: Das Alter wird gebraucht für ...
   utter_goodbye:
@@ -108,10 +123,13 @@ responses:
   - text: Wiedersehen macht Freude !
 
   utter_ask_rephrase:
-  - text: "Sorry, I'm not sure I understand. Could you rephrase it?"
-  - text: "Could you please rephrase your message? I didn't quite get that."
+  - text: Das habe ich leider nicht verstanden. Kannst du bitte deine Frage wiederholen ?
+  - text: Kannst du bitte deine Frage wiederholen ? 
   utter_respond_love: 
   - text: Ich liebe alle meine Nutzer ! 
+  - text: Es gibt nichts Schöneres als geliebt zu werden, geliebt um seiner selbst willen oder vielmehr trotz seiner selbst.
+  - text: Was du liebst, lass frei. Kommt es zurück, gehört es dir - für immer.
+  - text: Nicht die Vollkommenen, sondern die Unvollkommenen brauchen unsere Liebe.
 
   utter_respond_insult:
    - text: Das war aber gemein. 
@@ -119,7 +137,7 @@ responses:
   - text: "Moin, ich bin Dave dein persönlicher Reiseberater. \n Möchtest du beginnen\
       \ ? "
   utter_slot_values:
-  - text: Du möchtest nach {destination} in {continent} verreisen.
+  - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days}, Geschäftlich ? {occasion}, Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage}, Reiserücktritt {financeLoss}
   utter_tooYoung:
   - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
       bei deinen Eltern an.
@@ -147,7 +165,7 @@ slots:
   luggage:
     type: unfeaturized
   occasion:
-    type: unfeaturized
+    type: bool
   requested_slot:
     type: unfeaturized
   travel_days:
@@ -166,4 +184,5 @@ slots:
     type: unfeaturized
   versichert:
     type: unfeaturized
-
+  moreTravel:
+    type: bool
