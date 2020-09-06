@@ -1,0 +1,36 @@
+{
+    "Auslandsreisekrankenversicherung":[
+       {
+          "id":0,
+          "name":"Arzt",
+          "versichert":"stationäre Heilbehandlung im Krankenhaus"
+       },
+       {
+          "id":1,
+          "name":"Krankenhaus",
+          "versichert":"Stationäre Heilbehandlung im Krankenhaus"
+       },
+       {
+          "id":2,
+          "name":"Zahnersatz",
+          "versichert":"schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+       }
+    ],
+    "reisegepäckversicherung":[
+       {
+          "id":0,
+          "name":"stat",
+          "versichert":"stationäre Heilbehandlung im Krankenhaus"
+       },
+       {
+          "id":1,
+          "name":"fat",
+          "versichert":"Stationäre Heilbehandlung im Krankenhaus"
+       },
+       {
+          "id":2,
+          "name":"mat",
+          "versichert":"schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+       }
+    ]
+ }

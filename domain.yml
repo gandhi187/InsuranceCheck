@@ -1,120 +1,169 @@
-intents:
- - greet
- - goodbye
- - affirm
- - deny
- - mood_great
- - mood_unhappy
- - bot_challenge
- - greet_user
- - question
- - inform
- - out_of_scope
+actions:
+- action_fetch_continent
+- action_fetch_corona
+- action_fetch_travel_warning
+- utter_answerDestination_insideEurope
+- utter_answerDestination_outsideEurope
+- utter_ask_age
+- utter_ask_baggage
+- utter_ask_continue
+- utter_ask_destination
+- utter_ask_familyStatus
+- utter_ask_financeLoss
+- utter_ask_luggage
+- utter_ask_travel_days
+- utter_explain_age
+- utter_goodbye
+- utter_greet
+- utter_slot_values
+- utter_tooYoung
+- action_query_knowledge_base
 entities:
- - profession
- - age 
- - familyStatus
- - living 
- - ownership
- - leisure 
-
-slots: 
- age:
-    type: float
-    max_value: 120
-    min_value: 0.0
- profession:
-    type: unfeaturized 
- familyStatus:
-    type: unfeaturized
- living:
-    type: unfeaturized
-    
- ownership:
-    type: unfeaturized 
- leisure:
-    type: unfeaturized 
-  
-
-  
+- age
+- continent
+- destination
+- familyStatus
+- financeLoss
+- luggage
+- occasion
+- travel_days
+- travelWarning
+- object_type
+- mention
+- attribute
+- Auslandsreisekrankenversicherung
+- versichert
+forms:
+- insurance_check
+intents:
+- inform
+- affirm
+- destination
+- travel_days
+- greet
+- corona
+- goodbye
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- greet_user
+- question
+- out_of_scope
+- weather
+- travelWarning
+- whatsPossible
+- query_knowledge_base
+- insult : {triggers: utter_respond_insult}
+- love : {triggers: utter_respond_love}
 responses:
-  utter_greet:
-  - text: "Moin, ich bin dein persönlicher Versicherungsassistent \n
-  Ich möchte gerne einen Versicherungscheck mit dir durchführen.\n
-  Falls du Fragen hast, kannst du jederzeit gerne Rückfragen stellen \n
-  Möchtest du anfangen ? "
- 
-  utter_explain_age:
-  - text: "Das Alter wird gebraucht für ..."
-
-
+  utter_answerDestination_insideEurope:
+  - text: -{destination} liegt innerhalb Europas
+  utter_answerDestination_outsideEurope:
+  - text: -{destination} liegt außerhalb Europas
   utter_ask_age:
-  - text: "Wie alt bist du ?"
-
-  utter_ask_profession:
-    - text: "Da du {age} Jahre alt bist, gehe ich davon aus, dass du "
-      buttons:
-        - title: "Student"
-          payload: '/inform{"profession":"student"}'
-        - title: "Arbeitnehmer"
-          payload: '/inform{"profession":"arbeitnehmer"}'
-        - title: "Selbstständig"
-          payload: '/inform{"profession":"selbstständig"}'
-        - title: "Beamter"
-          payload: '/inform{"profession":"beamter"}'
-        - title: "Azubi"
-          payload: '/inform{"profession":"azubi"}'
-        - title: "Hausfrau"
-          payload: '/inform{"profession":"hausfrau"}'
-        - title: "Rentner"
-          payload: '/inform{"profession":"rentner"}'
-        - title: "Arbeitslos"
-          payload: '/inform{"profession":"arbeitslos"}'
-
-  utter_ask_familyStatus:
-    - text: "Familienstatus ? "
-      buttons:
-      - title: "Single"
-        payload: '/inform{"familyStatus":"Single"}'
-      - title: "Paar"
-        payload: '/inform{"familyStatus": "Paar"}'
-      - title: "Verheiratet"
-        payload: '/inform{"familyStatus": "Verheiratet"}'
-
-  utter_ask_lving:
-    - text: "Zur Miete oder Eigentum ? "
-      buttons:
-      - title: "Miete"
-        payload: '/inform{"living": "Miete"}'
-      - title: "Eigentum"
-        payload: '/inform{"living": "Eigentum"}'
-  
-  utter_ask_ownership:
-    - text: "Besitztümer ?"
-  
-  utter_ask_leisure:
-    - text: "Freizeit ? "
-
-  utter_tooYoung:
-  - text: "Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal bei deinen Eltern an."
-
-  utter_goodbye:
-  - text: "Tschüssiii"
-  - text: "Ciao"
-  - text: "Auf Wiedersehen"
-  - text: "Wiedersehen macht Freude !"
-
+  - text: Wie alt bist du ?
+  utter_ask_baggage:
+  - text: Wie hoch schätzt du den Wert deines Gepäcks ein ?
   utter_ask_continue:
-  - text: "Möchtest du den Versicherungscheck fortführen ?"
+  - text: Möchtest du den Versicherungscheck fortführen ?
+  utter_ask_destination:
+  - text: Wohin möchtest du vereisen ?
+  utter_ask_familyStatus:
+  - buttons:
+    - payload: /inform{"familyStatus":"Single"}
+      title: Single
+    - payload: '/inform{"familyStatus": "Paar"}'
+      title: Paar
+    - payload: '/inform{"familyStatus": "Verheiratet"}'
+      title: Verheiratet
+    text: 'Familienstatus ? '
+  utter_ask_financeLoss:
+  - buttons:
+    - payload: /inform{"financeLoss":"Nicht"}
+      title: Nicht schlimm
+    - payload: '/inform{"financeLoss": "Geht"}'
+      title: Mäßig schlimm
+    - payload: '/inform{"financeLoss": "Sehr"}'
+      title: Sehr schlimm
+    text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nicht antritt deiner
+      Reise nach {destination} ? '
+  utter_ask_luggage:
+  - buttons:
+    - payload: /inform{"luggage":"Nicht"}
+      title: Nicht schlimm
+    - payload: '/inform{"luggage": "Geht"}'
+      title: Mäßig schlimm
+    - payload: '/inform{"luggage": "Sehr"}'
+      title: Sehr schlimm
+    text: 'Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ? '
+  utter_ask_travel_days:
+  - text: Wie viele Tage wirst du verreisen ?
+  utter_explain_age:
+  - text: Das Alter wird gebraucht für ...
+  utter_goodbye:
+  - text: Tschüssiii
+  - text: Ciao
+  - text: Auf Wiedersehen
+  - text: Wiedersehen macht Freude !
 
+  utter_ask_rephrase:
+  - text: "Sorry, I'm not sure I understand. Could you rephrase it?"
+  - text: "Could you please rephrase your message? I didn't quite get that."
+  utter_respond_love: 
+  - text: Ich liebe alle meine Nutzer ! 
+
+  utter_respond_insult:
+   - text: Das war aber gemein. 
+  utter_greet:
+  - text: "Moin, ich bin Dave dein persönlicher Reiseberater. \n Möchtest du beginnen\
+      \ ? "
   utter_slot_values:
-  - text: "Du bist {age} Jahre alt."
-
-forms: 
-  - insurance_check  
+  - text: Du möchtest nach {destination} in {continent} verreisen.
+  utter_tooYoung:
+  - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
+      bei deinen Eltern an.
+  utter_explain_whatspossible:
+  - text: Ich kann dich über Reiseversicherungen beraten. \n Ich befinde mich jedoch noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! :) 
 
 session_config:
-  session_expiration_time: 60
   carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  age:
+    max_value: 120
+    min_value: 0.0
+    type: float
+  continent:
+    type: unfeaturized
+  coronaCases:
+    type: unfeaturized
+  destination:
+    type: text
+  familyStatus:
+    type: unfeaturized
+  financeLoss:
+    type: unfeaturized
+  luggage:
+    type: unfeaturized
+  occasion:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+  travel_days:
+    max_value: 9999
+    min_value: 1.0
+    type: float
+  travelWarning:
+    type: unfeaturized 
+  object_type:
+    type: unfeaturized
+  mention:
+    type: unfeaturized
+  attribute:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung:
+    type: unfeaturized
+  versichert:
+    type: unfeaturized
 
-  

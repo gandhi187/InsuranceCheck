@@ -7,21 +7,14 @@
   - form{"name": "insurance_check"}
 > check_affirm
 
+
+
 ## happy_path
 > check_affirm
   - form{"name": null}
   - utter_slot_values
+  - utter_goodbye
 
-## explain_age
-> check_affirm
-  - slot{"requested_slot":"age"}
-* question
-  - utter_explain_age
-  - insurance_check
-  - form{"name": null}
-  - utter_slot_values
-
-  
 ## check_stop
 > check_affirm
 * out_of_scope
@@ -31,17 +24,34 @@
     - form{"name": null}
     - utter_goodbye
 
+## ask_whats_possible
+* whatsPossible
+  - utter_explain_whatspossible
+
 ## check_continue
 > check_affirm
 * out_of_scope
   - utter_ask_continue
 * affirm
-  - action_deactivate_form
+  - insurance_check
   - form{"name": null}
   - utter_goodbye
+
+## ask_insurance
+* query_knowledge_base
+  - action_query_knowledge_base
 
 ## no_check
 * greet
   - utter_greet
 * deny
   - utter_goodbye
+
+## travel_warning
+* travelWarning
+ - action_fetch_travel_warning
+
+## corona
+* corona 
+ - action_fetch_corona
+

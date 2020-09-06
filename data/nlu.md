@@ -21,7 +21,7 @@
 - moin
 
 ## intent:greet_user
-- Mein name ist [Juste][PERSON]  <!--- Square brackets contain the value of entity while the text in parentheses is a a label of the entity --> 
+- Mein name ist [Juste][PERSON]
 - ich bin [Tim][PERSON]
 - ich bin [Robert][PERSON]
 - ich bin [Tom][PERSON]
@@ -75,8 +75,6 @@
 - Please call me [Leo][PERSON]
 - name is [Pari][PERSON]
 - name [Sanjay][PERSON]
-
-
 
 ## intent:goodbye
 - Schönen Abend noch
@@ -171,43 +169,123 @@
 - nu klar bot
 - ok bot
 - okay bot
+- yes
 
+## intent:ask_weather
+- Wie wird das Wetter ?
+- Wetter ?
+- Wird das Wetter gut ?
+- Wird es warm ?
+- Wird es schön ?
+- Wettervorhersage
 
 ## intent:deny
 - niemals
 - nein
 - ne
 
-
-
 ## intent:out_of_scope
 - warte
 - erzähl mir einen Witz
 - wie geht es dir ?
-- geht dich nichts an ! 
+- geht dich nichts an !
 - geht dich nichts an
 
-## intent:question 
-- Warum ? 
+## intent:question
+- Warum ?
 - Warum
 - Wieso
 - Wegen ?
-- Warum fragst du ? 
+- Warum fragst du ?
 - ?
 
 ## intent:inform
 - Ich bin [23](age)
 - [12](age)
 - [31](age)
-- Ich bin [Student](profession)
-- Ich [studiere](profession)
-- [nichts](profession)
-- [Arbeitslos](profession)
+
+## intent:destination
+- Nach [Deutschland](destination)
+- Ich gehe nach [Mexiko](destination)
+- Ich fliege nach [Italien](destination)
+- Nach [Hong Kong](destination)
+- [Albanien](destination)
+- [Türkei](destination)
+- [Japan](destination)
+- [Mexiko](destination)
+- [Deutschland](destination)
+
+## intent:travel_days
+- [20](travel_days) Tage
+- Ich vereise [10](travel_days) Tage
+- [15](travel_days)
+
+## intent: query_knowledge_base
+<!-- - what [restaurants](object_type:restaurant) can you recommend?
+- list some [restaurants](object_type:restaurant)
+- can you name some [restaurants](object_type:restaurant) please?
+- can you show me some [restaurant](object_type:restaurant) options
+- list [German](cuisine) [restaurants](object_type:restaurant)
+- do you have any [mexican](cuisine) [restaurants](object_type:restaurant)?
+- do you know the [price range](attribute:price-range) of [that one](mention)?
+- what [cuisine](attribute) is [it](mention)?
+- do you know what [cuisine](attribute) the [last one](mention:LAST) has?
+- does the [first one](mention:1) have [outside seating](attribute:outside-seating)?
+- what is the [price range](attribute:price-range) of [Berlin Burrito Company](restaurant)?
+- what about [I due forni](restaurant)?
+- can you tell me the [price range](attribute) of [that restaurant](mention)?
+- what [cuisine](attribute) do [they](mention) have? -->
+- Welche Leistung ist in der [Auslandsreisekrankenversicherung](object_type:Auslandsreisekrankenversicherung) versichert ?
+- Versicherte Leistungen in der [Auslandsreisekrankenversicherung](object_type:Auslandsreisekrankenversicherung)
+- Was ist versichert in der [Auslandsreisekrankenversicherung](object_type:Auslandsreisekrankenversicherung) ? 
+- Kann du mir [Details](attribute:versichert) zum [ersten](mention:1) nennen ?
+- Was ist im [ersten](mention:1) [versichert](attribute:versichert) ? 
+- Was ist im [letzten](mention:LAST) [versichert](attribute:versichert) ? 
+- Was [versichert](attribute:versichert) in [Krankenhaus](Auslandsreisekrankenversicherung)?
+- Was ist mit [Krankenhaus](Auslandsreisekrankenversicherung)?
+
+## intent:corona
+- Wie viele Corona Fallzahlen ? 
+- Wie viele Corona Erkankungen ?
+- Gibt es viele Corona Erkrankungen
+- Wie viele haben Corona ? 
+- Fallzahlen ? 
+
+## intent:travelWarning
+- Reisewarnung ? 
+- Gibt es eine Reisewarnung ?
+- Wie sicher ist mein Land ?
+
+## intent:love
+- Ich liebe dich
+- Hast du eine Frau ? 
+- Verheiratet ?
+- Willst du mich heiraten ? 
+- Liebe dich
+- Bist du Single ? 
 
 
+## intent:insult
+- Arschloch
+- Penner
+- Hurensohn
+- Bastard
+- Wixxer
+- Du Arsch
+- Leck mich !
+- Ich hasse dich !
+
+## intent:whatsPossible
+- Was kannst du ?
+- Wie kannst du mir helfen ?
+- Möglichkeiten ?
+- Was kannst du beantworten ?
+- was kannst du 
 
 
-
-
-## regex:age
+## regex
 - ^(1[89]|[2-9][0-9])$
+
+## lookup:destination
+  data/lookup/countrys/country-list-clean.csv
+
