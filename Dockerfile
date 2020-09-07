@@ -12,7 +12,10 @@ USER root
 
 # Install extra requirements for actions code, if necessary (uncomment next line)
 # RUN pip install -r requirements-actions.txt
-
+RUN pip install pycountry_convert
+RUN pip install openpyxl
+RUN pip install requests
+RUN pip install datetime
 # Copy actions folder to working directory
 COPY ./actions /app/actions
 

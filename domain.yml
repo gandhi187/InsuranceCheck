@@ -18,6 +18,8 @@ actions:
 - utter_slot_values
 - utter_tooYoung
 - action_query_knowledge_base
+- utter_respond_insult
+- utter_respond_love
 entities:
 - age
 - continent
@@ -81,21 +83,21 @@ responses:
     text: 'Familienstatus ? '
   utter_ask_financeLoss:
   - buttons:
-    - payload: /inform{"financeLoss":"Nicht"}
+    - payload: /inform{"financeLoss":"niedrig"}
       title: Nicht schlimm
-    - payload: '/inform{"financeLoss": "Geht"}'
+    - payload: '/inform{"financeLoss": "mittel"}'
       title: Mäßig schlimm
-    - payload: '/inform{"financeLoss": "Sehr"}'
+    - payload: '/inform{"financeLoss": "hoch"}'
       title: Sehr schlimm
     text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nicht antritt deiner
       Reise nach {destination} ? '
   utter_ask_luggage:
   - buttons:
-    - payload: /inform{"luggage":"Nicht"}
+    - payload: /inform{"luggage":"niedrig"}
       title: Nicht schlimm
-    - payload: '/inform{"luggage": "Geht"}'
+    - payload: '/inform{"luggage": "mittel"}'
       title: Mäßig schlimm
-    - payload: '/inform{"luggage": "Sehr"}'
+    - payload: '/inform{"luggage": "hoch"}'
       title: Sehr schlimm
     text: 'Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ? '
   utter_ask_travel_days:

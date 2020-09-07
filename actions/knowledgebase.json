@@ -1,0 +1,54 @@
+{
+    "Auslandsreisekrankenversicherung":[
+       {    
+          "id":0,
+          "name":"Arzt",
+          "versichert":"Stationäre Heilbehandlung im Krankenhaus"
+       },
+       {
+          "id":1,
+          "name":"Krankenhaus",
+          "versichert":"Stationäre Heilbehandlung im Krankenhaus"
+       },
+       {
+          "id":2,
+          "name":"Zahnersatz",
+          "versichert":"schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz\n "
+       },
+       {
+        "id":3,
+        "name":"Medikamente",
+        "versichert":"Ärtzliche verordnete Arznei- und Verbandsmittel sowie Hilfsmittel"
+
+       },
+        {
+            "id":4,
+            "name":"Schwangerschaftskomplikationen",
+            "versichert":"Schwangerschaftskomplikationen, Frühgeburten,Schwangerschaftsuntersuchungen und Entbindungen, wenn die Schwangerschaft während Reise eintritt, notwendige Heilbehandlung des neugeborenen Kindes bei Frühgeburten im Ausland "
+     
+        },
+        {
+            "id":5,
+            "name":"Rücktransport",
+            "versichert":"den Transport zum nächsterreichbaren Arzt/Krankenhaus und zurück in die Unterkunft    \n den medizinisch sinnvollen und vertretbaren Rücktransport \n Überführung und Bestattung im Ausland \n Begleitperson im Krankenhaus und Reisebetreuung für Kinder bis zum 18. Lebensjahr "
+ 
+        }
+    ],
+    "reisegepäckversicherung":[
+       {
+          "id":0,
+          "name":"stat",
+          "versichert":"stationäre Heilbehandlung im Krankenhaus"
+       },
+       {
+          "id":1,
+          "name":"fat",
+          "versichert":"Stationäre Heilbehandlung im Krankenhaus"
+       },
+       {
+          "id":2,
+          "name":"mat",
+          "versichert":"schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+       }
+    ]
+ }

@@ -114,6 +114,26 @@ class InsuranceCheck(FormAction):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict]:
+        destination = tracker.get_slot('destination')
+        continent = tracker.get_slot('continent')
+        travel_days = tracker.get_slot('travel_days')
+        luggage = tracker.get_slot('luggage')
+        financeLoss = tracker.get_slot('financeLoss')
+        occasion = tracker.get_slot('occasion')
+        moreTravel = tracker.get_slot("moreTravel")
+
+        if (int(travel_days) <= 30 and moreTravel == False and luggage == 'hoch' and financeLoss == 'hoch' or luggage == 'mittel' or financeLoss =='mittel' ):
+            print ('Empfehlung 1')
+            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Einmalige Reisekrankenversicherung \n Reisgepäckversicherung \n Reiserücktrittversicherung")
+        elif (int(travel_days) <= 30 and moreTravel == False and luggage == 'niedrig' and financeLoss == 'niedrig' ):
+            print ('Empfehlung 2')
+            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Einmalige Reisekrankenversicherung")
+        elif (int(travel_days) <= 30 and moreTravel == True and luggage == 'hoch' and financeLoss == 'hoch' or luggage == 'mittel' or financeLoss =='mittel' ):
+            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Jahres-Reisekrankenversicherung \n Reisgepäckversicherung \n Reiserücktrittversicherung")
+        elif (int(travel_days) <= 30 and moreTravel == True and luggage == 'niedrig' and financeLoss == 'niedrig' ):
+            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Jahres-Reisekrankenversicherung ")
+        elif (int(travel_days) >= 30 ) : 
+            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Da du für + " + int (travel_days) + " verreist, .... COMING SOON ")
 
         return []   
 
@@ -168,7 +188,7 @@ Custom Actions to query the Knowledge-Base (JSON-Object)
 """
 class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
     def __init__(self):
-        knowledge_base = InMemoryKnowledgeBase("data/knowledgebase.json")
+        knowledge_base = InMemoryKnowledgeBase("actions/knowledgebase.json")
         super().__init__(knowledge_base)
 
 

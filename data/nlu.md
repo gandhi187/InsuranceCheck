@@ -243,11 +243,12 @@
 - Kann du mir [Details](attribute:versichert) zum [ersten](mention:1) nennen ?
 - Was ist im [ersten](mention:1) [versichert](attribute:versichert) ? 
 - Was ist im [letzten](mention:LAST) [versichert](attribute:versichert) ? 
-- Was [versichert](attribute:versichert) in [Krankenhaus](Auslandsreisekrankenversicherung)?
+- Was ist [versichert](attribute:versichert) in [Krankenhaus](Auslandsreisekrankenversicherung)?
 - Was ist mit [Krankenhaus](Auslandsreisekrankenversicherung) -Aufenthalten?
 - Wie ist das im [Krankenhaus](Auslandsreisekrankenversicherung) ? 
 - Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung) ? 
-- Werden meine [Medikamente](Auslandsreisekrankenversicherung) bezahlt ? 
+- Ist der [Zahnersatz](Auslandsreisekrankenversicherung) [versichert](attribute:versichert) ? 
+- Sind [Medikamente](Auslandsreisekrankenversicherung) [versichert](attribute:versichert) ? 
 - Was ist mit [Schwangerschaftskomplikationen](Auslandsreisekrankenversicherung)?
 - Ist der [Rücktransport](Auslandsreisekrankenversicherung) mitversichert ?
 
