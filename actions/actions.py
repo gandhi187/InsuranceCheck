@@ -125,16 +125,20 @@ class InsuranceCheck(FormAction):
         if (int(travel_days) <= 30 and moreTravel == False and luggage == 'hoch' and financeLoss == 'hoch' or luggage == 'mittel' or financeLoss =='mittel' ):
             print ('Empfehlung 1')
             dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Einmalige Reisekrankenversicherung \n Reisgepäckversicherung \n Reiserücktrittversicherung")
+            return []
         elif (int(travel_days) <= 30 and moreTravel == False and luggage == 'niedrig' and financeLoss == 'niedrig' ):
             print ('Empfehlung 2')
             dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Einmalige Reisekrankenversicherung")
+            return []
         elif (int(travel_days) <= 30 and moreTravel == True and luggage == 'hoch' and financeLoss == 'hoch' or luggage == 'mittel' or financeLoss =='mittel' ):
             dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Jahres-Reisekrankenversicherung \n Reisgepäckversicherung \n Reiserücktrittversicherung")
+            return []
         elif (int(travel_days) <= 30 and moreTravel == True and luggage == 'niedrig' and financeLoss == 'niedrig' ):
             dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Jahres-Reisekrankenversicherung ")
+            return []
         elif (int(travel_days) >= 30 ) : 
             dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Da du für + " + int (travel_days) + " verreist, .... COMING SOON ")
-
+            return []
         return []   
 
 
