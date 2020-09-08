@@ -218,60 +218,45 @@
 ## intent:travel_days
 - [20](travel_days) Tage
 - [3](travel_days) Tage
-- [8](travel_days) Tage 
+- [8](travel_days) Tage
 - Ich vereise [10](travel_days) Tage
 - [15](travel_days)
 
-## intent: query_knowledge_base
-<!-- - what [restaurants](object_type:restaurant) can you recommend?
-- list some [restaurants](object_type:restaurant)
-- can you name some [restaurants](object_type:restaurant) please?
-- can you show me some [restaurant](object_type:restaurant) options
-- list [German](cuisine) [restaurants](object_type:restaurant)
-- do you have any [mexican](cuisine) [restaurants](object_type:restaurant)?
-- do you know the [price range](attribute:price-range) of [that one](mention)?
-- what [cuisine](attribute) is [it](mention)?
-- do you know what [cuisine](attribute) the [last one](mention:LAST) has?
-- does the [first one](mention:1) have [outside seating](attribute:outside-seating)?
-- what is the [price range](attribute:price-range) of [Berlin Burrito Company](restaurant)?
-- what about [I due forni](restaurant)?
-- can you tell me the [price range](attribute) of [that restaurant](mention)?
-- what [cuisine](attribute) do [they](mention) have? -->
-- Welche Leistung ist in der [Auslandsreisekrankenversicherung](object_type:Auslandsreisekrankenversicherung) versichert ?
-- Versicherte Leistungen in der [Auslandsreisekrankenversicherung](object_type:Auslandsreisekrankenversicherung)
-- Was ist versichert in der [Auslandsreisekrankenversicherung](object_type:Auslandsreisekrankenversicherung) ? 
-- Kann du mir [Details](attribute:versichert) zum [ersten](mention:1) nennen ?
-- Was ist im [ersten](mention:1) [versichert](attribute:versichert) ? 
-- Was ist im [letzten](mention:LAST) [versichert](attribute:versichert) ? 
-- Was ist [versichert](attribute:versichert) in [Krankenhaus](Auslandsreisekrankenversicherung)?
+## intent:query_knowledge_base
+- Welche Leistung ist in der [Auslandsreisekrankenversicherung](object_type) versichert ?
+- Versicherte Leistungen in der [Auslandsreisekrankenversicherung](object_type)
+- Was ist versichert in der [Auslandsreisekrankenversicherung](object_type) ?
+- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
+- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
+- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
+- Was ist [versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung)?
 - Was ist mit [Krankenhaus](Auslandsreisekrankenversicherung) -Aufenthalten?
-- Wie ist das im [Krankenhaus](Auslandsreisekrankenversicherung) ? 
-- Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung) ? 
-- Ist der [Zahnersatz](Auslandsreisekrankenversicherung) [versichert](attribute:versichert) ? 
-- Sind [Medikamente](Auslandsreisekrankenversicherung) [versichert](attribute:versichert) ? 
+- Wie ist das im [Krankenhaus](Auslandsreisekrankenversicherung) ?
+- Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung) ?
+- Ist der [Zahnersatz](Auslandsreisekrankenversicherung) [versichert](attribute) ?
+- Sind [Medikamente](Auslandsreisekrankenversicherung) [versichert](attribute) ?
 - Was ist mit [Schwangerschaftskomplikationen](Auslandsreisekrankenversicherung)?
 - Ist der [Rücktransport](Auslandsreisekrankenversicherung) mitversichert ?
 
 ## intent:corona
-- Wie viele Corona Fallzahlen ? 
+- Wie viele Corona Fallzahlen ?
 - Wie viele Corona Erkankungen ?
 - Gibt es viele Corona Erkrankungen
-- Wie viele haben Corona ? 
-- Fallzahlen ? 
+- Wie viele haben Corona ?
+- Fallzahlen ?
 
 ## intent:travelWarning
-- Reisewarnung ? 
+- Reisewarnung ?
 - Gibt es eine Reisewarnung ?
 - Wie sicher ist mein Land ?
 
 ## intent:love
 - Ich liebe dich
-- Hast du eine Frau ? 
+- Hast du eine Frau ?
 - Verheiratet ?
-- Willst du mich heiraten ? 
+- Willst du mich heiraten ?
 - Liebe dich
-- Bist du Single ? 
-
+- Bist du Single ?
 
 ## intent:insult
 - Arschloch
@@ -288,12 +273,17 @@
 - Wie kannst du mir helfen ?
 - Möglichkeiten ?
 - Was kannst du beantworten ?
-- was kannst du 
-
-
-## regex
+- was kannst du
 - ^(1[89]|[2-9][0-9])$
 
-## lookup:destination
-  data/lookup/countrys/country-list-clean.csv
+## synonym:1
+- ersten
 
+## synonym:LAST
+- letzten
+
+## synonym:versichert
+- Details
+
+## lookup:country-list-clean.csv
+  data/lookup/countrys/country-list-clean.csv

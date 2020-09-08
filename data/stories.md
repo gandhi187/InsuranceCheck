@@ -1,4 +1,3 @@
-
 ## user_affirm_check
 * greet
   - utter_greet
@@ -6,8 +5,6 @@
   - insurance_check
   - form{"name": "insurance_check"}
 > check_affirm
-
-
 
 ## happy_path
 > check_affirm
@@ -58,3 +55,108 @@
 * corona 
  - action_fetch_corona
 
+## Generated Story1
+
+* greet
+    - utter_greet
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* destination{"destination":"Mexiko"}
+    - slot{"destination":"Mexiko"}
+    - slot{"destination":"Mexiko"}
+    - insurance_check
+    - slot{"destination":"Mexiko"}
+    - slot{"requested_slot":"travel_days"}
+* travel_days{"travel_days":"4"}
+    - slot{"travel_days":"4"}
+    - slot{"travel_days":"4"}
+    - insurance_check
+    - slot{"travel_days":"4"}
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"hoch"}
+    - slot{"luggage":"hoch"}
+    - slot{"luggage":"hoch"}
+    - insurance_check
+    - slot{"luggage":"hoch"}
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"hoch"}
+    - slot{"financeLoss":"hoch"}
+    - slot{"financeLoss":"hoch"}
+    - insurance_check
+    - slot{"financeLoss":"hoch"}
+    - slot{"requested_slot":"occasion"}
+* deny
+    - insurance_check
+    - slot{"occasion":false}
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - action_fetch_continent
+    - slot{"continent":"Nordamerika"}
+    - utter_slot_values
+    - slot{"destination":"Mexiko"}
+    - slot{"travel_days":"4"}
+    - slot{"luggage":"hoch"}
+    - slot{"financeLoss":"hoch"}
+    - utter_goodbye
+
+## New Story
+
+* greet
+    - utter_greet
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* destination{"destination":"Mexiko"}
+    - slot{"destination":"Mexiko"}
+    - insurance_check
+    - slot{"destination":"Mexiko"}
+    - slot{"requested_slot":"travel_days"}
+* travel_days{"travel_days":"4"}
+    - slot{"travel_days":"4"}
+    - insurance_check
+    - slot{"travel_days":"4"}
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"luggage":"mittel"}
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"hoch"}
+    - slot{"financeLoss":"hoch"}
+    - insurance_check
+    - slot{"financeLoss":"hoch"}
+    - slot{"requested_slot":"occasion"}
+* deny
+    - insurance_check
+    - slot{"occasion":false}
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - action_fetch_continent
+    - slot{"continent":"Nordamerika"}
+    - utter_slot_values
+    - utter_goodbye
+* insult
+    - utter_respond_insult
+* corona
+    - action_fetch_corona
+    - slot{"coronaCases":113954}
+* query_knowledge_base{"object_type":"Auslandsreisekrankenversicherung"}
+    - slot{"object_type":"Auslandsreisekrankenversicherung"}
+    - action_query_knowledge_base
+    - slot{"object_type":"Auslandsreisekrankenversicherung"}
+    - slot{"mention":null}
+    - slot{"attribute":null}
+    - slot{"knowledge_base_last_object":null}
+    - slot{"knowledge_base_last_object_type":"Auslandsreisekrankenversicherung"}
+    - slot{"knowledge_base_listed_objects":[5,0,3,1,4]}
