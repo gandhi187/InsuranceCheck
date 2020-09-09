@@ -1,43 +1,6 @@
-actions:
-- action_fetch_continent
-- action_fetch_corona
-- action_fetch_travel_warning
-- utter_answerDestination_insideEurope
-- utter_answerDestination_outsideEurope
-- utter_ask_age
-- utter_ask_baggage
-- utter_ask_continue
-- utter_ask_destination
-- utter_ask_familyStatus
-- utter_ask_financeLoss
-- utter_ask_luggage
-- utter_ask_travel_days
-- utter_explain_age
-- utter_goodbye
-- utter_greet
-- utter_slot_values
-- utter_tooYoung
-- action_query_knowledge_base
-- utter_respond_insult
-- utter_respond_love
-entities:
-- age
-- continent
-- destination
-- familyStatus
-- financeLoss
-- luggage
-- occasion
-- travel_days
-- travelWarning
-- object_type
-- mention
-- attribute
-- Auslandsreisekrankenversicherung
-- versichert
-- moreTravel
-forms:
-- insurance_check
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
 - inform
 - affirm
@@ -57,8 +20,72 @@ intents:
 - travelWarning
 - whatsPossible
 - query_knowledge_base
-- insult : {triggers: utter_respond_insult}
-- love : {triggers: utter_respond_love}
+- insult:
+    triggers: utter_respond_insult
+- love:
+    triggers: utter_respond_love
+- ask_weather
+entities:
+- age
+- continent
+- destination
+- familyStatus
+- financeLoss
+- luggage
+- occasion
+- travel_days
+- travelWarning
+- object_type
+- mention
+- attribute
+- Auslandsreisekrankenversicherung
+- versichert
+- moreTravel
+slots:
+  Auslandsreisekrankenversicherung:
+    type: unfeaturized
+  age:
+    type: float
+    max_value: 1.0
+    min_value: 0.0
+  attribute:
+    type: unfeaturized
+  continent:
+    type: unfeaturized
+  coronaCases:
+    type: unfeaturized
+  destination:
+    type: text
+  familyStatus:
+    type: unfeaturized
+  financeLoss:
+    type: unfeaturized
+  knowledge_base_last_object:
+    type: unfeaturized
+  knowledge_base_last_object_type:
+    type: unfeaturized
+  knowledge_base_listed_objects:
+    type: unfeaturized
+  luggage:
+    type: unfeaturized
+  mention:
+    type: unfeaturized
+  moreTravel:
+    type: bool
+  object_type:
+    type: unfeaturized
+  occasion:
+    type: bool
+  requested_slot:
+    type: unfeaturized
+  travelWarning:
+    type: unfeaturized
+  travel_days:
+    type: float
+    max_value: 1.0
+    min_value: 0.0
+  versichert:
+    type: unfeaturized
 responses:
   utter_answerDestination_insideEurope:
   - text: -{destination} liegt innerhalb Europas
@@ -104,18 +131,18 @@ responses:
   - text: Wie viele Tage wirst du verreisen ?
   utter_ask_moreTravel:
   - buttons:
-    - payload: '/affirm'
+    - payload: /affirm
       title: Ja
-    - payload: '/deny'
+    - payload: /deny
       title: Nein
-    text: Wirst du dieses Jahr noch öfters verreisen ?= 
+    text: Wirst du dieses Jahr noch öfters verreisen ?=
   utter_ask_occasion:
   - buttons:
-    - payload: '/affirm'
+    - payload: /affirm
       title: Ja
-    - payload: '/deny'
+    - payload: /deny
       title: Nein
-    text: Verreist du geschäftlich ? 
+    text: Verreist du geschäftlich ?
   utter_explain_age:
   - text: Das Alter wird gebraucht für ...
   utter_goodbye:
@@ -123,68 +150,53 @@ responses:
   - text: Ciao
   - text: Auf Wiedersehen
   - text: Wiedersehen macht Freude !
-
   utter_ask_rephrase:
-  - text: Das habe ich leider nicht verstanden. Kannst du bitte deine Frage wiederholen ?
-  - text: Kannst du bitte deine Frage wiederholen ? 
-  utter_respond_love: 
-  - text: Ich liebe alle meine Nutzer ! 
-  - text: Es gibt nichts Schöneres als geliebt zu werden, geliebt um seiner selbst willen oder vielmehr trotz seiner selbst.
+  - text: Das habe ich leider nicht verstanden. Kannst du bitte deine Frage wiederholen
+      ?
+  - text: Kannst du bitte deine Frage wiederholen ?
+  utter_respond_love:
+  - text: Ich liebe alle meine Nutzer !
+  - text: Es gibt nichts Schöneres als geliebt zu werden, geliebt um seiner selbst
+      willen oder vielmehr trotz seiner selbst.
   - text: Was du liebst, lass frei. Kommt es zurück, gehört es dir - für immer.
   - text: Nicht die Vollkommenen, sondern die Unvollkommenen brauchen unsere Liebe.
-
   utter_respond_insult:
-   - text: Das war aber gemein. 
+  - text: Das war aber gemein.
   utter_greet:
-  - text: "Moin, ich bin Dave dein persönlicher Reiseberater. \n Möchtest du beginnen\
-      \ ? "
+  - text: Moin, ich bin Dave dein persönlicher Reiseberater.  Möchtest du beginnen
+      ? (Bitte ignoriere meine Grammtik/Schreibfehler - ich befinde mich noch in der
+      Entwicklung !
   utter_slot_values:
-  - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days}, Geschäftlich ? {occasion}, Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage}, Reiserücktritt {financeLoss}
+  - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days},
+      Geschäftlich ? {occasion}, Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage},
+      Reiserücktritt {financeLoss}
   utter_tooYoung:
   - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
       bei deinen Eltern an.
   utter_explain_whatspossible:
-  - text: Ich kann dich über Reiseversicherungen beraten. \n Ich befinde mich jedoch noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! :) 
-
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 60
-slots:
-  age:
-    max_value: 120
-    min_value: 0.0
-    type: float
-  continent:
-    type: unfeaturized
-  coronaCases:
-    type: unfeaturized
-  destination:
-    type: text
-  familyStatus:
-    type: unfeaturized
-  financeLoss:
-    type: unfeaturized
-  luggage:
-    type: unfeaturized
-  occasion:
-    type: bool
-  requested_slot:
-    type: unfeaturized
-  travel_days:
-    max_value: 9999
-    min_value: 1.0
-    type: float
-  travelWarning:
-    type: unfeaturized 
-  object_type:
-    type: unfeaturized
-  mention:
-    type: unfeaturized
-  attribute:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung:
-    type: unfeaturized
-  versichert:
-    type: unfeaturized
-  moreTravel:
-    type: bool
+  - text: Ich kann dich über Reiseversicherungen beraten. \n Ich befinde mich jedoch
+      noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! :)
+actions:
+- action_fetch_continent
+- action_fetch_corona
+- action_fetch_travel_warning
+- utter_answerDestination_insideEurope
+- utter_answerDestination_outsideEurope
+- utter_ask_age
+- utter_ask_baggage
+- utter_ask_continue
+- utter_ask_destination
+- utter_ask_familyStatus
+- utter_ask_financeLoss
+- utter_ask_luggage
+- utter_ask_travel_days
+- utter_explain_age
+- utter_goodbye
+- utter_greet
+- utter_slot_values
+- utter_tooYoung
+- action_query_knowledge_base
+- utter_respond_insult
+- utter_respond_love
+forms:
+- insurance_check

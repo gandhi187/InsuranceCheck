@@ -19,6 +19,7 @@
 - Mahlzeit!
 - Moin!
 - moin
+- hi
 
 ## intent:greet_user
 - Mein name ist [Juste][PERSON]
@@ -170,6 +171,7 @@
 - ok bot
 - okay bot
 - yes
+- Sehr schlimm
 
 ## intent:ask_weather
 - Wie wird das Wetter ?
@@ -214,6 +216,8 @@
 - [Japan](destination)
 - [Mexiko](destination)
 - [Deutschland](destination)
+- [Spanien](destination)
+- [Griechenland](destination)
 
 ## intent:travel_days
 - [20](travel_days) Tage
@@ -221,6 +225,7 @@
 - [8](travel_days) Tage
 - Ich vereise [10](travel_days) Tage
 - [15](travel_days)
+- [4](travel_days) Tage
 
 ## intent:query_knowledge_base
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung](object_type) versichert ?
@@ -237,6 +242,9 @@
 - Sind [Medikamente](Auslandsreisekrankenversicherung) [versichert](attribute) ?
 - Was ist mit [Schwangerschaftskomplikationen](Auslandsreisekrankenversicherung)?
 - Ist der [Rücktransport](Auslandsreisekrankenversicherung) mitversichert ?
+- Ist [Zahnersatz](Auslandsreisekrankenversicherung) [versichert](attribute) in der [Auslandsreisekrankenversicherung](object_type) ?
+- Ist [Zahnersatz](Auslandsreisekrankenversicherung) [versichert](attribute) ?
+- [Auslandsreisekrankenversicherung](object_type)
 
 ## intent:corona
 - Wie viele Corona Fallzahlen ?
@@ -244,6 +252,7 @@
 - Gibt es viele Corona Erkrankungen
 - Wie viele haben Corona ?
 - Fallzahlen ?
+- Corona Situation ?
 
 ## intent:travelWarning
 - Reisewarnung ?
@@ -257,6 +266,8 @@
 - Willst du mich heiraten ?
 - Liebe dich
 - Bist du Single ?
+- Heirate mich
+- Was ist Liebe ?
 
 ## intent:insult
 - Arschloch
@@ -267,6 +278,8 @@
 - Du Arsch
 - Leck mich !
 - Ich hasse dich !
+- Si kerim
+- Leck mich
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -275,6 +288,7 @@
 - Was kannst du beantworten ?
 - was kannst du
 - ^(1[89]|[2-9][0-9])$
+- Was kannst du
 
 ## synonym:1
 - ersten
