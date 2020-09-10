@@ -226,6 +226,8 @@
 - Ich vereise [10](travel_days) Tage
 - [15](travel_days)
 - [4](travel_days) Tage
+- 4
+- 5
 
 ## intent:query_knowledge_base
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung](object_type) versichert ?
@@ -245,6 +247,8 @@
 - Ist [Zahnersatz](Auslandsreisekrankenversicherung) [versichert](attribute) in der [Auslandsreisekrankenversicherung](object_type) ?
 - Ist [Zahnersatz](Auslandsreisekrankenversicherung) [versichert](attribute) ?
 - [Auslandsreisekrankenversicherung](object_type)
+- Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung)[Zahnersatz](Auslandsreisekrankenversicherung) `?
+- Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung)[Krankenhaus](Auslandsreisekrankenversicherung)?
 
 ## intent:corona
 - Wie viele Corona Fallzahlen ?
