@@ -227,8 +227,8 @@
 - Ich vereise [10](travel_days) Tage
 - [15](travel_days)
 - [4](travel_days) Tage
-- 4
-- 5
+- [5](travel_days)
+- [48](travel_days)
 
 ## intent:query_knowledge_base
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung](object_type) versichert ?
