@@ -218,6 +218,7 @@
 - [Deutschland](destination)
 - [Spanien](destination)
 - [Griechenland](destination)
+- mexiko
 
 ## intent:travel_days
 - [20](travel_days) Tage

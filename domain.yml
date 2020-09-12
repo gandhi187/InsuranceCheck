@@ -176,6 +176,8 @@ responses:
   utter_explain_whatspossible:
   - text: Ich kann dich über Reiseversicherungen beraten. \n Ich befinde mich jedoch
       noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! :)
+  utter_response_whyDestination:
+  - text: Ich benötige dein Reiseziel, um dich optimal beraten zu können.
 actions:
 - action_fetch_continent
 - action_fetch_corona
