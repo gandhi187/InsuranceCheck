@@ -176,8 +176,15 @@ responses:
   utter_explain_whatspossible:
   - text: Ich kann dich über Reiseversicherungen beraten. \n Ich befinde mich jedoch
       noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! :)
-  utter_response_whyDestination:
-  - text: Ich benötige dein Reiseziel, um dich optimal beraten zu können.
+  utter_explain_whyDestination:
+  - text: Dein Reiseziel hat Auswirkungen auf meine Tarifempfehlungen. Zudem kann ich dir Informationen (Corona Fallzahlen oder Reisewarnungen) zum jeweiligen Zielland liefern. 
+  utter_explain_whyTravelDays:
+  - text: Ich benötige deine Reisedauer, um dich optimal beraten zu können.
+  utter_ask_continent:
+  - text: 
+
+
+
 actions:
 - action_fetch_continent
 - action_fetch_corona
@@ -191,6 +198,8 @@ actions:
 - utter_ask_familyStatus
 - utter_ask_financeLoss
 - utter_ask_luggage
+- utter_explain_whyDestination
+- utter_explain_whyTravelDays
 - utter_ask_travel_days
 - utter_explain_age
 - utter_goodbye

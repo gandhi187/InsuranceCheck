@@ -259,6 +259,15 @@
 - Fallzahlen ?
 - Corona Situation ?
 
+## intent:dontKnow
+- Weiß ich nicht
+- weiß ich noch nicht
+- noch nicht festgelegt
+- keine Ahnung
+- Weiß nicht
+- keine Ahnung 
+- Ich weiß es nicht
+
 ## intent:travelWarning
 - Reisewarnung ?
 - Gibt es eine Reisewarnung ?
