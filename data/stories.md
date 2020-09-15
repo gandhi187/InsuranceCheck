@@ -160,3 +160,58 @@
     - slot{"knowledge_base_last_object":null}
     - slot{"knowledge_base_last_object_type":"Auslandsreisekrankenversicherung"}
     - slot{"knowledge_base_listed_objects":[5,0,3,1,4]}
+
+## New Story
+
+* greet
+    - utter_greet
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* question
+    - utter_explain_whyDestination
+    - utter_ask_continue
+* affirm
+    - insurance_check
+    - slot{"requested_slot":"destination"}
+* destination{"destination":"Mexiko"}
+    - slot{"destination":"Mexiko"}
+    - slot{"destination":"Mexiko"}
+    - insurance_check
+    - slot{"destination":"Mexiko"}
+    - slot{"requested_slot":"travel_days"}
+* question
+    - slot{"destination":"Mexiko"}
+    - utter_explain_whyTravelDays
+    - slot{"destination":"Mexiko"}
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+* travel_days{"travel_days":"4"}
+    - slot{"travel_days":"4"}
+    - insurance_check
+    - slot{"travel_days":"4"}
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"luggage":"mittel"}
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"niedrig"}
+    - slot{"financeLoss":"niedrig"}
+    - insurance_check
+    - slot{"financeLoss":"niedrig"}
+    - slot{"requested_slot":"occasion"}
+* deny
+    - insurance_check
+    - slot{"occasion":false}
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - action_fetch_continent
+    - slot{"continent":"Nordamerika"}
+    - utter_slot_values
+    - utter_goodbye
