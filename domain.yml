@@ -70,11 +70,15 @@ intents:
 - travelWarning
 - whatsPossible
 - query_knowledge_base
+- ask_weather
+
+
 - insult:
     triggers: utter_respond_insult
 - love:
     triggers: utter_respond_love
-- ask_weather
+
+
 responses:
   utter_answerDestination_insideEurope:
   - text: -{destination} liegt innerhalb Europas
