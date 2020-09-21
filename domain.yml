@@ -1,11 +1,60 @@
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+actions:
+- action_fetch_continent
+- action_fetch_corona
+- action_fetch_travel_warning
+- action_query_knowledge_base
+- utter_answerDestination_insideEurope
+- action_reset_destination
+- utter_answerDestination_outsideEurope
+- utter_ask_age
+- utter_ask_baggage
+- utter_ask_continent
+- utter_ask_continue
+- utter_ask_destination
+- utter_ask_familyStatus
+- utter_ask_financeLoss
+- utter_ask_luggage
+- utter_ask_travel_days
+- utter_explain_age
+- utter_explain_whyDestination
+- utter_explain_whyTravelDays
+- utter_goodbye
+- utter_greet
+- utter_respond_insult
+- utter_respond_love
+- utter_slot_values
+- utter_tooYoung
+- utter_ask_group
+entities:
+- Auslandsreisekrankenversicherung
+- age
+- attribute
+- continent
+- destination
+- familyStatus
+- financeLoss
+- luggage
+- mention
+- moreTravel
+- group
+- object_type
+- occasion
+- occasionDetails
+- travelWarning
+- travel_days
+- versichert
+- format
+forms:
+- insurance_check
 intents:
-- inform
+- dontKnow
 - affirm
+- inform
 - destination
 - travel_days
+- travel_weeks
+- travel_years
+- travel_months
 - greet
 - corona
 - goodbye
@@ -16,6 +65,7 @@ intents:
 - greet_user
 - question
 - out_of_scope
+- changeDestination
 - weather
 - travelWarning
 - whatsPossible
@@ -25,29 +75,140 @@ intents:
 - love:
     triggers: utter_respond_love
 - ask_weather
-entities:
-- age
-- continent
-- destination
-- familyStatus
-- financeLoss
-- luggage
-- occasion
-- travel_days
-- travelWarning
-- object_type
-- mention
-- attribute
-- Auslandsreisekrankenversicherung
-- versichert
-- moreTravel
+responses:
+  utter_answerDestination_insideEurope:
+  - text: -{destination} liegt innerhalb Europas
+  utter_answerDestination_outsideEurope:
+  - text: -{destination} liegt außerhalb Europas
+  utter_ask_age:
+  - text: In welchem Jahr bist du geboren ?
+  utter_ask_baggage:
+  - text: Wie hoch schätzt du den Wert deines Gepäcks ein ?
+  utter_ask_continent:
+  - buttons:
+    - payload: /inform{"continent":"Nordamerika"}'
+      title: Nordamerika
+    - payload: '/inform{"continent": "Südamerika"}'
+      title: Südamerika
+    - payload: '/inform{"continent": "Asien"}'
+      title: Asien
+    - payload: '/inform{"continent": "Australien"}'
+      title: Australien
+    - payload: '/inform{"continent": "Afrika"}'
+      title: Afrika
+    - payload: '/inform{"continent": "Europa"}'
+      title: Europa
+    text: Schade, weißt du denn ansonsten auf welchen Kontinent ?
+  utter_ask_continue:
+  - text: Möchtest du den Versicherungscheck fortführen ?
+  utter_ask_destination:
+  - text: Wohin möchtest du vereisen ?
+
+  utter_ask_occasionDetails:
+  - text: Was ist der Zweck deiner Reise ? 
+
+  utter_ask_familyStatus:
+  - buttons:
+    - payload: /inform{"familyStatus":"Single"}
+      title: Single
+    - payload: '/inform{"familyStatus": "Paar"}'  
+      title: Paar
+    - payload: '/inform{"familyStatus": "Verheiratet"}'
+      title: Verheiratet
+    text: 'Familienstatus ? '
+  utter_ask_financeLoss:
+  - buttons:
+    - payload: /inform{"financeLoss":"niedrig"}
+      title: Nicht schlimm
+    - payload: '/inform{"financeLoss": "mittel"}'
+      title: Mäßig schlimm
+    - payload: '/inform{"financeLoss": "hoch"}'
+      title: Sehr schlimm
+    text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nicht antritt deiner
+      Reise nach {destination} ? '
+  
+
+  utter_ask_group:
+  - buttons:
+    - payload: /affirm
+      title: Ja
+    - payload: /deny
+      title: Nein
+    text: Möchtest deinen Lebenspartner oder Kinder unter 25 mitversichern ?
+
+  utter_ask_luggage:
+  - buttons:
+    - payload: /inform{"luggage":"niedrig"}
+      title: Nicht schlimm
+    - payload: '/inform{"luggage": "mittel"}'
+      title: Mäßig schlimm
+    - payload: '/inform{"luggage": "hoch"}'
+      title: Sehr schlimm
+    text: 'Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ? '
+  utter_ask_moreTravel:
+  - buttons:
+    - payload: /affirm
+      title: Ja
+    - payload: /deny
+      title: Nein
+    text: Wirst du dieses Jahr noch öfters verreisen ?
+  utter_ask_occasion:
+  - buttons:
+    - payload: /affirm
+      title: Ja
+    - payload: /deny
+      title: Nein
+    text: Verreist du geschäftlich ?
+  utter_ask_rephrase:
+  - text: Das habe ich leider nicht verstanden. Kannst du bitte deine Frage wiederholen?
+  - text: Kannst du bitte deine Frage wiederholen ?
+  utter_ask_travel_days:
+  - text: Wie lange wirst du verreisen ?
+  utter_explain_age:
+  - text: Das Alter wird gebraucht für ...
+  utter_explain_whatspossible:
+  - text: Ich kann dich über **Reiseversicherungen** beraten. \n Ich befinde mich jedoch
+      noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! 😀
+  utter_explain_whyDestination:
+  - text: Dein Reiseziel hat Auswirkungen auf meine Tarifempfehlungen. Zudem kann
+      ich dir Informationen (Corona Fallzahlen oder Reisewarnungen) zum jeweiligen
+      Zielland liefern.
+  utter_explain_whyTravelDays:
+  - text: Ich benötige deine Reisedauer, um dich optimal beraten zu können.
+  utter_goodbye:
+  - text: Tschüssiii
+  - text: Ciao
+  - text: Auf Wiedersehen
+  - text: Wiedersehen macht Freude !
+  utter_greet:
+  - text: Moin, ich bin Dave dein persönlicher Reiseberater. \n Ich würde dir nun ein paar Fragen stellen, um dich optimal beraten zu können. ⛱ \n **Möchtest du beginnen ?**
+  utter_respond_insult:
+  - text: Das war aber gemein.
+  utter_finished_check:
+  - text: Du kannst mir gerne noch weitere Fragen stellen.
+  utter_respond_love:
+  - text: Ich liebe alle meine Nutzer !
+  - text: Es gibt nichts Schöneres als geliebt zu werden, geliebt um seiner selbst
+      willen oder vielmehr trotz seiner selbst.
+  - text: Was du liebst, lass frei. Kommt es zurück, gehört es dir - für immer.
+  - text: Nicht die Vollkommenen, sondern die Unvollkommenen brauchen unsere Liebe.
+  utter_slot_values:
+  - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days},
+      Geschäftlich ? {occasion}, Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage},
+      Reiserücktritt {financeLoss}
+  utter_tooYoung:
+  - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
+      bei deinen Eltern an.
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 0
 slots:
   Auslandsreisekrankenversicherung:
     type: unfeaturized
   age:
-    type: float
     max_value: 1.0
     min_value: 0.0
+    type: float
   attribute:
     type: unfeaturized
   continent:
@@ -72,6 +233,8 @@ slots:
     type: unfeaturized
   moreTravel:
     type: bool
+  group:
+    type: bool
   object_type:
     type: unfeaturized
   occasion:
@@ -80,134 +243,13 @@ slots:
     type: unfeaturized
   travelWarning:
     type: unfeaturized
+  occasionDetails:
+    type: unfeaturized
+  format: 
+    type: unfeaturized
   travel_days:
-    type: float
     max_value: 1.0
     min_value: 0.0
+    type: float
   versichert:
     type: unfeaturized
-responses:
-  utter_answerDestination_insideEurope:
-  - text: -{destination} liegt innerhalb Europas
-  utter_answerDestination_outsideEurope:
-  - text: -{destination} liegt außerhalb Europas
-  utter_ask_age:
-  - text: Wie alt bist du ?
-  utter_ask_baggage:
-  - text: Wie hoch schätzt du den Wert deines Gepäcks ein ?
-  utter_ask_continue:
-  - text: Möchtest du den Versicherungscheck fortführen ?
-  utter_ask_destination:
-  - text: Wohin möchtest du vereisen ?
-  utter_ask_familyStatus:
-  - buttons:
-    - payload: /inform{"familyStatus":"Single"}
-      title: Single
-    - payload: '/inform{"familyStatus": "Paar"}'
-      title: Paar
-    - payload: '/inform{"familyStatus": "Verheiratet"}'
-      title: Verheiratet
-    text: 'Familienstatus ? '
-  utter_ask_financeLoss:
-  - buttons:
-    - payload: /inform{"financeLoss":"niedrig"}
-      title: Nicht schlimm
-    - payload: '/inform{"financeLoss": "mittel"}'
-      title: Mäßig schlimm
-    - payload: '/inform{"financeLoss": "hoch"}'
-      title: Sehr schlimm
-    text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nicht antritt deiner
-      Reise nach {destination} ? '
-  utter_ask_luggage:
-  - buttons:
-    - payload: /inform{"luggage":"niedrig"}
-      title: Nicht schlimm
-    - payload: '/inform{"luggage": "mittel"}'
-      title: Mäßig schlimm
-    - payload: '/inform{"luggage": "hoch"}'
-      title: Sehr schlimm
-    text: 'Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ? '
-  utter_ask_travel_days:
-  - text: Wie viele Tage wirst du verreisen ?
-  utter_ask_moreTravel:
-  - buttons:
-    - payload: /affirm
-      title: Ja
-    - payload: /deny
-      title: Nein
-    text: Wirst du dieses Jahr noch öfters verreisen ?=
-  utter_ask_occasion:
-  - buttons:
-    - payload: /affirm
-      title: Ja
-    - payload: /deny
-      title: Nein
-    text: Verreist du geschäftlich ?
-  utter_explain_age:
-  - text: Das Alter wird gebraucht für ...
-  utter_goodbye:
-  - text: Tschüssiii
-  - text: Ciao
-  - text: Auf Wiedersehen
-  - text: Wiedersehen macht Freude !
-  utter_ask_rephrase:
-  - text: Das habe ich leider nicht verstanden. Kannst du bitte deine Frage wiederholen
-      ?
-  - text: Kannst du bitte deine Frage wiederholen ?
-  utter_respond_love:
-  - text: Ich liebe alle meine Nutzer !
-  - text: Es gibt nichts Schöneres als geliebt zu werden, geliebt um seiner selbst
-      willen oder vielmehr trotz seiner selbst.
-  - text: Was du liebst, lass frei. Kommt es zurück, gehört es dir - für immer.
-  - text: Nicht die Vollkommenen, sondern die Unvollkommenen brauchen unsere Liebe.
-  utter_respond_insult:
-  - text: Das war aber gemein.
-  utter_greet:
-  - text: Moin, ich bin Dave dein persönlicher Reiseberater.  Möchtest du beginnen
-      ? (Bitte ignoriere meine Grammtik/Schreibfehler - ich befinde mich noch in der
-      Entwicklung !
-  utter_slot_values:
-  - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days},
-      Geschäftlich ? {occasion}, Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage},
-      Reiserücktritt {financeLoss}
-  utter_tooYoung:
-  - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
-      bei deinen Eltern an.
-  utter_explain_whatspossible:
-  - text: Ich kann dich über Reiseversicherungen beraten. \n Ich befinde mich jedoch
-      noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! :)
-  utter_explain_whyDestination:
-  - text: Dein Reiseziel hat Auswirkungen auf meine Tarifempfehlungen. Zudem kann ich dir Informationen (Corona Fallzahlen oder Reisewarnungen) zum jeweiligen Zielland liefern. 
-  utter_explain_whyTravelDays:
-  - text: Ich benötige deine Reisedauer, um dich optimal beraten zu können.
-  utter_ask_continent:
-  - text: 
-
-
-
-actions:
-- action_fetch_continent
-- action_fetch_corona
-- action_fetch_travel_warning
-- utter_answerDestination_insideEurope
-- utter_answerDestination_outsideEurope
-- utter_ask_age
-- utter_ask_baggage
-- utter_ask_continue
-- utter_ask_destination
-- utter_ask_familyStatus
-- utter_ask_financeLoss
-- utter_ask_luggage
-- utter_explain_whyDestination
-- utter_explain_whyTravelDays
-- utter_ask_travel_days
-- utter_explain_age
-- utter_goodbye
-- utter_greet
-- utter_slot_values
-- utter_tooYoung
-- action_query_knowledge_base
-- utter_respond_insult
-- utter_respond_love
-forms:
-- insurance_check

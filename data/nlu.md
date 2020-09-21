@@ -202,9 +202,17 @@
 - ?
 
 ## intent:inform
-- Ich bin [23](age)
-- [12](age)
-- [31](age)
+- [1991](age)
+- [2001](age)
+- [1993](age)
+- [1994](age)
+- Ich bin [1995](age) geboren
+- [1996](age)
+- [1997](age)
+- [1998](age)
+- [1990](age)
+- [1988](age)
+- [1987](age)
 
 ## intent:destination
 - Nach [Deutschland](destination)
@@ -221,6 +229,7 @@
 - mexiko
 
 ## intent:travel_days
+- [zwei](travel_days) Tage
 - [20](travel_days) Tage
 - [3](travel_days) Tage
 - [8](travel_days) Tage
@@ -229,6 +238,50 @@
 - [4](travel_days) Tage
 - [5](travel_days)
 - [48](travel_days)
+
+## intent:travel_weeks
+- [20](travel_days) Wochen
+- [3](travel_days) Wochen
+- [8](travel_days) Wochen
+- Ich vereise [10](travel_days) Wochen
+- [15](travel_days) Wochen
+- [4](travel_days) Wochen
+- [5](travel_days) Wochen
+- [48](travel_days) Wochen
+- [1](travel_days) Woche
+
+
+## intent:occasionDetails
+- Werde [beruflich](occasionDetails)
+- [Auslandssemester](occasionDetails)
+- [Urlaub](occasionDetails)
+- [Familienbesuch](occasionDetails)
+- [Chillen](occasionDetails)
+
+
+## intent:travel_months
+- [20](travel_days) Monate
+- [3](travel_days) Monate
+- [8](travel_days) Monate
+- Ich vereise [10](travel_days) Monate
+- [15](travel_days) Monate
+- [4](travel_days) Monate
+- [5](travel_days) Monate
+- [48](travel_days) Monate
+
+
+## intent:travel_years
+- [20](travel_days) Jahre
+- [3](travel_days) Jahre
+- [8](travel_days) Jahre
+- Ich vereise [10](travel_days) Jahre
+- [15](travel_days) Jahre
+- [4](travel_days) Jahre
+- [5](travel_days) Jahre
+- [48](travel_days) Jahre
+
+
+
 
 ## intent:query_knowledge_base
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung](object_type) versichert ?
@@ -265,7 +318,6 @@
 - noch nicht festgelegt
 - keine Ahnung
 - Weiß nicht
-- keine Ahnung 
 - Ich weiß es nicht
 
 ## intent:travelWarning
@@ -304,11 +356,46 @@
 - ^(1[89]|[2-9][0-9])$
 - Was kannst du
 
+
+## intent:changeDestination
+
+- Ich möcht das Reiseland ändern
+- Ich möchte wo anderst hin 
+- Ich will das Land ändern
+- Ich reise jetzt doch nach
+- Land ändern
+- Ändere das Reiseland
+- Zielland ändern
+- Reiseziel ändern
+
+## intent: changeTravelDays
+
+- Ich möchte länger verreisen
+- Ich möchte kürzer verreisen 
+- Ich will doch wann anderst verreisen 
+
+
+
+
+
 ## synonym:1
 - ersten
+- eine
+
+## synonym:2
+- zwei
+## synonym:3
+- drei
+
+
+
+
 
 ## synonym:LAST
 - letzten
+
+## synonym:Spanien
+- Spain
 
 ## synonym:versichert
 - Details

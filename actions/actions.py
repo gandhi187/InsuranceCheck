@@ -1,9 +1,10 @@
 from typing import Any, Text, Dict, List, Union
-
+from datetime import date
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from .validateCountry import *
+from .buildRecommendation import *
 from rasa_sdk.events import SlotSet
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
@@ -11,6 +12,7 @@ from rasa_sdk.knowledge_base import *
 from rasa_sdk import utils
 
 class InsuranceCheck(FormAction):
+
 
     def name(self):
         return "insurance_check"
@@ -21,15 +23,26 @@ class InsuranceCheck(FormAction):
         # if tracker.get_slot('age') is None: 
         #     print ("none", tracker.get_slot('age'))
 
-        if tracker.get_slot('travel_days') is None:
-            print ("none", tracker.get_slot('travel_days'))
-            return ["destination", "travel_days","occasion","moreTravel"]
-        elif  (int) (tracker.get_slot('travel_days')) <= 30:
-            print("Reisegepäck")
-            return ["destination", "travel_days","luggage","financeLoss","occasion","moreTravel"]
-        elif (int) (tracker.get_slot('travel_days')) >= 30: 
-            return ["destination", "travel_days","occasion","moreTravel"]
-     
+
+       
+        if tracker.get_slot('destination') == 'Null':
+            if tracker.get_slot('travel_days') is None:
+                print ("none", tracker.get_slot('travel_days'))
+                return ["continent", "travel_days","occasionDetails","moreTravel","age","group"]
+            elif  (int) (tracker.get_slot('travel_days')) <= 30:
+                print("Reisegepäck")
+                return ["continent", "travel_days","luggage","financeLoss","occasionDetails","moreTravel","age","group"]
+            elif (int) (tracker.get_slot('travel_days')) >= 30: 
+                return ["continent", "travel_days","occasionDetails","moreTravel","age","group"]
+        else:
+            if tracker.get_slot('travel_days') is None:
+                print ("none", tracker.get_slot('travel_days'))
+                return ["destination", "travel_days","occasionDetails","moreTravel","age","group"]
+            elif  (int) (tracker.get_slot('travel_days')) <= 30:
+                print("Reisegepäck")
+                return ["destination", "travel_days","luggage","financeLoss","occasionDetails","moreTravel","age","group"]
+            elif (int) (tracker.get_slot('travel_days')) >= 30: 
+                return ["destination", "travel_days","occasionDetails","moreTravel","age","group"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         """A dictionary to map required slots to
@@ -37,8 +50,21 @@ class InsuranceCheck(FormAction):
             - intent: value pairs
             - a whole message
             or a list of them, where a first match will be picked"""
+        #print(self.get_entity_value("travel_days"))
+        #print(tracker.latest_message['entities'][0]['value'])
+        
         return {
             
+            "travel_days": [
+            self.from_entity(entity="travel_days",intent = ["travel_days","travel_weeks","travel_months","travel_years"])
+
+            ],
+
+            "group":[
+                self.from_intent(intent="affirm", value=True),
+                self.from_intent(intent="deny", value=False),
+            ],
+
             "occasion":[
                 self.from_intent(intent="affirm", value=True),
                 self.from_intent(intent="deny", value=False),
@@ -58,7 +84,13 @@ class InsuranceCheck(FormAction):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
+
+
         destination = tracker.get_slot("destination")
+        print (tracker.latest_message['intent'].get('name'))
+        typeMessage = tracker.latest_message['intent'].get('name')
+        value = self.calculateDays(value,typeMessage)
+
 
         if int(value)<5:
             dispatcher.utter_message("Bei " + str(value) +  " Tagen, wirst du wohl mit Hangepäck  nach " + destination + " reisen")
@@ -77,11 +109,17 @@ class InsuranceCheck(FormAction):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
+        if value is None: 
+            return {"destination":"Null"}
+
         print(value)
         countryCode = FindCountryCode(value)
         print(countryCode)
         continent = GetContinentFromCountry(countryCode)
         print(continent)
+
+    
+
         if (continent == "Europa"):
             dispatcher.utter_message(template="utter_answerDestination_insideEurope")
             return {"destination":value}
@@ -97,16 +135,17 @@ class InsuranceCheck(FormAction):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
+        a = date.today()
+        ageCalculated = a.year - int(value)
 
-        if int(value)<18:
+        if ageCalculated<18:
             dispatcher.utter_message(template="utter_tooYoung")
             return self.deactivate()
-        if int(value)>125:
-            dispatcher.utter_message("unnmöglich")
+        if ageCalculated>125:
+            dispatcher.utter_message("Respekt, dass du in diesem Alter noch auf Reisen gehst, jedoch kann ich dir keine passende Versicherung vorschlagen")
             return self.deactivate()
         else:
-            dispatcher.utter_message("Über 18 ")
-            return {"age": value} 
+            return {"age": ageCalculated} 
 
     def submit(
         self,
@@ -119,28 +158,36 @@ class InsuranceCheck(FormAction):
         travel_days = tracker.get_slot('travel_days')
         luggage = tracker.get_slot('luggage')
         financeLoss = tracker.get_slot('financeLoss')
-        occasion = tracker.get_slot('occasion')
+        occasionDetails = tracker.get_slot('occasionDetails')
         moreTravel = tracker.get_slot("moreTravel")
+        age = tracker.get_slot("age")
+        group = tracker.get_slot("group")
 
-        if (int(travel_days) <= 30 and moreTravel == False and luggage == 'hoch' and financeLoss == 'hoch' or luggage == 'mittel' or financeLoss =='mittel' ):
-            print ('Empfehlung 1')
-            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Einmalige Reisekrankenversicherung \n Reisgepäckversicherung \n Reiserücktrittversicherung")
-            return []
-        elif (int(travel_days) <= 30 and moreTravel == False and luggage == 'niedrig' and financeLoss == 'niedrig' ):
-            print ('Empfehlung 2')
-            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Einmalige Reisekrankenversicherung")
-            return []
-        elif (int(travel_days) <= 30 and moreTravel == True and luggage == 'hoch' and financeLoss == 'hoch' or luggage == 'mittel' or financeLoss =='mittel' ):
-            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Jahres-Reisekrankenversicherung \n Reisgepäckversicherung \n Reiserücktrittversicherung")
-            return []
-        elif (int(travel_days) <= 30 and moreTravel == True and luggage == 'niedrig' and financeLoss == 'niedrig' ):
-            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Jahres-Reisekrankenversicherung ")
-            return []
-        elif (int(travel_days) >= 30 ) : 
-            dispatcher.utter_message("Empfehlung für deine Reise nach " + destination + " Da du für + " + int (travel_days) + " verreist, .... COMING SOON ")
-            return []
+        jsonCarousel = queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,occasionDetails,destination)
+        jsonCarousel2= {"type": "template", "payload": {"template_type": "generic", "elements": [{"title": "Auslandsversicherung Langzeit ab 35 Jahre", "subtitle": "blabalba", "image_url": "https://i.imgur.com/EXp0PV6.png", "buttons": [{"title": "Mehr", "url": "http://link.url", "type": "web_url"}, {"title": "postback name", "type": "postback", "payload": "/greet"}]}]}}
+        print(jsonCarousel)
+        dispatcher.utter_message("Deine Vorschläge")
+        dispatcher.utter_message(attachment=jsonCarousel)
+
+
         return []   
 
+    def calculateDays(self,value,formatType):
+        print ("calculate " + value + " format :" + formatType)
+        intValue = int(value)
+        if formatType == "travel_days":
+            print (value)
+            return intValue
+        elif formatType == "travel_weeks":
+            print ("travel_weeks")
+            print (intValue*7)
+            return intValue*7
+        elif formatType =="travel_months":
+            print (intValue*30)
+            return intValue*30
+        elif formatType == "travel_years":
+            print (intValue*365)
+            return intValue*365 
 
 class FetchContinentAction(Action):
     def name(self):
@@ -148,10 +195,12 @@ class FetchContinentAction(Action):
 
     def run(self, dispatcher, tracker, domain):
         data = tracker.get_slot("destination")
-        countryCode = FindCountryCode(data)
-        continent = GetContinentFromCountry(countryCode)
-
-        return [SlotSet("continent", continent)]  
+        if data is None or data == "Null": 
+            return [SlotSet("destination", "Null")]  
+        else:
+            countryCode = FindCountryCode(data)
+            continent = GetContinentFromCountry(countryCode)
+            return [SlotSet("continent", continent)]  
 
 class FetchCoronaAction(Action):
     def name (self):
@@ -166,7 +215,7 @@ class FetchCoronaAction(Action):
         totalCases = activeCases+seriousCases
         dangerRank = data['countrydata'][0]['total_danger_rank']
         
-        dispatcher.utter_message("In " + destination + " gibt es derzeit " + str(totalCases) + " aktive Corona Fälle. \n Das Land befindet sich auf Rang " + str(dangerRank) )
+        dispatcher.utter_message("In " + destination + " gibt es derzeit " + str(totalCases) + " aktive Corona Fälle. \n Das Land befindet sich auf Rang " + str(dangerRank) + " auf der Weltrangliste." )
 
         return [SlotSet("coronaCases",totalCases)]
 
@@ -184,6 +233,13 @@ class FetchTravelWarning(Action):
         dispatcher.utter_message("In " + destination + " lautet die Reisewarnung: " + travelWarningText + " \n Reisewarnung-Stufe " + str(travelWarningRating) + " von 5")
 
         return [SlotSet("travelWarning",travelWarningRating)]
+
+class ResetDestination(Action):
+    def name (self):
+        return "action_reset_destination"
+
+    def run (self, dispatcher, tracker, domain):
+        return [SlotSet("destination", None)]
 
 
 """
