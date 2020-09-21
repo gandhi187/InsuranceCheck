@@ -227,3 +227,63 @@
     - slot{"destination": "Null"}
     - insurance_check
     - slot{"requested_slot": "continent"}
+
+## New Story
+
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* destination{"destination":"Türkei"}
+    - slot{"destination":"Türkei"}
+    - slot{"destination":"Türkei"}
+    - insurance_check
+    - slot{"destination":"Türkei"}
+    - slot{"requested_slot":"travel_days"}
+* travel_months{"travel_days":"8"}
+    - slot{"travel_days":"8"}
+    - slot{"travel_days":"8"}
+    - insurance_check
+    - slot{"travel_days":240}
+    - slot{"requested_slot":"occasionDetails"}
+* occasionDetails{"occasionDetails":"Urlaub"}
+    - slot{"occasionDetails":"Urlaub"}
+    - slot{"occasionDetails":"Urlaub"}
+    - insurance_check
+    - slot{"occasionDetails":"Urlaub"}
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* inform{"age":"1988"}
+    - slot{"age":"1988"}
+    - slot{"age":"1988"}
+    - insurance_check
+    - slot{"age":32}
+    - slot{"requested_slot":"group"}
+* deny
+    - insurance_check
+    - slot{"group":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - action_fetch_continent
+    - slot{"continent":"Asien"}
+    - utter_slot_values
+    - utter_goodbye
+* changeDestination
+    - slot{"destination":"Türkei"}
+    - slot{"travel_days":"8"}
+    - slot{"occasionDetails":"Urlaub"}
+    - slot{"age":"1988"}
+    - action_reset_destination
+    - slot{"destination":null}
+    - insurance_check
+    - utter_ask_destination
+* destination{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - insurance_check
+    - action_fetch_continent
+    - slot{"continent":"Asien"}
+    - utter_slot_values
+    - utter_goodbye
