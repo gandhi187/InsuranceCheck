@@ -30,19 +30,19 @@ class InsuranceCheck(FormAction):
             if tracker.get_slot('travel_days') is None:
                 print ("none", tracker.get_slot('travel_days'))
                 return ["continent", "travel_days","occasionDetails","moreTravel","age","group"]
-            elif  (int) (tracker.get_slot('travel_days')) <= 30:
+            elif  (int) (tracker.get_slot('travel_days')) <= 45:
                 print("Reisegepäck")
                 return ["continent", "travel_days","luggage","financeLoss","moreTravel","age","group"]
-            elif (int) (tracker.get_slot('travel_days')) >= 30: 
+            elif (int) (tracker.get_slot('travel_days')) >= 45: 
                 return ["continent", "travel_days","moreTravel","age","group"]
         else:
             if tracker.get_slot('travel_days') is None:
                 print ("none", tracker.get_slot('travel_days'))
                 return ["destination", "travel_days","moreTravel","age","group"]
-            elif  (int) (tracker.get_slot('travel_days')) <= 30:
+            elif  (int) (tracker.get_slot('travel_days')) <= 45:
                 print("Reisegepäck")
                 return ["destination", "travel_days","luggage","financeLoss","moreTravel","age","group"]
-            elif (int) (tracker.get_slot('travel_days')) >= 30: 
+            elif (int) (tracker.get_slot('travel_days')) >= 45: 
                 return ["destination", "travel_days","moreTravel","age","group"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
