@@ -2,6 +2,7 @@ import openpyxl
 import pycountry_convert as pc
 import requests
 import json
+import tempfile
 from datetime import datetime, timedelta
 
 def FindXlCell(search_str, range=None):
@@ -24,7 +25,8 @@ def FindXlCell(search_str, range=None):
                 return [_tuple[0] for _tuple in ws.iter_cols(min_row=cell.row, max_row=cell.row)]
 
 def FindCountryCode(search_str):
-    cellsOfFoundRow = FindXlCell(search_str)
+    
+    cellsOfFoundRow = FindXlCell(search_str.lower())
     if cellsOfFoundRow:
     # List cellsOfFoundRow is 0-based, Index of D == 3
         print("Found:, the value of Column D is {}".format(cellsOfFoundRow[2].value))
@@ -68,5 +70,17 @@ def getTravelWarning(country):
     data =  resp.json()
     return data
 
+def getJsonData():
+
+    resp = requests.get('https://api.npoint.io/6b1f7a75909bda025ff9')
+    if resp.status_code != 200:
+    # This means something went wrong.
+        raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+    data =  resp.json()
+    data = json.dumps(data)
+    return data
+
 wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
+
+#print(getJsonData())

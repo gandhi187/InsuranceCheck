@@ -1,54 +1,312 @@
 {
-    "Auslandsreisekrankenversicherung":[
-       {    
-          "id":0,
-          "name":"Arzt",
-          "versichert":"Stationäre Heilbehandlung im Krankenhaus"
-       },
-       {
-          "id":1,
-          "name":"Krankenhaus",
-          "versichert":"Stationäre Heilbehandlung im Krankenhaus"
-       },
-       {
-          "id":2,
-          "name":"Zahnersatz",
-          "versichert":"schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz\n "
-       },
-       {
-        "id":3,
-        "name":"Medikamente",
-        "versichert":"Ärtzliche verordnete Arznei- und Verbandsmittel sowie Hilfsmittel"
-
-       },
-        {
-            "id":4,
-            "name":"Schwangerschaftskomplikationen",
-            "versichert":"Schwangerschaftskomplikationen, Frühgeburten,Schwangerschaftsuntersuchungen und Entbindungen, wenn die Schwangerschaft während Reise eintritt, notwendige Heilbehandlung des neugeborenen Kindes bei Frühgeburten im Ausland "
-     
-        },
-        {
-            "id":5,
-            "name":"Rücktransport",
-            "versichert":"den Transport zum nächsterreichbaren Arzt/Krankenhaus und zurück in die Unterkunft    \n den medizinisch sinnvollen und vertretbaren Rücktransport \n Überführung und Bestattung im Ausland \n Begleitperson im Krankenhaus und Reisebetreuung für Kinder bis zum 18. Lebensjahr "
- 
-        }
-    ],
-    "reisegepäckversicherung":[
-       {
-          "id":0,
-          "name":"stat",
-          "versichert":"stationäre Heilbehandlung im Krankenhaus"
-       },
-       {
-          "id":1,
-          "name":"fat",
-          "versichert":"Stationäre Heilbehandlung im Krankenhaus"
-       },
-       {
-          "id":2,
-          "name":"mat",
-          "versichert":"schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
-       }
-    ]
- }
+  "Auslandsreisekrankenversicherung Einmalig Gruppen": [
+ {
+      "id": 0,
+      "name": "Personenkreis",
+      "versichert": "Stationäre Heilbehandlung beim Atzt"
+    },
+    {
+      "id": 0,
+      "name": "Arzt",
+      "versichert": "Stationäre Heilbehandlung beim Atzt"
+    },
+    {
+      "id": 1,
+      "name": "Krankenhaus",
+      "versichert": "Ambulante Heilbehandlung im Krankenhaus / Operationen"
+    },
+    {
+      "id": 2,
+      "name": "Zahnersatz",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz\n "
+    },
+    {
+      "id": 3,
+      "name": "Medikamente",
+      "versichert": "Ärtzliche verordnete Arznei- und Verbandsmittel sowie Hilfsmittel"
+    },
+    {
+      "id": 4,
+      "name": "Schwangerschaftskomplikationen",
+      "versichert": "Schwangerschaftskomplikationen, Frühgeburten,Schwangerschaftsuntersuchungen und Entbindungen, wenn die Schwangerschaft während Reise eintritt, notwendige Heilbehandlung des neugeborenen Kindes bei Frühgeburten im Ausland "
+    },
+    {
+      "id": 5,
+      "name": "Rücktransport",
+      "versichert": "den Transport zum nächsterreichbaren Arzt/Krankenhaus und zurück in die Unterkunft    \n den medizinisch sinnvollen und vertretbaren Rücktransport \n Überführung und Bestattung im Ausland \n Begleitperson im Krankenhaus und Reisebetreuung für Kinder bis zum 18. Lebensjahr "
+    }
+  ],
+  "Auslandsreisekrankenversicherung Einmalig Einzeln": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Auslandsreisekrankenversicherung Jahres Gruppen": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Auslandsreisekrankenversicherung Jahres Einzeln": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Reisegepäckversicherung Einmalig Gruppen": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Reisegepäckversicherung Einmalig Einzeln": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Reiserücktritt Einmalig Gruppen": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Reiserücktritt Einmalig Einzeln": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Reiserücktritt Jahres Gruppen": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Reiserücktritt Jahres Einzeln": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "5 Sterne Schutz Einmalig Einzelnd": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "5 Sterne Schutz Gruppe Jahres": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "5 Sterne Schutz Gruppe Einzel": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "5 Sterne Schutz Einmalig Jahres": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],
+  "Auslandsversicherung für  bis 35 Jahre": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],  
+    "Auslandsversicherung bis 35 Jahre Deluxe": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ],  
+    "Auslandsversicherung ab 35 Jahre": [
+    {
+      "id": 0,
+      "name": "stat",
+      "versichert": "stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 1,
+      "name": "fat",
+      "versichert": "Stationäre Heilbehandlung im Krankenhaus"
+    },
+    {
+      "id": 2,
+      "name": "mat",
+      "versichert": "schmerzstillende Zahnbehandlungen, Zahnfüllungen in einfacher Ausführung, sowie Reparaturen von vorhandenem Zahnersatz"
+    }
+  ]
+  
+}

@@ -1,4 +1,5 @@
 actions:
+- action_reset_travel_days
 - action_fetch_continent
 - action_fetch_corona
 - action_fetch_travel_warning
@@ -16,8 +17,14 @@ actions:
 - utter_ask_luggage
 - utter_ask_travel_days
 - utter_explain_age
+- utter_whats_covered
 - utter_explain_whyDestination
 - utter_explain_whyTravelDays
+- utter_explain_whyFinanceLoss
+- utter_explain_whyMoreTravel
+- utter_explain_whyBaggeLoss
+- utter_explain_whyGroup
+- utter_explain_whyAge
 - utter_goodbye
 - utter_greet
 - utter_respond_insult
@@ -26,7 +33,24 @@ actions:
 - utter_tooYoung
 - utter_ask_group
 entities:
-- Auslandsreisekrankenversicherung
+- Auslandsreisekrankenversicherung Einmalig Gruppen
+- Auslandsreisekrankenversicherung Einmalig Einzeln
+- Auslandsreisekrankenversicherung Jahres Gruppen
+- Auslandsreisekrankenversicherung Jahres Einzeln
+- Reisegepäckversicherung Einmalig Gruppen
+- Reisegepäckversicherung Einmalig Einzeln
+- Reiserücktritt Einmalig Gruppen
+- Reiserücktritt Einmalig Einzeln
+- Reiserücktritt Jahres Gruppen
+- Reiserücktritt Jahres Einzeln
+- 5 Sterne Schutz Einmalig Einzelnd
+- 5 Sterne Schutz Gruppe Jahres
+- 5 Sterne Schutz Gruppe Einzel
+- 5 Sterne Schutz Einmalig Jahres
+- Auslandsversicherung für  bis 35 Jahre
+- Auslandsversicherung bis 35 Jahre Deluxe
+- Auslandsversicherung ab 35 Jahre
+- product
 - age
 - attribute
 - continent
@@ -44,6 +68,7 @@ entities:
 - travel_days
 - versichert
 - format
+- typeMessage
 forms:
 - insurance_check
 intents:
@@ -56,6 +81,7 @@ intents:
 - travel_years
 - travel_months
 - greet
+- kat
 - corona
 - goodbye
 - deny
@@ -128,9 +154,14 @@ responses:
       title: Mäßig schlimm
     - payload: '/inform{"financeLoss": "hoch"}'
       title: Sehr schlimm
-    text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nicht antritt deiner
-      Reise nach {destination} ? '
+    text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nichtantritt deiner
+      Reise in dein Reiseland:   {destination} ? '
   
+  utter_whats_covered:
+  - buttons:
+    - payload: "Was ist in der {product} versichert ?" 
+      title: Was ist versichert ? 
+    text: "Auswahl"
 
   utter_ask_group:
   - buttons:
@@ -166,10 +197,12 @@ responses:
   utter_ask_rephrase:
   - text: Das habe ich leider nicht verstanden. Kannst du bitte deine Frage wiederholen?
   - text: Kannst du bitte deine Frage wiederholen ?
+  utter_default:
+  - text: Leider habe ich dich nicht verstanden. Bitte versuche es erneut
   utter_ask_travel_days:
   - text: Wie lange wirst du verreisen ?
   utter_explain_age:
-  - text: Das Alter wird gebraucht für ...
+  - text: Da wir auch spezielle Tarife für Studenten anbieten, benötige ich dein Geburtsjahr
   utter_explain_whatspossible:
   - text: Ich kann dich über **Reiseversicherungen** beraten. \n Ich befinde mich jedoch
       noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! 😀
@@ -179,13 +212,27 @@ responses:
       Zielland liefern.
   utter_explain_whyTravelDays:
   - text: Ich benötige deine Reisedauer, um dich optimal beraten zu können.
+  utter_explain_whyMoreTravel:
+  - text: Für den Fall, dass du dieses Jahr öfter verreisen möchte, bieten wir dir spezielle Jahrestarife an
+  utter_explain_whyFinanceLoss:
+  - text: Falls du plötzlich krank wirst oder aus anderen versicherten Gründen nicht verreisen kannst, gibt es die Möglichkeit eine Reiserücktrittsversicherung abzuschließen
+  utter_explain_whyBaggeLoss:
+  - text: Für den Fall dass dein Gepäck auf deiner Reise aufgrund der versicherten Gründe beschädigt wird, gibt es die Möglichkeit eine Reisegepäckversicherung abzuschließen
+  utter_explain_whyGroup:
+  - text: Falls du mit deinem Lebenspartner/in und Kindern untetr 25 verreisen möchtest, gibt es die Möglichkeit diese in die Versicherung miteinzuschließen
+  utter_explain_whyAge:
+  - text: Es gibt spezielle Tarife für Studenten und Personen unter 35 :) 
+
+
   utter_goodbye:
   - text: Tschüssiii
   - text: Ciao
   - text: Auf Wiedersehen
   - text: Wiedersehen macht Freude !
   utter_greet:
-  - text: Moin, ich bin Dave dein persönlicher Reiseberater. \n Ich würde dir nun ein paar Fragen stellen, um dich optimal beraten zu können. ⛱ \n **Möchtest du beginnen ?**
+  - text: Moin, ich bin Dave dein persönlicher Reiseberater. 
+  utter_begin:
+  - text:  Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können. ⛱  **Möchtest du beginnen ?**
   utter_respond_insult:
   - text: Das war aber gemein.
   utter_finished_check:
@@ -209,7 +256,41 @@ session_config:
 slots:
   Auslandsreisekrankenversicherung:
     type: unfeaturized
-  age:
+  Auslandsreisekrankenversicherung Einmalig Gruppen:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Einmalig Einzeln:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Jahres Gruppen:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Jahres Einzeln:
+    type: unfeaturized
+  Reisegepäckversicherung Einmalig Gruppen:
+    type: unfeaturized
+  Reisegepäckversicherung Einmalig Einzeln:
+    type: unfeaturized
+  Reiserücktritt Einmalig Gruppen:
+    type: unfeaturized
+  Reiserücktritt Einmalig Einzeln:
+    type: unfeaturized
+  Reiserücktritt Jahres Gruppen:
+    type: unfeaturized
+  Reiserücktritt Jahres Einzeln:
+    type: unfeaturized
+  5 Sterne Schutz Einmalig Einzelnd:
+    type: unfeaturized
+  5 Sterne Schutz Gruppe Jahres:
+    type: unfeaturized
+  5 Sterne Schutz Gruppe Einzel:
+    type: unfeaturized
+  5 Sterne Schutz Einmalig Jahres:
+    type: unfeaturized
+  Auslandsversicherung für  bis 35 Jahre:
+    type: unfeaturized
+  Auslandsversicherung bis 35 Jahre Deluxe:
+    type: unfeaturized
+  Auslandsversicherung ab 35 Jahre:
+    type: unfeaturized
+  age: 
     max_value: 1.0
     min_value: 0.0
     type: float
@@ -256,4 +337,8 @@ slots:
     min_value: 0.0
     type: float
   versichert:
+    type: unfeaturized
+  typeMessage:
+    type: unfeaturized
+  product:
     type: unfeaturized

@@ -6,10 +6,11 @@ from rasa_sdk.forms import FormAction
 from .validateCountry import *
 from .buildRecommendation import *
 from rasa_sdk.events import SlotSet
-from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
+from .MyKnowledgeBase import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 from rasa_sdk.knowledge_base import *
 from rasa_sdk import utils
+import urllib.request
 
 class InsuranceCheck(FormAction):
 
@@ -31,18 +32,18 @@ class InsuranceCheck(FormAction):
                 return ["continent", "travel_days","occasionDetails","moreTravel","age","group"]
             elif  (int) (tracker.get_slot('travel_days')) <= 30:
                 print("Reisegepäck")
-                return ["continent", "travel_days","luggage","financeLoss","occasionDetails","moreTravel","age","group"]
+                return ["continent", "travel_days","luggage","financeLoss","moreTravel","age","group"]
             elif (int) (tracker.get_slot('travel_days')) >= 30: 
-                return ["continent", "travel_days","occasionDetails","moreTravel","age","group"]
+                return ["continent", "travel_days","moreTravel","age","group"]
         else:
             if tracker.get_slot('travel_days') is None:
                 print ("none", tracker.get_slot('travel_days'))
-                return ["destination", "travel_days","occasionDetails","moreTravel","age","group"]
+                return ["destination", "travel_days","moreTravel","age","group"]
             elif  (int) (tracker.get_slot('travel_days')) <= 30:
                 print("Reisegepäck")
-                return ["destination", "travel_days","luggage","financeLoss","occasionDetails","moreTravel","age","group"]
+                return ["destination", "travel_days","luggage","financeLoss","moreTravel","age","group"]
             elif (int) (tracker.get_slot('travel_days')) >= 30: 
-                return ["destination", "travel_days","occasionDetails","moreTravel","age","group"]
+                return ["destination", "travel_days","moreTravel","age","group"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         """A dictionary to map required slots to
@@ -88,16 +89,18 @@ class InsuranceCheck(FormAction):
 
         destination = tracker.get_slot("destination")
         print (tracker.latest_message['intent'].get('name'))
+
         typeMessage = tracker.latest_message['intent'].get('name')
         value = self.calculateDays(value,typeMessage)
 
 
+
         if int(value)<5:
             dispatcher.utter_message("Bei " + str(value) +  " Tagen, wirst du wohl mit Hangepäck  nach " + destination + " reisen")
-            return {"travel_days":value}
+            return {"travel_days" : value}
         elif int(value)>5:
             dispatcher.utter_message("Bei " + str(value) + " Tagen, wirst du wohl mit größerem Gepäck nach " + destination + " reisen")
-            return {"travel_days":value}
+            return {"travel_days" : value}
         else:
             return {"travel_days":None}
 
@@ -146,6 +149,7 @@ class InsuranceCheck(FormAction):
             return self.deactivate()
         else:
             return {"age": ageCalculated} 
+            
 
     def submit(
         self,
@@ -158,14 +162,14 @@ class InsuranceCheck(FormAction):
         travel_days = tracker.get_slot('travel_days')
         luggage = tracker.get_slot('luggage')
         financeLoss = tracker.get_slot('financeLoss')
-        occasionDetails = tracker.get_slot('occasionDetails')
+        #occasionDetails = tracker.get_slot('occasionDetails')
         moreTravel = tracker.get_slot("moreTravel")
         age = tracker.get_slot("age")
         group = tracker.get_slot("group")
-
-        jsonCarousel = queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,occasionDetails,destination)
-        jsonCarousel2= {"type": "template", "payload": {"template_type": "generic", "elements": [{"title": "Auslandsversicherung Langzeit ab 35 Jahre", "subtitle": "blabalba", "image_url": "https://i.imgur.com/EXp0PV6.png", "buttons": [{"title": "Mehr", "url": "http://link.url", "type": "web_url"}, {"title": "postback name", "type": "postback", "payload": "/greet"}]}]}}
-        print(jsonCarousel)
+        
+        jsonCarousel = queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination)
+       # jsonCarousel2= {"type": "template", "payload": {"template_type": "generic", "elements": [{"title": "Auslandsversicherung Langzeit ab 35 Jahre", "subtitle": "blabalba", "image_url": "https://i.imgur.com/EXp0PV6.png", "buttons": [{"title": "Mehr", "url": "http://link.url", "type": "web_url"}, {"title": "postback name", "type": "postback", "payload": "/greet"}]}]}}
+        #print(jsonCarousel)
         dispatcher.utter_message("Deine Vorschläge")
         dispatcher.utter_message(attachment=jsonCarousel)
 
@@ -241,6 +245,12 @@ class ResetDestination(Action):
     def run (self, dispatcher, tracker, domain):
         return [SlotSet("destination", None)]
 
+class ResetTraveldays(Action):
+    def name (self):
+        return "action_reset_travel_days"
+
+    def run (self, dispatcher, tracker, domain):
+        return [SlotSet("travel_days", None)]
 
 """
 Custom Actions to query the Knowledge-Base (JSON-Object)
@@ -248,7 +258,11 @@ Custom Actions to query the Knowledge-Base (JSON-Object)
 """
 class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
     def __init__(self):
-        knowledge_base = InMemoryKnowledgeBase("actions/knowledgebase.json")
+        json = getJsonData()
+  
+        #knowledge_base = InMemoryKnowledgeBase(response)
+        knowledge_base = InMemoryKnowledgeBase(json)
+
         super().__init__(knowledge_base)
 
 

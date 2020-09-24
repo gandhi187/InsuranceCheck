@@ -55,7 +55,7 @@
 * corona 
  - action_fetch_corona
 
-## Generated Story1
+## New Story_5
 
 * greet
     - utter_greet
@@ -105,7 +105,7 @@
     - slot{"financeLoss":"hoch"}
     - utter_goodbye
 
-## New Story
+## New Story_4
 
 * greet
     - utter_greet
@@ -151,17 +151,9 @@
 * corona
     - action_fetch_corona
     - slot{"coronaCases":113954}
-* query_knowledge_base{"object_type":"Auslandsreisekrankenversicherung"}
-    - slot{"object_type":"Auslandsreisekrankenversicherung"}
-    - action_query_knowledge_base
-    - slot{"object_type":"Auslandsreisekrankenversicherung"}
-    - slot{"mention":null}
-    - slot{"attribute":null}
-    - slot{"knowledge_base_last_object":null}
-    - slot{"knowledge_base_last_object_type":"Auslandsreisekrankenversicherung"}
-    - slot{"knowledge_base_listed_objects":[5,0,3,1,4]}
 
-## New Story
+
+## New Story_3
 
 * greet
     - utter_greet
@@ -228,7 +220,7 @@
     - insurance_check
     - slot{"requested_slot": "continent"}
 
-## New Story
+## New Story_2
 
 * affirm
     - insurance_check
@@ -287,3 +279,46 @@
     - slot{"continent":"Asien"}
     - utter_slot_values
     - utter_goodbye
+
+
+## Change Destination 
+* changeDestination
+    - slot{"destination":"Türkei"}
+    - slot{"travel_days":"8"}
+    - slot{"occasionDetails":"Urlaub"}
+    - slot{"age":"1988"}
+    - action_reset_destination
+    - action_reset_travel_days
+    - slot{"destination":null}
+    - slot {"destination":null}
+    - insurance_check
+    - utter_ask_destination
+* destination{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - slot{"requested_slot":"travel_days"}
+* travel_months{"travel_days":"8"}
+    - slot{"travel_days":"8"}
+    - insurance_check
+    - slot{"travel_days":240}
+    - insurance_check
+    - action_fetch_continent
+    - slot{"continent":"Asien"}
+    - utter_slot_values
+    - utter_goodbye
+
+## Kath
+* product
+    - utter_whats_covered
+
+
+## Generated Story 1
+
+* query_knowledge_base{"object_type":"Auslandsreisekrankenversicherung"}
+    - slot{"object_type":"Auslandsreisekrankenversicherung"}
+    - action_query_knowledge_base
+    - slot{"object_type":"Auslandsreisekrankenversicherung"}
+    - slot{"mention":null}
+    - slot{"attribute":null}
+    - slot{"knowledge_base_last_object":null}
+    - slot{"knowledge_base_last_object_type":"Auslandsreisekrankenversicherung"}
+    - slot{"knowledge_base_listed_objects":[0,2,4,5,3]}
