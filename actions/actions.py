@@ -169,7 +169,7 @@ class InsuranceCheck(FormAction):
         
         jsonCarousel = queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination)
        # jsonCarousel2= {"type": "template", "payload": {"template_type": "generic", "elements": [{"title": "Auslandsversicherung Langzeit ab 35 Jahre", "subtitle": "blabalba", "image_url": "https://i.imgur.com/EXp0PV6.png", "buttons": [{"title": "Mehr", "url": "http://link.url", "type": "web_url"}, {"title": "postback name", "type": "postback", "payload": "/greet"}]}]}}
-        #print(jsonCarousel)
+        print(jsonCarousel)
         dispatcher.utter_message("Deine Vorschläge")
         dispatcher.utter_message(attachment=jsonCarousel)
 
