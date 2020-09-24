@@ -22,4 +22,3 @@ jobs:
         # More details about github context:
         # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
         docker_image_tag: 'rasactio'
-        requirements_file: 'develop/requirements.txt'
