@@ -289,7 +289,7 @@ responses:
   - text: Wiedersehen macht Freude !
   utter_greet:
   - text: Moin, ich bin Dave dein persönlicher Reiseberater. Ich werde dir nun ein
-      paar Fragen stellen. Möchtest du beginnen ? 😀
+      paar Fragen stellen. Möchtest du beginnen ? 
   utter_begin:
   - text: Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können.
       ⛱  **Möchtest du beginnen ?**
@@ -311,12 +311,12 @@ responses:
   - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
       bei deinen Eltern an.
   utter_response_katha1:
-  - text: Meinst du das hübscheste und süßeste Mädchen aus Hamburg ?❤️
-  - text: Du meinst Mrs. Right ? :) ❤️
+  - text: Meinst du das hübscheste und süßeste Mädchen aus Hamburg ?
+  - text: Du meinst Mrs. Right ? :) 
   utter_response_katha2:
-  - text: Ich liebe dich ❤️
+  - text: Ich liebe dich 
   utter_response_katha3:
-  - text: Schatz 🐼
+  - text: Schatz 
 actions:
 - action_reset_travel_days
 - action_fetch_continent
