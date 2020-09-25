@@ -21,7 +21,7 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
             connection = psycopg2.connect(user="admin",
                                     password="dyr6PGIIlRQDUvk",
                                     host="34.107.51.226",
-                                    port="32771",
+                                    port="5432",
                                     database="insurance")
             cursor = connection.cursor()
             postgreSQL_select_Query = "select name, image_link from insuranceproducts WHERE age >=" + str(age) + "AND luggage ="+"'" +luggage +"'" + " AND finance_loss =" + "'"+ financeLoss + "'" + " AND person_group = " + str(group) + " AND " + str(travel_days) + "  <= travel_days UNION select name, image_link from insuranceproducts where name like '%Auslandsreisekranken%' AND person_group = " + str(group) + " and  more_travel = " + str(moreTravel) + " AND " + str(travel_days) + " <= travel_days"
