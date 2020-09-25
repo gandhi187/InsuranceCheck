@@ -15,7 +15,7 @@ USER root
 RUN pip install pycountry_convert
 RUN pip install openpyxl
 RUN pip install requests
-RUN pip install datetime
+RUN pip install psycopg2-binary
 # Copy actions folder to working directory
 COPY ./actions /app/actions
 
