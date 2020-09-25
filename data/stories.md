@@ -322,10 +322,18 @@
 
 ## Secret
 * katharina
+<<<<<<< HEAD
  - utter_response_katha1
 * affirm
  - utter_response_katha2
 * metoo
  - utter_response_katha3
+=======
+ - utter_response_katharina1
+* affirm
+ - utter_response_katharina2
+* metoo
+ - utter_response_katharina3
+>>>>>>> 2b3ba100eb36ed3f0332756b7a6d8ef7724fa762
 * deny
  - utter_goodbye
