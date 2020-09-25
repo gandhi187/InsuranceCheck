@@ -152,7 +152,6 @@
     - action_fetch_corona
     - slot{"coronaCases":113954}
 
-
 ## New Story_3
 
 * greet
@@ -280,7 +279,6 @@
     - utter_slot_values
     - utter_goodbye
 
-
 ## Change Destination 
 * changeDestination
     - slot{"destination":"Türkei"}
@@ -310,7 +308,6 @@
 * product
     - utter_whats_covered
 
-
 ## Generated Story 1
 
 * query_knowledge_base{"object_type":"Auslandsreisekrankenversicherung"}
@@ -322,3 +319,13 @@
     - slot{"knowledge_base_last_object":null}
     - slot{"knowledge_base_last_object_type":"Auslandsreisekrankenversicherung"}
     - slot{"knowledge_base_listed_objects":[0,2,4,5,3]}
+
+## Secret
+* katharina
+ - utter_answer_katharina1
+* affirm
+ - utter_answer_katharina2
+* meetoo
+ - utter_answer_katharina3
+* deny
+ - utter_goodbye

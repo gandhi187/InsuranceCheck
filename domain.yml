@@ -1,37 +1,42 @@
-actions:
-- action_reset_travel_days
-- action_fetch_continent
-- action_fetch_corona
-- action_fetch_travel_warning
-- action_query_knowledge_base
-- utter_answerDestination_insideEurope
-- action_reset_destination
-- utter_answerDestination_outsideEurope
-- utter_ask_age
-- utter_ask_baggage
-- utter_ask_continent
-- utter_ask_continue
-- utter_ask_destination
-- utter_ask_familyStatus
-- utter_ask_financeLoss
-- utter_ask_luggage
-- utter_ask_travel_days
-- utter_explain_age
-- utter_whats_covered
-- utter_explain_whyDestination
-- utter_explain_whyTravelDays
-- utter_explain_whyFinanceLoss
-- utter_explain_whyMoreTravel
-- utter_explain_whyBaggeLoss
-- utter_explain_whyGroup
-- utter_explain_whyAge
-- utter_goodbye
-- utter_greet
-- utter_respond_insult
-- utter_respond_love
-- utter_slot_values
-- utter_tooYoung
-- utter_ask_group
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- dontKnow
+- affirm
+- inform
+- destination
+- travel_days
+- travel_weeks
+- travel_years
+- travel_months
+- greet
+- kat
+- corona
+- goodbye
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- greet_user
+- question
+- out_of_scope
+- changeDestination
+- weather
+- travelWarning
+- whatsPossible
+- query_knowledge_base
+- ask_weather
+- insult:
+    triggers: utter_respond_insult
+- love:
+    triggers: utter_respond_love
+- occasionDetails
+- product
+- changeTravelDays
+- katharina
+- metoo
+- meetoo
 entities:
 - Auslandsreisekrankenversicherung Einmalig Gruppen
 - Auslandsreisekrankenversicherung Einmalig Einzeln
@@ -69,42 +74,95 @@ entities:
 - versichert
 - format
 - typeMessage
-forms:
-- insurance_check
-intents:
-- dontKnow
-- affirm
-- inform
-- destination
-- travel_days
-- travel_weeks
-- travel_years
-- travel_months
-- greet
-- kat
-- corona
-- goodbye
-- deny
-- mood_great
-- mood_unhappy
-- bot_challenge
-- greet_user
-- question
-- out_of_scope
-- changeDestination
-- weather
-- travelWarning
-- whatsPossible
-- query_knowledge_base
-- ask_weather
-
-
-- insult:
-    triggers: utter_respond_insult
-- love:
-    triggers: utter_respond_love
-
-
+slots:
+  5 Sterne Schutz Einmalig Einzelnd:
+    type: unfeaturized
+  5 Sterne Schutz Einmalig Jahres:
+    type: unfeaturized
+  5 Sterne Schutz Gruppe Einzel:
+    type: unfeaturized
+  5 Sterne Schutz Gruppe Jahres:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Einmalig Einzeln:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Einmalig Gruppen:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Jahres Einzeln:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Jahres Gruppen:
+    type: unfeaturized
+  Auslandsversicherung ab 35 Jahre:
+    type: unfeaturized
+  Auslandsversicherung bis 35 Jahre Deluxe:
+    type: unfeaturized
+  Auslandsversicherung für  bis 35 Jahre:
+    type: unfeaturized
+  Reisegepäckversicherung Einmalig Einzeln:
+    type: unfeaturized
+  Reisegepäckversicherung Einmalig Gruppen:
+    type: unfeaturized
+  Reiserücktritt Einmalig Einzeln:
+    type: unfeaturized
+  Reiserücktritt Einmalig Gruppen:
+    type: unfeaturized
+  Reiserücktritt Jahres Einzeln:
+    type: unfeaturized
+  Reiserücktritt Jahres Gruppen:
+    type: unfeaturized
+  age:
+    type: float
+    max_value: 1.0
+    min_value: 0.0
+  attribute:
+    type: unfeaturized
+  continent:
+    type: unfeaturized
+  coronaCases:
+    type: unfeaturized
+  destination:
+    type: text
+  familyStatus:
+    type: unfeaturized
+  financeLoss:
+    type: unfeaturized
+  format:
+    type: unfeaturized
+  group:
+    type: bool
+  knowledge_base_last_object:
+    type: unfeaturized
+  knowledge_base_last_object_type:
+    type: unfeaturized
+  knowledge_base_listed_objects:
+    type: unfeaturized
+  luggage:
+    type: unfeaturized
+  mention:
+    type: unfeaturized
+  moreTravel:
+    type: bool
+  object_type:
+    type: unfeaturized
+  occasion:
+    type: bool
+  occasionDetails:
+    type: unfeaturized
+  product:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+  travelWarning:
+    type: unfeaturized
+  travel_days:
+    type: float
+    max_value: 1.0
+    min_value: 0.0
+  typeMessage:
+    type: unfeaturized
+  versichert:
+    type: unfeaturized
 responses:
   utter_answerDestination_insideEurope:
   - text: -{destination} liegt innerhalb Europas
@@ -133,15 +191,13 @@ responses:
   - text: Möchtest du den Versicherungscheck fortführen ?
   utter_ask_destination:
   - text: Wohin möchtest du vereisen ?
-
   utter_ask_occasionDetails:
-  - text: Was ist der Zweck deiner Reise ? 
-
+  - text: Was ist der Zweck deiner Reise ?
   utter_ask_familyStatus:
   - buttons:
     - payload: /inform{"familyStatus":"Single"}
       title: Single
-    - payload: '/inform{"familyStatus": "Paar"}'  
+    - payload: '/inform{"familyStatus": "Paar"}'
       title: Paar
     - payload: '/inform{"familyStatus": "Verheiratet"}'
       title: Verheiratet
@@ -156,13 +212,11 @@ responses:
       title: Sehr schlimm
     text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nichtantritt deiner
       Reise in dein Reiseland:   {destination} ? '
-  
   utter_whats_covered:
   - buttons:
-    - payload: "Was ist in der {product} versichert ?" 
-      title: Was ist versichert ? 
-    text: "Auswahl"
-
+    - payload: Was ist in der {product} versichert ?
+      title: Was ist versichert ?
+    text: Auswahl
   utter_ask_group:
   - buttons:
     - payload: /affirm
@@ -170,7 +224,6 @@ responses:
     - payload: /deny
       title: Nein
     text: Möchtest deinen Lebenspartner oder Kinder unter 25 mitversichern ?
-
   utter_ask_luggage:
   - buttons:
     - payload: /inform{"luggage":"niedrig"}
@@ -204,8 +257,9 @@ responses:
   utter_explain_age:
   - text: Da wir auch spezielle Tarife für Studenten anbieten, benötige ich dein Geburtsjahr
   utter_explain_whatspossible:
-  - text: Ich kann dich über **Reiseversicherungen** beraten. \n Ich befinde mich jedoch
-      noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen ! 😀
+  - text: Ich kann dich über **Reiseversicherungen** beraten. \n Ich befinde mich
+      jedoch noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen
+      ! 😀
   utter_explain_whyDestination:
   - text: Dein Reiseziel hat Auswirkungen auf meine Tarifempfehlungen. Zudem kann
       ich dir Informationen (Corona Fallzahlen oder Reisewarnungen) zum jeweiligen
@@ -213,26 +267,31 @@ responses:
   utter_explain_whyTravelDays:
   - text: Ich benötige deine Reisedauer, um dich optimal beraten zu können.
   utter_explain_whyMoreTravel:
-  - text: Für den Fall, dass du dieses Jahr öfter verreisen möchte, bieten wir dir spezielle Jahrestarife an
+  - text: Für den Fall, dass du dieses Jahr öfter verreisen möchte, bieten wir dir
+      spezielle Jahrestarife an
   utter_explain_whyFinanceLoss:
-  - text: Falls du plötzlich krank wirst oder aus anderen versicherten Gründen nicht verreisen kannst, gibt es die Möglichkeit eine Reiserücktrittsversicherung abzuschließen
+  - text: Falls du plötzlich krank wirst oder aus anderen versicherten Gründen nicht
+      verreisen kannst, gibt es die Möglichkeit eine Reiserücktrittsversicherung abzuschließen
   utter_explain_whyBaggeLoss:
-  - text: Für den Fall dass dein Gepäck auf deiner Reise aufgrund der versicherten Gründe beschädigt wird, gibt es die Möglichkeit eine Reisegepäckversicherung abzuschließen
+  - text: Für den Fall dass dein Gepäck auf deiner Reise aufgrund der versicherten
+      Gründe beschädigt wird, gibt es die Möglichkeit eine Reisegepäckversicherung
+      abzuschließen
   utter_explain_whyGroup:
-  - text: Falls du mit deinem Lebenspartner/in und Kindern untetr 25 verreisen möchtest, gibt es die Möglichkeit diese in die Versicherung miteinzuschließen
+  - text: Falls du mit deinem Lebenspartner/in und Kindern untetr 25 verreisen möchtest,
+      gibt es die Möglichkeit diese in die Versicherung miteinzuschließen
   utter_explain_whyAge:
-  - text: Es gibt spezielle Tarife für Studenten und Personen unter 35 :) 
-
-
+  - text: Es gibt spezielle Tarife für Studenten und Personen unter 35 :)
   utter_goodbye:
   - text: Tschüssiii
   - text: Ciao
   - text: Auf Wiedersehen
   - text: Wiedersehen macht Freude !
   utter_greet:
-  - text: Moin, ich bin Dave dein persönlicher Reiseberater. 
+  - text: Moin, ich bin Dave dein persönlicher Reiseberater. Ich werde dir nun ein
+      paar Fragen stellen. Möchtest du beginnen ? 😀
   utter_begin:
-  - text:  Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können. ⛱  **Möchtest du beginnen ?**
+  - text: Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können.
+      ⛱  **Möchtest du beginnen ?**
   utter_respond_insult:
   - text: Das war aber gemein.
   utter_finished_check:
@@ -250,95 +309,46 @@ responses:
   utter_tooYoung:
   - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
       bei deinen Eltern an.
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 0
-slots:
-  Auslandsreisekrankenversicherung:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung Einmalig Gruppen:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung Einmalig Einzeln:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung Jahres Gruppen:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung Jahres Einzeln:
-    type: unfeaturized
-  Reisegepäckversicherung Einmalig Gruppen:
-    type: unfeaturized
-  Reisegepäckversicherung Einmalig Einzeln:
-    type: unfeaturized
-  Reiserücktritt Einmalig Gruppen:
-    type: unfeaturized
-  Reiserücktritt Einmalig Einzeln:
-    type: unfeaturized
-  Reiserücktritt Jahres Gruppen:
-    type: unfeaturized
-  Reiserücktritt Jahres Einzeln:
-    type: unfeaturized
-  5 Sterne Schutz Einmalig Einzelnd:
-    type: unfeaturized
-  5 Sterne Schutz Gruppe Jahres:
-    type: unfeaturized
-  5 Sterne Schutz Gruppe Einzel:
-    type: unfeaturized
-  5 Sterne Schutz Einmalig Jahres:
-    type: unfeaturized
-  Auslandsversicherung für  bis 35 Jahre:
-    type: unfeaturized
-  Auslandsversicherung bis 35 Jahre Deluxe:
-    type: unfeaturized
-  Auslandsversicherung ab 35 Jahre:
-    type: unfeaturized
-  age: 
-    max_value: 1.0
-    min_value: 0.0
-    type: float
-  attribute:
-    type: unfeaturized
-  continent:
-    type: unfeaturized
-  coronaCases:
-    type: unfeaturized
-  destination:
-    type: text
-  familyStatus:
-    type: unfeaturized
-  financeLoss:
-    type: unfeaturized
-  knowledge_base_last_object:
-    type: unfeaturized
-  knowledge_base_last_object_type:
-    type: unfeaturized
-  knowledge_base_listed_objects:
-    type: unfeaturized
-  luggage:
-    type: unfeaturized
-  mention:
-    type: unfeaturized
-  moreTravel:
-    type: bool
-  group:
-    type: bool
-  object_type:
-    type: unfeaturized
-  occasion:
-    type: bool
-  requested_slot:
-    type: unfeaturized
-  travelWarning:
-    type: unfeaturized
-  occasionDetails:
-    type: unfeaturized
-  format: 
-    type: unfeaturized
-  travel_days:
-    max_value: 1.0
-    min_value: 0.0
-    type: float
-  versichert:
-    type: unfeaturized
-  typeMessage:
-    type: unfeaturized
-  product:
-    type: unfeaturized
+  utter_response_katha1:
+  - text: Meinst du das hübscheste und süßeste Mädchen aus Hamburg ?❤️
+  - text: Du meinst Mrs. Right ? :) ❤️
+  utter_response_katha2:
+  - text: Ich liebe dich ❤️
+  utter_response_katha3:
+  - text: Schatz 🐼
+actions:
+- action_reset_travel_days
+- action_fetch_continent
+- action_fetch_corona
+- action_fetch_travel_warning
+- action_query_knowledge_base
+- utter_answerDestination_insideEurope
+- action_reset_destination
+- utter_answerDestination_outsideEurope
+- utter_ask_age
+- utter_ask_baggage
+- utter_ask_continent
+- utter_ask_continue
+- utter_ask_destination
+- utter_ask_familyStatus
+- utter_ask_financeLoss
+- utter_ask_luggage
+- utter_ask_travel_days
+- utter_explain_age
+- utter_whats_covered
+- utter_explain_whyDestination
+- utter_explain_whyTravelDays
+- utter_explain_whyFinanceLoss
+- utter_explain_whyMoreTravel
+- utter_explain_whyBaggeLoss
+- utter_explain_whyGroup
+- utter_explain_whyAge
+- utter_goodbye
+- utter_greet
+- utter_respond_insult
+- utter_respond_love
+- utter_slot_values
+- utter_tooYoung
+- utter_ask_group
+forms:
+- insurance_check

@@ -21,7 +21,6 @@
 - moin
 - hi
 
-
 ## intent:goodbye
 - Schönen Abend noch
 - Auf Wiederschauen
@@ -147,7 +146,6 @@
 - ?
 
 ## intent:product
-
 - [Auslandsreisekrankenversicherung Einmalig Gruppen](product)
 - [Auslandsreisekrankenversicherung Einmalig Einzeln](product)
 - [Auslandsreisekrankenversicherung Jahres Gruppen](product)
@@ -215,17 +213,15 @@
 - [48](travel_days) Wochen
 - [1](travel_days) Woche
 
-
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
 - [Auslandssemester](occasionDetails)
 - [Urlaub](occasionDetails)
 - [Familienbesuch](occasionDetails)
 - [Chillen](occasionDetails)
-- [Freunde](occasionDetails) besuchen 
-- [Familie ](occasionDetails) besuchen 
+- [Freunde](occasionDetails) besuchen
+- [Familie ](occasionDetails) besuchen
 - [Work and Travel](occasionDetails)
-
 
 ## intent:travel_months
 - [20](travel_days) Monate
@@ -237,7 +233,6 @@
 - [5](travel_days) Monate
 - [48](travel_days) Monate
 
-
 ## intent:travel_years
 - [20](travel_days) Jahre
 - [3](travel_days) Jahre
@@ -247,9 +242,6 @@
 - [4](travel_days) Jahre
 - [5](travel_days) Jahre
 - [48](travel_days) Jahre
-
-
-
 
 ## intent:query_knowledge_base
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung Einmalig Gruppen](object_type) versichert ?
@@ -271,15 +263,9 @@
 - [Auslandsreisekrankenversicherung Einmalig Gruppen](object_type)
 - Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung Einmalig Gruppen)[Zahnersatz](Auslandsreisekrankenversicherung Einmalig Gruppen) `?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung Einmalig Gruppen)[Krankenhaus](Auslandsreisekrankenversicherung Einmalig Gruppen)?
-
-
-
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung Einmalig Einzeln](object_type) versichert ?
 - Versicherte Leistungen in der [Auslandsreisekrankenversicherung Einmalig Einzeln](object_type)
 - Was ist versichert in der [Auslandsreisekrankenversicherung Einmalig Einzeln](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung Einmalig Einzeln)?
 - Was ist mit [Krankenhaus](Auslandsreisekrankenversicherung Einmalig Einzeln) -Aufenthalten?
 - Wie ist das im [Krankenhaus](Auslandsreisekrankenversicherung Einmalig Einzeln) ?
@@ -293,14 +279,9 @@
 - [Auslandsreisekrankenversicherung Einmalig Einzeln](object_type)
 - Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung Einmalig Einzeln)[Zahnersatz](Auslandsreisekrankenversicherung Einmalig Einzeln) `?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung Einmalig Einzeln)[Krankenhaus](Auslandsreisekrankenversicherung Einmalig Einzeln)?
-
-
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung Jahres Gruppen](object_type) versichert ?
 - Versicherte Leistungen in der [Auslandsreisekrankenversicherung Jahres Gruppen](object_type)
 - Was ist versichert in der [Auslandsreisekrankenversicherung Jahres Gruppen](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung Jahres Gruppen)?
 - Was ist mit [Krankenhaus](Auslandsreisekrankenversicherung Jahres Gruppen) -Aufenthalten?
 - Wie ist das im [Krankenhaus](Auslandsreisekrankenversicherung Jahres Gruppen) ?
@@ -314,14 +295,9 @@
 - [Auslandsreisekrankenversicherung Jahres Gruppen](object_type)
 - Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung Jahres Gruppen)[Zahnersatz](Auslandsreisekrankenversicherung Jahres Gruppen) `?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung Jahres Gruppen)[Krankenhaus](Auslandsreisekrankenversicherung Jahres Gruppen)?
-
-
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung Jahres Einzeln](object_type) versichert ?
 - Versicherte Leistungen in der [Auslandsreisekrankenversicherung Jahres Einzeln](object_type)
 - Was ist versichert in der [Auslandsreisekrankenversicherung Jahres Einzeln](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung Jahres Einzeln)?
 - Was ist mit [Krankenhaus](Auslandsreisekrankenversicherung Jahres Einzeln) -Aufenthalten?
 - Wie ist das im [Krankenhaus](Auslandsreisekrankenversicherung Jahres Einzeln) ?
@@ -335,63 +311,27 @@
 - [Auslandsreisekrankenversicherung Jahres Einzeln](object_type)
 - Was ist mit [Zahnersatz](Auslandsreisekrankenversicherung Jahres Einzeln)[Zahnersatz](Auslandsreisekrankenversicherung Jahres Einzeln) `?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](Auslandsreisekrankenversicherung Jahres Einzeln)[Krankenhaus](Auslandsreisekrankenversicherung Jahres Einzeln)?
-
-
-
 - Welche Leistung ist in der [Reisegepäckversicherung Einmalig Gruppen](object_type) versichert ?
 - Versicherte Leistungen in der [Reisegepäckversicherung Einmalig Gruppen](object_type)
 - Was ist versichert in der [Reisegepäckversicherung Einmalig Gruppen](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
-
-
 - Welche Leistung ist in der [Reisegepäckversicherung Einmalig Einzeln](object_type) versichert ?
 - Versicherte Leistungen in der [Reisegepäckversicherung Einmalig Einzeln](object_type)
 - Was ist versichert in der [Reisegepäckversicherung Einmalig Einzeln](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
-
-
 - Welche Leistung ist in der [Reiserücktritt Einmalig Gruppen](object_type) versichert ?
 - Versicherte Leistungen in der [Reiserücktritt Einmalig Gruppen](object_type)
 - Was ist versichert in der [Reiserücktritt Einmalig Gruppen](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
-
-
 - Welche Leistung ist in der [Reiserücktritt Einmalig Einzeln](object_type) versichert ?
 - Versicherte Leistungen in der [Reiserücktritt Einmalig Einzeln](object_type)
 - Was ist versichert in der [Reiserücktritt Einmalig Einzeln](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
-
-
 - Welche Leistung ist in der [Reiserücktritt Jahres Gruppen](object_type) versichert ?
 - Versicherte Leistungen in der [Reiserücktritt Jahres Gruppen](object_type)
 - Was ist versichert in der [Reiserücktritt Jahres Gruppen](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
-
-
 - Welche Leistung ist in der [Reiserücktritt Jahres Einzeln](object_type) versichert ?
 - Versicherte Leistungen in der [Reiserücktritt Jahres Einzeln](object_type)
 - Was ist versichert in der [Reiserücktritt Jahres Einzeln](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
-
-
 - Welche Leistung ist in der [5 Sterne Schutz Einmalig Einzelnd](object_type) versichert ?
 - Versicherte Leistungen in der [5 Sterne Schutz Einmalig Einzelnd](object_type)
 - Was ist versichert in der [5 Sterne Schutz Einmalig Einzelnd](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](5 Sterne Schutz Einmalig Einzelnd)?
 - Was ist mit [Krankenhaus](5 Sterne Schutz Einmalig Einzelnd) -Aufenthalten?
 - Wie ist das im [Krankenhaus](5 Sterne Schutz Einmalig Einzelnd) ?
@@ -405,14 +345,9 @@
 - [5 Sterne Schutz Einmalig Einzelnd](object_type)
 - Was ist mit [Zahnersatz](5 Sterne Schutz Einmalig Einzelnd)[Zahnersatz](5 Sterne Schutz Einmalig Einzelnd) `?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](5 Sterne Schutz Einmalig Einzelnd)[Krankenhaus](5 Sterne Schutz Einmalig Einzelnd)?
-
-
 - Welche Leistung ist in der [5 Sterne Schutz Gruppe Jahres](object_type) versichert ?
 - Versicherte Leistungen in der [5 Sterne Schutz Gruppe Jahres](object_type)
 - Was ist versichert in der [5 Sterne Schutz Gruppe Jahres](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](5 Sterne Schutz Gruppe Jahres)?
 - Was ist mit [Krankenhaus](5 Sterne Schutz Gruppe Jahres) -Aufenthalten?
 - Wie ist das im [Krankenhaus](5 Sterne Schutz Gruppe Jahres) ?
@@ -426,15 +361,9 @@
 - [5 Sterne Schutz Gruppe Jahres](object_type)
 - Was ist mit [Zahnersatz](5 Sterne Schutz Gruppe Jahres)[Zahnersatz](5 Sterne Schutz Gruppe Jahres) `?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](5 Sterne Schutz Gruppe Jahres)[Krankenhaus](5 Sterne Schutz Gruppe Jahres)?
-
-
-
 - Welche Leistung ist in der [5 Sterne Schutz Gruppe Einzel](object_type) versichert ?
 - Versicherte Leistungen in der [5 Sterne Schutz Gruppe Einzel](object_type)
 - Was ist versichert in der [5 Sterne Schutz Gruppe Einzel](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](5 Sterne Schutz Gruppe Einzel)?
 - Was ist mit [Krankenhaus](5 Sterne Schutz Gruppe Einzel) -Aufenthalten?
 - Wie ist das im [Krankenhaus](5 Sterne Schutz Gruppe Einzel) ?
@@ -448,14 +377,9 @@
 - [5 Sterne Schutz Gruppe Einzel](object_type)
 - Was ist mit [Zahnersatz](5 Sterne Schutz Gruppe Einzel)[Zahnersatz](5 Sterne Schutz Gruppe Einzel) ?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](5 Sterne Schutz Gruppe Einzel)[Krankenhaus](5 Sterne Schutz Gruppe Einzel)?
-
-
 - Welche Leistung ist in der [5 Sterne Schutz Einmalig Jahres](object_type) versichert ?
 - Versicherte Leistungen in der [5 Sterne Schutz Einmalig Jahres](object_type)
 - Was ist versichert in der [5 Sterne Schutz Einmalig Jahres](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](5 Sterne Schutz Einmalig Jahres)?
 - Was ist mit [Krankenhaus](5 Sterne Schutz Einmalig Jahres) -Aufenthalten?
 - Wie ist das im [Krankenhaus](5 Sterne Schutz Einmalig Jahres) ?
@@ -469,23 +393,12 @@
 - [5 Sterne Schutz Einmalig Jahres](object_type)
 - Was ist mit [Zahnersatz](5 Sterne Schutz Einmalig Jahres)[Zahnersatz](5 Sterne Schutz Einmalig Jahres) `?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](5 Sterne Schutz Einmalig Jahres)[Krankenhaus](5 Sterne Schutz Einmalig Jahres)?
-
-
 - Welche Leistung ist in der [Auslandsversicherung für  bis 35 Jahre](object_type) versichert ?
 - Versicherte Leistungen in der [Auslandsversicherung für  bis 35 Jahre](object_type)
 - Was ist versichert in der [Auslandsversicherung für  bis 35 Jahre](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
-
-
-
 - Welche Leistung ist in der [Auslandsversicherung bis 35 Jahre Deluxe](object_type) versichert ?
 - Versicherte Leistungen in der [Auslandsversicherung bis 35 Jahre Deluxe](object_type)
 - Was ist versichert in der [Auslandsversicherung bis 35 Jahre Deluxe](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](Auslandsversicherung bis 35 Jahre Deluxe)?
 - Was ist mit [Krankenhaus](Auslandsversicherung bis 35 Jahre Deluxe) -Aufenthalten?
 - Wie ist das im [Krankenhaus](Auslandsversicherung bis 35 Jahre Deluxe) ?
@@ -499,15 +412,9 @@
 - [Auslandsversicherung bis 35 Jahre Deluxe](object_type)
 - Was ist mit [Zahnersatz](Auslandsversicherung bis 35 Jahre Deluxe)[Zahnersatz](Auslandsversicherung bis 35 Jahre Deluxe) ?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](Auslandsversicherung bis 35 Jahre Deluxe)[Krankenhaus](Auslandsversicherung bis 35 Jahre Deluxe)?
-
-
-
 - Welche Leistung ist in der [Auslandsversicherung ab 35 Jahre](object_type) versichert ?
 - Versicherte Leistungen in der [Auslandsversicherung ab 35 Jahre](object_type)
 - Was ist versichert in der [Auslandsversicherung ab 35 Jahre](object_type) ?
-- Kann du mir [Details]{"entity": "attribute", "value": "versichert"} zum [ersten]{"entity": "mention", "value": "1"} nennen ?
-- Was ist im [ersten]{"entity": "mention", "value": "1"} [versichert](attribute) ?
-- Was ist im [letzten]{"entity": "mention", "value": "LAST"} [versichert](attribute) ?
 - Was ist [versichert](attribute) in [Krankenhaus](Auslandsversicherung ab 35 Jahre)?
 - Was ist mit [Krankenhaus](Auslandsversicherung ab 35 Jahre) -Aufenthalten?
 - Wie ist das im [Krankenhaus](Auslandsversicherung ab 35 Jahre) ?
@@ -522,7 +429,6 @@
 - Was ist mit [Zahnersatz](Auslandsversicherung ab 35 Jahre)[Zahnersatz](Auslandsversicherung ab 35 Jahre) ?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](Auslandsversicherung ab 35 Jahre)[Krankenhaus](Auslandsversicherung ab 35 Jahre)?
 
-
 ## intent:corona
 - Wie viele Corona Fallzahlen ?
 - Wie viele Corona Erkankungen ?
@@ -530,7 +436,6 @@
 - Wie viele haben Corona ?
 - Fallzahlen ?
 - Corona Situation ?
-
 
 ## intent:dontKnow
 - Weiß ich nicht
@@ -576,11 +481,9 @@
 - ^(1[89]|[2-9][0-9])$
 - Was kannst du
 
-
 ## intent:changeDestination
-
 - Ich möcht das Reiseland ändern
-- Ich möchte wo anderst hin 
+- Ich möchte wo anderst hin
 - Ich will das Land ändern
 - Ich reise jetzt doch nach
 - Land ändern
@@ -588,16 +491,18 @@
 - Zielland ändern
 - Reiseziel ändern
 
-## intent: changeTravelDays
-
+## intent:changeTravelDays
 - Ich möchte länger verreisen
-- Ich möchte kürzer verreisen 
-- Ich will doch wann anderst verreisen 
+- Ich möchte kürzer verreisen
+- Ich will doch wann anderst verreisen
 - Ich möchte den Zeitraum ändern
 
+## intent:katharina
+- Katharina Könches
+- Baby
 
-
-
+## intent:metoo
+- Ich dich auch
 
 ## synonym:1
 - ersten
@@ -605,12 +510,9 @@
 
 ## synonym:2
 - zwei
+
 ## synonym:3
 - drei
-
-
-
-
 
 ## synonym:LAST
 - letzten
