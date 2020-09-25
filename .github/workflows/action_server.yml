@@ -16,6 +16,8 @@ jobs:
       uses: RasaHQ/action-server-gha@master
       # Full list of parameters: https://github.com/RasaHQ/action-server-gha/tree/master#input-arguments
       with:
+        requirements_file: 'develop/requirements.txt'
+        rasa_sdk_version: 2.0.0a3
         docker_image_name: 'gandhi187/rasa_action_david'
         docker_registry_login: ${{ secrets.DOCKER_HUB_LOGIN }}
         docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
