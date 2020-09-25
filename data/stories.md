@@ -322,10 +322,10 @@
 
 ## Secret
 * katharina
- - utter_answer_katharina1
+ - utter_response_katha1
 * affirm
- - utter_answer_katharina2
+ - utter_response_katha2
 * metoo
- - utter_answer_katharina3
+ - utter_response_katha3
 * deny
  - utter_goodbye
