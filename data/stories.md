@@ -325,7 +325,7 @@
  - utter_answer_katharina1
 * affirm
  - utter_answer_katharina2
-* meetoo
+* metoo
  - utter_answer_katharina3
 * deny
  - utter_goodbye
