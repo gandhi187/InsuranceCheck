@@ -2,7 +2,6 @@ import openpyxl
 import pycountry_convert as pc
 import requests
 import json
-import tempfile
 from datetime import datetime, timedelta
 
 def FindXlCell(search_str, range=None):

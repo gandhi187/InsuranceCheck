@@ -10,7 +10,6 @@ from .MyKnowledgeBase import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 from rasa_sdk.knowledge_base import *
 from rasa_sdk import utils
-import urllib.request
 
 class InsuranceCheck(FormAction):
 
