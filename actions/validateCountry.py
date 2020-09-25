@@ -82,4 +82,4 @@ def getJsonData():
 wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
 
-#print(getJsonData())
+print(getJsonData())
