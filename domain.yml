@@ -191,9 +191,11 @@ responses:
   utter_ask_continue:
   - text: Möchtest du den Versicherungscheck fortführen ?
   utter_ask_destination:
-  - text: Wohin möchtest du vereisen ?
+  - text: In welches Land möchtest du vereisen ?
   utter_ask_occasionDetails:
   - text: Was ist der Zweck deiner Reise ?
+  utter_noInsuranceCover:
+    - text: Leider bieten wir keinen Versicherungsschutz für eine Reise nach {destination} an. 
   utter_ask_familyStatus:
   - buttons:
     - payload: /inform{"familyStatus":"Single"}
@@ -305,7 +307,7 @@ responses:
   - text: Nicht die Vollkommenen, sondern die Unvollkommenen brauchen unsere Liebe.
   utter_slot_values:
   - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days},
-      Geschäftlich ? {occasion}, Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage},
+       Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage},
       Reiserücktritt {financeLoss}
   utter_tooYoung:
   - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
@@ -350,6 +352,7 @@ actions:
 - utter_respond_love
 - utter_slot_values
 - utter_tooYoung
+- utter_noInsuranceCover  
 - utter_ask_group
 forms:
 - insurance_check

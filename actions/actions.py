@@ -113,7 +113,9 @@ class InsuranceCheck(FormAction):
     ) -> Dict[Text, Any]:
         if value is None: 
             return {"destination":"Null"}
-
+        if (value == 'Deutschland' or "detuschland"):
+            dispatcher.utter_message(templater="utter_noInsuranceCover")
+            return self.deactivate()
         print(value)
         countryCode = FindCountryCode(value)
         print(countryCode)
