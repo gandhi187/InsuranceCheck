@@ -55,11 +55,9 @@
 * corona 
  - action_fetch_corona
 
-
 ## Kath
 * product
     - utter_whats_covered
-
 
 ## Secret
 * katharina
@@ -70,3 +68,42 @@
  - utter_response_katha3
 * deny
  - utter_goodbye
+
+## New Story
+
+* greet
+    - utter_greet
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* destination{"destination":"Frankreich"}
+    - slot{"destination":"Frankreich"}
+    - slot{"destination":"Frankreich"}
+    - insurance_check
+    - slot{"destination":[{"event":"form","name":null,"timestamp":null},{"event":"slot","timestamp":null,"name":"requested_slot","value":null}]}
+    - slot{"requested_slot":"travel_days"}
+* travel_months{"travel_days":"9"}
+    - slot{"travel_days":"9"}
+    - insurance_check
+    - slot{"travel_days":270}
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* inform{"age":"1992"}
+    - slot{"age":"1992"}
+    - insurance_check
+    - slot{"age":28}
+    - slot{"requested_slot":"group"}
+* deny
+    - insurance_check
+    - slot{"group":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+* corona
+    - action_fetch_corona
+    - slot{"coronaCases":386482}
+* whatsPossible
+    - utter_explain_whatspossible
