@@ -114,7 +114,7 @@ class InsuranceCheck(FormAction):
         if value is None: 
             return {"destination":"Null"}
         if (value == 'Deutschland' or value == "deutschland"):
-            dispatcher.utter_message(templater="utter_noInsuranceCover")
+            dispatcher.utter_message(template="utter_noInsuranceCover")
             return None
         print("destination: " + value)
         countryCode = FindCountryCode(value)
@@ -144,10 +144,10 @@ class InsuranceCheck(FormAction):
 
         if ageCalculated<18:
             dispatcher.utter_message(template="utter_tooYoung")
-            return self.deactivate()
+            return None
         if ageCalculated>125:
             dispatcher.utter_message("Respekt, dass du in diesem Alter noch auf Reisen gehst, jedoch kann ich dir keine passende Versicherung vorschlagen")
-            return self.deactivate()
+            return None
         else:
             return {"age": ageCalculated} 
             

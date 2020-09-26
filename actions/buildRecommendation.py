@@ -9,11 +9,8 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
                 luggage = 'mittel'
         if financeLoss == "niedrig" or financeLoss == None:
                 financeLoss=''
-                print('none')
         if financeLoss == 'hoch':
                 financeLoss = 'mittel'
-        print ("Finance Loss : " + financeLoss)
-        print ("Baggage : " + luggage)
         try:
             x =  {   "type": "template",     "payload": {            "template_type": "generic",            "elements": [            ]        }    }
             temp = x['payload']['elements']
@@ -30,6 +27,25 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
             print("Selecting rows from mobile table using cursor.fetchall")
             mobile_records = cursor.fetchall() 
             print("Print each row and it's columns values")
+            if not mobile_records:
+                noResults = {
+                "title": "Individuelle Beratung erforderlich",
+                "subtitle":destination,
+                "image_url": "https://i.imgur.com/CTJEWBM.png",
+                "buttons": [{
+                    "title": "Mehr",
+                    "url": "https://i.imgur.com/CTJEWBM.png",
+                    "type": "web_url"
+                },
+                    {
+                        "title": "Interessant",
+                        "type": "postback",
+                        "payload": "Kundenservice"
+                    }
+                ]
+            }
+                temp.append(noResults)
+
             for row in mobile_records:
                 y = {
                 "title": row[0],
@@ -58,11 +74,11 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
                 cursor.close()
                 connection.close()
                 print("PostgreSQL connection is closed")
-
+                print(x)
                 return x
 
 
-queryDB("50",None,None,False,"50",False,"asd")
+queryDB("50",None,None,False,"50000",False,"asd")
 
 
 
