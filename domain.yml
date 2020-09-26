@@ -123,7 +123,7 @@ slots:
   coronaCases:
     type: unfeaturized
   destination:
-    type: text
+    type: unfeaturized
   familyStatus:
     type: unfeaturized
   financeLoss:
@@ -195,7 +195,7 @@ responses:
   utter_ask_occasionDetails:
   - text: Was ist der Zweck deiner Reise ?
   utter_noInsuranceCover:
-    - text: Leider bieten wir keinen Versicherungsschutz für eine Reise nach {destination} an. 
+    - text: Leider bieten wir keinen Versicherungsschutz für eine Reise in dein Zielgebiet an. 
   utter_ask_familyStatus:
   - buttons:
     - payload: /inform{"familyStatus":"Single"}

@@ -91,8 +91,8 @@ class InsuranceCheck(FormAction):
 
         typeMessage = tracker.latest_message['intent'].get('name')
         value = self.calculateDays(value,typeMessage)
-
-
+        print(value)
+        print(destination)
 
         if int(value)<5:
             dispatcher.utter_message("Bei " + str(value) +  " Tagen, wirst du wohl mit Hangepäck  nach " + destination + " reisen")
@@ -113,10 +113,10 @@ class InsuranceCheck(FormAction):
     ) -> Dict[Text, Any]:
         if value is None: 
             return {"destination":"Null"}
-        if (value == 'Deutschland' or "detuschland"):
+        if (value == 'Deutschland' or value == "deutschland"):
             dispatcher.utter_message(templater="utter_noInsuranceCover")
-            return self.deactivate()
-        print(value)
+            return None
+        print("destination: " + value)
         countryCode = FindCountryCode(value)
         print(countryCode)
         continent = GetContinentFromCountry(countryCode)
