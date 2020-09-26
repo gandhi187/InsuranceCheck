@@ -36,8 +36,8 @@ intents:
 - occasionDetails
 - product
 - changeTravelDays
-
-
+- denizabi
+- happy
 entities:
 - Auslandsreisekrankenversicherung Einmalig Gruppen
 - Auslandsreisekrankenversicherung Einmalig Einzeln
@@ -195,7 +195,8 @@ responses:
   utter_ask_occasionDetails:
   - text: Was ist der Zweck deiner Reise ?
   utter_noInsuranceCover:
-    - text: Leider bieten wir keinen Versicherungsschutz für eine Reise in dein Zielgebiet an. 
+  - text: Leider bieten wir keinen Versicherungsschutz für eine Reise in dein Zielgebiet
+      an.
   utter_ask_familyStatus:
   - buttons:
     - payload: /inform{"familyStatus":"Single"}
@@ -291,7 +292,7 @@ responses:
   - text: Wiedersehen macht Freude !
   utter_greet:
   - text: Moin, ich bin Dave dein persönlicher Reiseberater. Ich werde dir nun ein
-      paar Fragen stellen. Möchtest du beginnen ? 
+      paar Fragen stellen. Möchtest du beginnen ?
   utter_begin:
   - text: Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können.
       ⛱  **Möchtest du beginnen ?**
@@ -307,18 +308,25 @@ responses:
   - text: Nicht die Vollkommenen, sondern die Unvollkommenen brauchen unsere Liebe.
   utter_slot_values:
   - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days},
-       Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage},
-      Reiserücktritt {financeLoss}
+      Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage}, Reiserücktritt {financeLoss}
   utter_tooYoung:
   - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
       bei deinen Eltern an.
   utter_response_katha1:
   - text: Meinst du das hübscheste und süßeste Mädchen aus Hamburg ?
-  - text: Du meinst Mrs. Right ? :) 
+  - text: Du meinst Mrs. Right ? :)
   utter_response_katha2:
-  - text: Ich liebe dich 
+  - text: Ich liebe dich
   utter_response_katha3:
-  - text: Schatz 
+  - text: Schatz
+  utter_answer_deniz:
+  - text: Ja ich lass ihn Diggi, glaub mir.
+  - text: Ohhh Deniz Abi
+  utter_answer_happy:
+  - text: Ich bin genauso begeistert wie du :)
+  - text: Ich bin genauso happy wie du :)
+  utter_answer_outofscope:
+  - text: Das kann ich dir leider (noch) nicht beantworten. Bitte entschuldige.
 actions:
 - action_reset_travel_days
 - action_fetch_continent
@@ -352,7 +360,7 @@ actions:
 - utter_respond_love
 - utter_slot_values
 - utter_tooYoung
-- utter_noInsuranceCover  
+- utter_noInsuranceCover
 - utter_ask_group
 forms:
 - insurance_check

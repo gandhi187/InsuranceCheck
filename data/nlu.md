@@ -67,6 +67,7 @@
 - Tschüss chat bot.
 - Wir sehen uns!
 - Wir sehen uns das nächste mal
+- Ciao
 
 ## intent:affirm
 - Alles klar.
@@ -116,6 +117,10 @@
 - okay bot
 - yes
 - Sehr schlimm
+- jop
+- Hi Dave, ja gerne.
+- Ja
+- Jap
 
 ## intent:ask_weather
 - Wie wird das Wetter ?
@@ -136,6 +141,8 @@
 - wie geht es dir ?
 - geht dich nichts an !
 - geht dich nichts an
+- Stuttgart
+- Wie viel kostet ein Flug nach Indien?
 
 ## intent:question
 - Warum ?
@@ -176,6 +183,8 @@
 - [1990](age)
 - [1988](age)
 - [1987](age)
+- [1989](age)
+- [1977](age)
 
 ## intent:destination
 - Nach [Deutschland](destination)
@@ -191,6 +200,10 @@
 - [Griechenland](destination)
 - Nach [Frankreich](destination)
 - [Polen](destination)
+- Ich möchte nach [Spanien](destination) verreisen.
+- Ich möchte nach [Spanien](destination) verreisen
+- indien
+- [Indien](destination)
 
 ## intent:travel_days
 - [zwei](travel_days) Tage
@@ -202,6 +215,7 @@
 - [4](travel_days) Tage
 - [5](travel_days)
 - [48](travel_days)
+- [5](travel_days) Tage
 
 ## intent:travel_weeks
 - [20](travel_days) Wochen
@@ -213,6 +227,7 @@
 - [5](travel_days) Wochen
 - [48](travel_days) Wochen
 - [1](travel_days) Woche
+- [6](travel_days) Wochen
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -437,6 +452,7 @@
 - Wie viele haben Corona ?
 - Fallzahlen ?
 - Corona Situation ?
+- corona situation
 
 ## intent:dontKnow
 - Weiß ich nicht
@@ -472,6 +488,9 @@
 - Ich hasse dich !
 - Si kerim
 - Leck mich
+- Bruder vor Luder
+- Fk
+- Bist du doof hab ich gefragt?
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -491,6 +510,12 @@
 - Ändere das Reiseland
 - Zielland ändern
 - Reiseziel ändern
+- Ich möchte verreisen
+- Ich reise auch noch nach Griechenland kriege ich dafür auch eine Versicherung
+- Wie ist die aktuelle Situation in Indien ?
+- Habibi ich möchte nach Hongkong reisen
+- Ich möchte auch nach Hongkong reisen
+- Ich reise auch noch nach [Griechenland](destination) kriege ich dafür auch eine Versicherung?
 
 ## intent:changeTravelDays
 - Ich möchte länger verreisen
@@ -504,6 +529,14 @@
 
 ## intent:metoo
 - Ich dich auch
+
+## intent:denizabi
+- Ghettosport
+- Wellensteyn
+- ghettosport
+
+## intent:happy
+- Wow
 
 ## synonym:1
 - ersten
