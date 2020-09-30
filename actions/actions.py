@@ -10,6 +10,7 @@ from .MyKnowledgeBase import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 from rasa_sdk.knowledge_base import *
 from rasa_sdk import utils
+import requests
 
 class InsuranceCheck(FormAction):
 
@@ -173,7 +174,9 @@ class InsuranceCheck(FormAction):
         print(jsonCarousel)
         dispatcher.utter_message("Deine Vorschläge")
         dispatcher.utter_message(attachment=jsonCarousel)
-
+        self.tag_convo(tracker,'[{"value":"Till Submit","color":"e5ff00"}]')
+        dispatcher.utter_message("Ich hoffe ich konnte dir weiterhelfen :) auf deiner Reise nach : " + destination + ". Klicke auf  'Mehr', um weitere Informationen über das gewünschte Produkt zu erhalten")
+        dispatcher.utter_message("Du kannst dich auch nach der aktuellen Corona-Lage in deinem Zielland: " + destination + " bei mir erkundigen" )
 
         return []   
 
@@ -193,6 +196,15 @@ class InsuranceCheck(FormAction):
         elif formatType == "travel_years":
             print (intValue*365)
             return intValue*365 
+
+
+
+
+
+    def tag_convo(self,tracker: Tracker, label: Text) -> None:
+        endpoint = f"https://dave-chatbot.de/api/conversations/{tracker.sender_id}/tags"
+        requests.post(url=endpoint, data=label)
+        return
 
 class FetchContinentAction(Action):
     def name(self):
