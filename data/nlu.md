@@ -491,6 +491,7 @@
 - Bruder vor Luder
 - Fk
 - Bist du doof hab ich gefragt?
+- bitch
 
 ## intent:whatsPossible
 - Was kannst du ?
