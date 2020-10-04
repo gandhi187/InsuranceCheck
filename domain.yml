@@ -188,6 +188,11 @@ responses:
     - payload: '/inform{"continent": "Europa"}'
       title: Europa
     text: Schade, weißt du denn ansonsten auf welchen Kontinent ?
+    utter_ask_restart:
+  - buttons:
+    - payload: /affirm
+      title: Ja
+    text: Willst du neustarten ?
   utter_ask_continue:
   - text: Möchtest du den Versicherungscheck fortführen ?
   utter_ask_destination:
@@ -362,5 +367,7 @@ actions:
 - utter_tooYoung
 - utter_noInsuranceCover
 - utter_ask_group
+- utter_ask_restart
+- action_restart_bot
 forms:
 - insurance_check

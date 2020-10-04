@@ -9,6 +9,7 @@ from rasa_sdk.events import SlotSet
 from .MyKnowledgeBase import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 from rasa_sdk.knowledge_base import *
+from rasa_sdk.events import Restarted
 from rasa_sdk import utils
 import requests
 
@@ -343,3 +344,18 @@ class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
                 text=f"Leider konnte ich unter dem Schlagwort '{attribute_name}' zu '{object_name}' nichts finden."
             )
 
+class ActionRestartBot(Action):
+
+    def name(self) -> Text:
+
+        return "action_restart_bot"
+
+    def run(self, dispatcher: CollectingDispatcher,
+
+            tracker: Tracker,
+
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(template="utter_ask_restart")
+    
+        return [Restarted()]

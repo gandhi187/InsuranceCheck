@@ -36,7 +36,10 @@ policies:
   - name: TwoStageFallbackPolicy
     nlu_threshold: 0.4
     core_threshold: 0.4
-    fallback_core_action_name: "action_default_fallback"
-    fallback_nlu_action_name: "action_default_fallback"
+    fallback_core_action_name: "action_restart_bot"
+    fallback_nlu_action_name: "action_restart_bot"
     deny_suggestion_intent_name: "out_of_scope"
- 
+  - name: "FallbackPolicy"
+    nlu_threshold: 0.4
+    core_threshold: 0.3
+    fallback_action_name: "action_default_fallback" 
