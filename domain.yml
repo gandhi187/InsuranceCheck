@@ -188,7 +188,7 @@ responses:
     - payload: '/inform{"continent": "Europa"}'
       title: Europa
     text: Schade, weißt du denn ansonsten auf welchen Kontinent ?
-    utter_ask_restart:
+  utter_ask_restart:
   - buttons:
     - payload: /affirm
       title: Ja
@@ -223,8 +223,10 @@ responses:
       Reise in dein Reiseland:   {destination} ? '
   utter_whats_covered:
   - buttons:
-    - payload: Was ist in der {product} versichert ?
+    - payload: Versicherte Leistungen in  {product} ?
       title: Was ist versichert ?
+    - payload: Corona Situation in meinem Land
+      title: Corona Situation
     text: Auswahl
   utter_ask_group:
   - buttons:
@@ -337,12 +339,14 @@ actions:
 - action_fetch_continent
 - action_fetch_corona
 - action_fetch_travel_warning
+- action_reset_productslot
 - action_query_knowledge_base
 - utter_answerDestination_insideEurope
 - action_reset_destination
 - utter_answerDestination_outsideEurope
 - utter_ask_age
 - utter_ask_baggage
+- action_moreInfo_buttons
 - utter_ask_continent
 - utter_ask_continue
 - utter_ask_destination

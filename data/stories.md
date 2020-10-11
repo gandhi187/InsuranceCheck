@@ -10,8 +10,7 @@
 > check_affirm
   - form{"name": null}
   - action_fetch_continent
-  - utter_slot_values
-  - utter_goodbye
+
 
 ## check_stop
 > check_affirm
@@ -34,8 +33,6 @@
   - insurance_check
   - form{"name": null}
   - action_fetch_continent
-  - utter_slot_values
-  - utter_goodbye
 
 ## ask_insurance
 * query_knowledge_base
@@ -57,7 +54,8 @@
 
 ## Kath
 * product
-    - utter_whats_covered
+    - action_moreInfo_buttons
+    - action_reset_productslot
 
 ## Secret
 * katharina
@@ -147,5 +145,3 @@
     - slot{"requested_slot":null}
     - action_fetch_continent
     - slot{"continent":"Asien"}
-    - utter_slot_values
-    - utter_goodbye

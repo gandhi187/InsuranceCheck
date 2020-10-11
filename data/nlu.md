@@ -154,22 +154,22 @@
 
 ## intent:product
 - [Auslandsreisekrankenversicherung Einmalig Gruppen](product)
-- [Auslandsreisekrankenversicherung Einmalig Einzeln](product)
+- [Auslandsreisekrankenversicherung Einmalig Einzel](product)
 - [Auslandsreisekrankenversicherung Jahres Gruppen](product)
-- [Auslandsreisekrankenversicherung Jahres Einzeln](product)
+- [Auslandsreisekrankenversicherung Jahres Einzel](product)
 - [Reisegepäckversicherung Einmalig Gruppen](product)
-- [Reisegepäckversicherung Einmalig Einzeln](product)
+- [Reisegepäckversicherung Einmalig Einzel](product)
 - [Reiserücktritt Einmalig Gruppen](product)
-- [Reiserücktritt Einmalig Einzeln](product)
+- [Reiserücktritt Einmalig Einzel](product)
 - [Reiserücktritt Jahres Gruppen](product)
-- [Reiserücktritt Jahres Einzeln](product)
-- [5 Sterne Schutz Einmalig Einzelnd](product)
-- [5 Sterne Schutz Gruppe Jahres](product)
-- [5 Sterne Schutz Gruppe Einzel](product)
-- [5 Sterne Schutz Einmalig Jahres](product)
-- [Auslandsversicherung für  bis 35 Jahre](product)
+- [Reiserücktritt Jahres Einzel](product)
+- [5 Sterne Schutz Einzel Einmalig](product)
+- [5 Sterne Schutz Gruppen Jahres](product)
+- [5 Sterne Schutz Gruppen Einmalig](product)
+- [5 Sterne Schutz Einzel Jahres](product)
+- [Auslandsversicherung Langzeit bis 35 Jahre](product)
 - [Auslandsversicherung bis 35 Jahre Deluxe](product)
-- [Auslandsversicherung ab 35 Jahre](product)
+- [Auslandsversicherung Langzeit ab 35 Jahre](product)
 
 ## intent:inform
 - [1991](age)
@@ -218,6 +218,7 @@
 - [5](travel_days) Tage
 
 ## intent:travel_weeks
+- [eine](travel_days) Woche
 - [20](travel_days) Wochen
 - [3](travel_days) Wochen
 - [8](travel_days) Wochen
@@ -542,6 +543,7 @@
 ## synonym:1
 - ersten
 - eine
+- ein
 
 ## synonym:2
 - zwei
@@ -558,5 +560,8 @@
 ## synonym:versichert
 - Details
 
-## lookup:country-list-clean.csv
+## lookup:destination
   data/lookup/countrys/country-list-clean.csv
+
+## lookup:product
+  data/lookup/products.txt

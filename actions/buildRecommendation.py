@@ -59,7 +59,7 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
                     {
                         "title": "Interessant",
                         "type": "postback",
-                        "payload": "Auslandsreisekrankenversicherung Einmalig Gruppen"
+                        "payload": row[0]
                     }
                 ]
             }

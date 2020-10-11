@@ -178,7 +178,6 @@ class InsuranceCheck(FormAction):
         self.tag_convo(tracker,'[{"value":"Till Submit","color":"e5ff00"}]')
         dispatcher.utter_message("Ich hoffe ich konnte dir weiterhelfen :) auf deiner Reise nach : " + destination + ". Klicke auf  'Mehr', um weitere Informationen über das gewünschte Produkt zu erhalten")
         dispatcher.utter_message("Du kannst dich auch nach der aktuellen Corona-Lage in deinem Zielland: " + destination + " bei mir erkundigen" )
-
         return []   
 
     def calculateDays(self,value,formatType):
@@ -359,3 +358,37 @@ class ActionRestartBot(Action):
         dispatcher.utter_message(template="utter_ask_restart")
     
         return [Restarted()]
+
+class FetchActionButtons(Action):
+
+    def name(self) -> Text:
+
+        return "action_moreInfo_buttons"
+
+    def run(self, dispatcher: CollectingDispatcher,
+
+            tracker: Tracker,
+
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        product   = tracker.get_slot("product")
+        print("Product " + product)
+        buttons = [{"title": "Weitere Informationen", "payload": "Was ist versichert in " + product}, {"title": "Aktuelle Corona Lage", "payload": "Corona Situation"}]
+        dispatcher.utter_button_message("Was möchtest du erfahren ?", buttons)
+
+    
+        return []
+
+
+class ResetProductSlot(Action):
+
+    def name(self) -> Text:
+
+        return "action_reset_productslot"
+
+    def run(self, dispatcher: CollectingDispatcher,
+
+            tracker: Tracker,
+
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [SlotSet("product", None)]
