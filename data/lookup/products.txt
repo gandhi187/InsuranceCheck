@@ -8,10 +8,10 @@ Reiserücktritt Einmalig Gruppen
 Reiserücktritt Einmalig Einzeln
 Reiserücktritt Jahres Gruppen
 Reiserücktritt Jahres Einzeln
-5 Sterne Schutz Einmalig Einzelnd
-5 Sterne Schutz Gruppe Jahres
-5 Sterne Schutz Gruppe Einzel
-5 Sterne Schutz Einmalig Jahres
+5 Sterne Schutz Einzel Einzelnd
+5 Sterne Schutz Gruppen Jahres
+5 Sterne Schutz Gruppen Einmalig
+5 Sterne Schutz Einzel Jahres
 Auslandsversicherung für  bis 35 Jahre
 Auslandsversicherung bis 35 Jahre Deluxe
-Auslandsversicherung ab 35 Jahre
+Auslandsversicherung Langzeit ab 35 Jahre
