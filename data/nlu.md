@@ -362,9 +362,9 @@
 - [5 Sterne Schutz Einmalig Einzelnd](object_type)
 - Was ist mit [Zahnersatz](5 Sterne Schutz Einmalig Einzelnd)[Zahnersatz](5 Sterne Schutz Einmalig Einzelnd) `?
 - Was [versichert](attribute)[versichert](attribute) in [Krankenhaus](5 Sterne Schutz Einmalig Einzelnd)[Krankenhaus](5 Sterne Schutz Einmalig Einzelnd)?
-- Welche Leistung ist in der [5 Sterne Schutz Gruppe Jahres](object_type) versichert ?
-- Versicherte Leistungen in der [5 Sterne Schutz Gruppe Jahres](object_type)
-- Was ist versichert in der [5 Sterne Schutz Gruppe Jahres](object_type) ?
+- Welche Leistung ist in der [5 Sterne Schutz Gruppen Jahres](object_type) versichert ?
+- Versicherte Leistungen in der [5 Sterne Schutz Gruppen Jahres](object_type)
+- Was ist versichert in der [5 Sterne Schutz Gruppen Jahres](object_type) ?
 - Was ist [versichert](attribute) in [Krankenhaus](5 Sterne Schutz Gruppe Jahres)?
 - Was ist mit [Krankenhaus](5 Sterne Schutz Gruppe Jahres) -Aufenthalten?
 - Wie ist das im [Krankenhaus](5 Sterne Schutz Gruppe Jahres) ?
@@ -525,17 +525,9 @@
 - Ich will doch wann anderst verreisen
 - Ich möchte den Zeitraum ändern
 
-## intent:katharina
-- Katharina Könches
-- Baby
 
-## intent:metoo
-- Ich dich auch
 
-## intent:denizabi
-- Ghettosport
-- Wellensteyn
-- ghettosport
+
 
 ## intent:happy
 - Wow

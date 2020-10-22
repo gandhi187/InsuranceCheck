@@ -57,19 +57,7 @@
     - action_moreInfo_buttons
     - action_reset_productslot
 
-## Secret
-* katharina
- - utter_response_katha1
-* affirm
- - utter_response_katha2
-* metoo
- - utter_response_katha3
-* deny
- - utter_goodbye
 
-## Secret2
-* denizabi
- - utter_answer_deniz
 
 ## GeneratedStory1
 

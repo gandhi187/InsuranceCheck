@@ -319,16 +319,7 @@ responses:
   utter_tooYoung:
   - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
       bei deinen Eltern an.
-  utter_response_katha1:
-  - text: Meinst du das hübscheste und süßeste Mädchen aus Hamburg ?
-  - text: Du meinst Mrs. Right ? :)
-  utter_response_katha2:
-  - text: Ich liebe dich
-  utter_response_katha3:
-  - text: Schatz
-  utter_answer_deniz:
-  - text: Ja ich lass ihn Diggi, glaub mir.
-  - text: Ohhh Deniz Abi
+ 
   utter_answer_happy:
   - text: Ich bin genauso begeistert wie du :)
   - text: Ich bin genauso happy wie du :)
