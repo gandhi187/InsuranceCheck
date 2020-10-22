@@ -18,7 +18,6 @@ intents:
 - mood_great
 - mood_unhappy
 - bot_challenge
-- katharina
 - metoo
 - greet_user
 - question
@@ -36,7 +35,6 @@ intents:
 - occasionDetails
 - product
 - changeTravelDays
-- denizabi
 - happy
 entities:
 - Auslandsreisekrankenversicherung Einmalig Gruppen
