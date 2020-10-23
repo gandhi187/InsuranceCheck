@@ -79,7 +79,20 @@ def getJsonData():
     data = json.dumps(data)
     return data
 
+def getRandomDogImage():
+    resp = requests.get('https://some-random-api.ml/img/dog')
+    if resp.status_code != 200:
+    # This means something went wrong.
+        raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+    data =  resp.json()
+    link = data["link"]
+    print(link)
+    return link
+   
+
+
 wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
 
-print(getJsonData())
+#print(getJsonData())
+print(getRandomDogImage())

@@ -57,8 +57,22 @@
     - action_moreInfo_buttons
     - action_reset_productslot
 
+## happy
+* happy
+ - utter_answer_happy
 
-
+## explainBackground
+* provocate
+ - utter_response_provocate
+ - utter_response_provocate2
+* whatsPossible
+ - utter_explain_whatspossible
+* researchquestion
+ - utter_response_research_question
+* question
+ - utter_response_research_question_simple
+* technicaldesign
+ - utter_response_architecture
 ## GeneratedStory1
 
 * greet

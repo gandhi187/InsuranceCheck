@@ -392,3 +392,20 @@ class ResetProductSlot(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         return [SlotSet("product", None)]
+
+
+class ResponseInsult(Action):
+
+    def name(self) -> Text:
+
+        return "action_response_insult"
+
+    def run(self, dispatcher: CollectingDispatcher,
+
+            tracker: Tracker,
+
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        link = getRandomDogImage()
+        dispatcher.utter_message(text="Das war gemein :( Vll. heitert dich ja das auf :")
+        dispatcher.utter_message(image=link)
+        return []

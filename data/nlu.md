@@ -151,6 +151,10 @@
 - Wegen ?
 - Warum fragst du ?
 - ?
+- Wat ?
+- Hä ?
+- Check ich nicht 
+
 
 ## intent:product
 - [Auslandsreisekrankenversicherung Einmalig Gruppen](product)
@@ -185,6 +189,10 @@
 - [1987](age)
 - [1989](age)
 - [1977](age)
+- [1725](age)
+- [1825](age)
+- [1725](age)
+- [1988](age)
 
 ## intent:destination
 - Nach [Deutschland](destination)
@@ -526,11 +534,32 @@
 - Ich möchte den Zeitraum ändern
 
 
+## intent:provocate
+- Schon wieder ein Chatbot ?
+- Nicht schon wieder ein Chatbot
+- Es gibt doch schon Millionen von Chatbots
+
+## intent:researchquestion
+- Was ist deine Forschungsfrage ?
+- Masterarbeit
+- Was ist Inhalt deiner Masterarbeit ? 
+- Welche Forschungsfrage sollst du beantworten ? 
+
+## intent:technicaldesign
+- Wie bist du aufgebaut ? 
+- Technische Details
+- Wie funktionierst du ? 
+- Welche Technologien ? 
 
 
 
 ## intent:happy
 - Wow
+- Krass
+- Cool
+- Find ich gut
+- Heftig
+- Nice
 
 ## synonym:1
 - ersten
