@@ -57,6 +57,14 @@
     - action_moreInfo_buttons
     - action_reset_productslot
 
+## changeDestination
+* changeDestination
+- action_reset_destination
+
+## changeTravelDays
+* changeTravelDays
+- action_reset_travel_days
+
 ## happy
 * happy
  - utter_answer_happy

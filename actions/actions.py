@@ -58,8 +58,7 @@ class InsuranceCheck(FormAction):
         return {
             
             "travel_days": [
-            self.from_entity(entity="travel_days",intent = ["travel_days","travel_weeks","travel_months","travel_years"])
-
+                self.from_entity(entity="duration", intent="travel_days")
             ],
 
             "group":[
@@ -89,19 +88,22 @@ class InsuranceCheck(FormAction):
 
 
         destination = tracker.get_slot("destination")
-        print (tracker.latest_message['intent'].get('name'))
 
-        typeMessage = tracker.latest_message['intent'].get('name')
-        value = self.calculateDays(value,typeMessage)
-        print(value)
-        print(destination)
 
-        if int(value)<5:
-            dispatcher.utter_message("Bei " + str(value) +  " Tagen, wirst du wohl mit Hangepäck  nach " + destination + " reisen")
-            return {"travel_days" : value}
-        elif int(value)>5:
-            dispatcher.utter_message("Bei " + str(value) + " Tagen, wirst du wohl mit größerem Gepäck nach " + destination + " reisen")
-            return {"travel_days" : value}
+        unit = tracker.latest_message['entities'][0]['additional_info']['unit']
+        print(unit)
+        print (value)
+        oldValue = value
+        newValue = self.calculateDays(value,unit)
+        print ("new Value " + str(newValue))
+
+
+        if int(newValue)<5:
+            dispatcher.utter_message("Bei " + str(newValue) +  " Tagen , wirst du wohl mit Hangepäck  nach " + destination + " reisen")
+            return {"travel_days" : newValue}
+        elif int(newValue)>5:
+            dispatcher.utter_message("Bei " + str(newValue) + " Tagen, wirst du wohl mit größerem Gepäck nach " + destination + " reisen")
+            return {"travel_days" : newValue}
         else:
             return {"travel_days":None}
 
@@ -181,19 +183,19 @@ class InsuranceCheck(FormAction):
         return []   
 
     def calculateDays(self,value,formatType):
-        print ("calculate " + value + " format :" + formatType)
+        print ("calculate " + str(value) + " format :" + formatType)
         intValue = int(value)
-        if formatType == "travel_days":
+        if formatType == "day":
             print (value)
             return intValue
-        elif formatType == "travel_weeks":
+        elif formatType == "week":
             print ("travel_weeks")
             print (intValue*7)
             return intValue*7
-        elif formatType =="travel_months":
+        elif formatType =="month":
             print (intValue*30)
             return intValue*30
-        elif formatType == "travel_years":
+        elif formatType == "year":
             print (intValue*365)
             return intValue*365 
 

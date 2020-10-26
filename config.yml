@@ -23,7 +23,11 @@ pipeline:
                "suffix2", "upper", "title", "digit", "pattern"],
               ["low", "title", "upper"]
             ]
-    
+  - name: "DucklingHTTPExtractor"
+    url: "http://localhost:8000"
+    dimensions: ["duration", "travel_days"]
+    locale: "de_DE"
+    timezone: "Europe/Berlin"
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:

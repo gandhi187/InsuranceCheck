@@ -9,6 +9,7 @@ intents:
 - travel_days
 - travel_weeks
 - travel_years
+- days
 - travel_months
 - greet
 - kat
@@ -16,6 +17,7 @@ intents:
 - goodbye
 - deny
 - mood_great
+- number
 - mood_unhappy
 - bot_challenge
 - metoo
@@ -73,6 +75,7 @@ entities:
 - occasionDetails
 - travelWarning
 - travel_days
+- days
 - versichert
 - format
 - typeMessage
@@ -158,9 +161,9 @@ slots:
   travelWarning:
     type: unfeaturized
   travel_days:
-    type: float
-    max_value: 1.0
-    min_value: 0.0
+    type: unfeaturized
+  days:
+    type: unfeaturized
   typeMessage:
     type: unfeaturized
   versichert:

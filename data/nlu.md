@@ -213,8 +213,11 @@
 - indien
 - [Indien](destination)
 
-## intent:travel_days
+<!-- ## intent:travel_days
+- [einen](travel_days) Tage
 - [zwei](travel_days) Tage
+- [drei](travel_days) Tage
+- [vier](travel_days) Tage
 - [20](travel_days) Tage
 - [3](travel_days) Tage
 - [8](travel_days) Tage
@@ -227,6 +230,10 @@
 
 ## intent:travel_weeks
 - [eine](travel_days) Woche
+- [zwei](travel_days) Woche
+- [drei](travel_days) Woche
+- [vier](travel_days) Woche
+
 - [20](travel_days) Wochen
 - [3](travel_days) Wochen
 - [8](travel_days) Wochen
@@ -238,6 +245,17 @@
 - [1](travel_days) Woche
 - [6](travel_days) Wochen
 
+
+## intent:travel_years
+- [20](travel_days) Jahre
+- [3](travel_days) Jahre
+- [8](travel_days) Jahre
+- Ich vereise [10](travel_days) Jahre
+- [15](travel_days) Jahre
+- [4](travel_days) Jahre
+- [5](travel_days) Jahre
+- [48](travel_days) Jahre -->
+
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
 - [Auslandssemester](occasionDetails)
@@ -248,7 +266,11 @@
 - [Familie ](occasionDetails) besuchen
 - [Work and Travel](occasionDetails)
 
-## intent:travel_months
+<!-- ## intent:travel_months
+- [einen](travel_days) Monat
+- [zwei](travel_days) Monate
+- [drei](travel_days) Monate
+- [vier](travel_days) Monate
 - [20](travel_days) Monate
 - [3](travel_days) Monate
 - [8](travel_days) Monate
@@ -256,17 +278,8 @@
 - [15](travel_days) Monate
 - [4](travel_days) Monate
 - [5](travel_days) Monate
-- [48](travel_days) Monate
+- [48](travel_days) Monate -->
 
-## intent:travel_years
-- [20](travel_days) Jahre
-- [3](travel_days) Jahre
-- [8](travel_days) Jahre
-- Ich vereise [10](travel_days) Jahre
-- [15](travel_days) Jahre
-- [4](travel_days) Jahre
-- [5](travel_days) Jahre
-- [48](travel_days) Jahre
 
 ## intent:query_knowledge_base
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung Einmalig Gruppen](object_type) versichert ?
@@ -553,6 +566,17 @@
 
 
 
+## intent:travel_days
+- einen Monat
+- zwei Tage
+- vier Jahre
+- 1 Tag
+- 2 Tage
+- 3 Tage
+- vier Tage
+- 4 Wochen
+- drei Wochen
+
 ## intent:happy
 - Wow
 - Krass
@@ -566,11 +590,6 @@
 - eine
 - ein
 
-## synonym:2
-- zwei
-
-## synonym:3
-- drei
 
 ## synonym:LAST
 - letzten
