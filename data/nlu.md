@@ -153,8 +153,7 @@
 - ?
 - Wat ?
 - Hä ?
-- Check ich nicht 
-
+- Check ich nicht
 
 ## intent:product
 - [Auslandsreisekrankenversicherung Einmalig Gruppen](product)
@@ -191,8 +190,6 @@
 - [1977](age)
 - [1725](age)
 - [1825](age)
-- [1725](age)
-- [1988](age)
 
 ## intent:destination
 - Nach [Deutschland](destination)
@@ -213,49 +210,6 @@
 - indien
 - [Indien](destination)
 
-<!-- ## intent:travel_days
-- [einen](travel_days) Tage
-- [zwei](travel_days) Tage
-- [drei](travel_days) Tage
-- [vier](travel_days) Tage
-- [20](travel_days) Tage
-- [3](travel_days) Tage
-- [8](travel_days) Tage
-- Ich vereise [10](travel_days) Tage
-- [15](travel_days)
-- [4](travel_days) Tage
-- [5](travel_days)
-- [48](travel_days)
-- [5](travel_days) Tage
-
-## intent:travel_weeks
-- [eine](travel_days) Woche
-- [zwei](travel_days) Woche
-- [drei](travel_days) Woche
-- [vier](travel_days) Woche
-
-- [20](travel_days) Wochen
-- [3](travel_days) Wochen
-- [8](travel_days) Wochen
-- Ich vereise [10](travel_days) Wochen
-- [15](travel_days) Wochen
-- [4](travel_days) Wochen
-- [5](travel_days) Wochen
-- [48](travel_days) Wochen
-- [1](travel_days) Woche
-- [6](travel_days) Wochen
-
-
-## intent:travel_years
-- [20](travel_days) Jahre
-- [3](travel_days) Jahre
-- [8](travel_days) Jahre
-- Ich vereise [10](travel_days) Jahre
-- [15](travel_days) Jahre
-- [4](travel_days) Jahre
-- [5](travel_days) Jahre
-- [48](travel_days) Jahre -->
-
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
 - [Auslandssemester](occasionDetails)
@@ -265,21 +219,6 @@
 - [Freunde](occasionDetails) besuchen
 - [Familie ](occasionDetails) besuchen
 - [Work and Travel](occasionDetails)
-
-<!-- ## intent:travel_months
-- [einen](travel_days) Monat
-- [zwei](travel_days) Monate
-- [drei](travel_days) Monate
-- [vier](travel_days) Monate
-- [20](travel_days) Monate
-- [3](travel_days) Monate
-- [8](travel_days) Monate
-- Ich vereise [10](travel_days) Monate
-- [15](travel_days) Monate
-- [4](travel_days) Monate
-- [5](travel_days) Monate
-- [48](travel_days) Monate -->
-
 
 ## intent:query_knowledge_base
 - Welche Leistung ist in der [Auslandsreisekrankenversicherung Einmalig Gruppen](object_type) versichert ?
@@ -475,6 +414,8 @@
 - Fallzahlen ?
 - Corona Situation ?
 - corona situation
+- wie siehts mit corona dort aus ?
+- wie ist die lage in italien
 
 ## intent:dontKnow
 - Weiß ich nicht
@@ -546,7 +487,6 @@
 - Ich will doch wann anderst verreisen
 - Ich möchte den Zeitraum ändern
 
-
 ## intent:provocate
 - Schon wieder ein Chatbot ?
 - Nicht schon wieder ein Chatbot
@@ -555,16 +495,15 @@
 ## intent:researchquestion
 - Was ist deine Forschungsfrage ?
 - Masterarbeit
-- Was ist Inhalt deiner Masterarbeit ? 
-- Welche Forschungsfrage sollst du beantworten ? 
+- Was ist Inhalt deiner Masterarbeit ?
+- Welche Forschungsfrage sollst du beantworten ?
 
 ## intent:technicaldesign
-- Wie bist du aufgebaut ? 
+- Wie bist du aufgebaut ?
 - Technische Details
-- Wie funktionierst du ? 
-- Welche Technologien ? 
-
-
+- Wie funktionierst du ?
+- Welche Technologien ?
+- wie läuft das technisch
 
 ## intent:travel_days
 - einen Monat
@@ -590,7 +529,6 @@
 - eine
 - ein
 
-
 ## synonym:LAST
 - letzten
 
@@ -600,8 +538,8 @@
 ## synonym:versichert
 - Details
 
-## lookup:destination
+## lookup:country-list-clean.csv
   data/lookup/countrys/country-list-clean.csv
 
-## lookup:product
+## lookup:products.txt
   data/lookup/products.txt
