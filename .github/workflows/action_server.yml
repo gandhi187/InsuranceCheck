@@ -24,3 +24,18 @@ jobs:
         # More details about github context:
         # https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
         docker_image_tag: 'rasactio'
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          whoami
+          cd /etc/rasa
+          sudo docker-compose pull 
+          sudo docker-compose stop -t 1 app
+          sudo docker-compose build app
+          sudo docker-compose create app
+          sudo docker-compose start app
