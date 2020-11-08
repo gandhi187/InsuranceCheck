@@ -190,15 +190,19 @@
 - [1977](age)
 - [1725](age)
 - [1825](age)
-
-## intent:destination
 - Nach [Deutschland](destination)
 - Ich gehe nach [Mexiko](destination)
 - Ich fliege nach [Italien](destination)
 - Nach [Hong Kong](destination)
 - [Albanien](destination)
 - [Türkei](destination)
+- [burkina faso](destination)
+- [burundi](destination)
+- [canada](destination)
+- [chile](destination)
 - [Japan](destination)
+- nach [italien](destination)
+- [schweiz](destination )
 - [Mexiko](destination)
 - [Deutschland](destination)
 - [Spanien](destination)
@@ -209,6 +213,9 @@
 - Ich möchte nach [Spanien](destination) verreisen
 - indien
 - [Indien](destination)
+- [frankreich](destination)
+- [japan](destination)
+
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -538,8 +545,8 @@
 ## synonym:versichert
 - Details
 
-## lookup:country-list-clean.csv
-  data/lookup/countrys/country-list-clean.csv
+## lookup:destination
+  data/lookup/countrys/destination.csv
 
 ## lookup:products.txt
   data/lookup/products.txt

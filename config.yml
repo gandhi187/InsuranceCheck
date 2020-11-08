@@ -3,6 +3,7 @@
 language: de_trf_bertbasecased_lg
 pipeline:
   - name: WhitespaceTokenizer
+    case-sensetive: false
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
