@@ -121,6 +121,7 @@
 - Hi Dave, ja gerne.
 - Ja
 - Jap
+- los
 
 ## intent:ask_weather
 - Wie wird das Wetter ?
@@ -134,6 +135,7 @@
 - niemals
 - nein
 - ne
+- /deny
 
 ## intent:out_of_scope
 - warte
@@ -143,6 +145,7 @@
 - geht dich nichts an
 - Stuttgart
 - Wie viel kostet ein Flug nach Indien?
+- wie gehts dir ?
 
 ## intent:question
 - Warum ?
@@ -215,7 +218,6 @@
 - [Indien](destination)
 - [frankreich](destination)
 - [japan](destination)
-
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -462,6 +464,8 @@
 - Fk
 - Bist du doof hab ich gefragt?
 - bitch
+- katharina ist doof
+- du arschloch
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -522,6 +526,7 @@
 - vier Tage
 - 4 Wochen
 - drei Wochen
+- fünf Monate
 
 ## intent:happy
 - Wow
@@ -530,6 +535,9 @@
 - Find ich gut
 - Heftig
 - Nice
+
+## intent:destination
+- Dubai
 
 ## synonym:1
 - ersten
@@ -545,7 +553,7 @@
 ## synonym:versichert
 - Details
 
-## lookup:destination
+## lookup:destination.csv
   data/lookup/countrys/destination.csv
 
 ## lookup:products.txt

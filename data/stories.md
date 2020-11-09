@@ -11,7 +11,6 @@
   - form{"name": null}
   - action_fetch_continent
 
-
 ## check_stop
 > check_affirm
 * out_of_scope   
@@ -81,3 +80,78 @@
  - utter_response_research_question_simple
 * technicaldesign
  - utter_response_architecture
+
+## New Story
+
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* question
+    - utter_explain_whyDestination
+    - insurance_check
+    - slot{"requested_slot":"destination"}
+* inform{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - insurance_check
+    - slot{"destination":"Indien"}
+    - slot{"requested_slot":"travel_days"}
+* question
+    - slot{"destination":"Indien"}
+    - utter_explain_whyTravelDays
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+* travel_days{"duration":2}
+    - insurance_check
+    - slot{"travel_days":14}
+    - slot{"requested_slot":"luggage"}
+* question
+    - slot{"destination":"Indien"}
+    - utter_explain_whyBaggeLoss
+    - insurance_check
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"luggage":"mittel"}
+    - slot{"requested_slot":"financeLoss"}
+* question
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - utter_explain_whyFinanceLoss
+    - insurance_check
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - insurance_check
+    - slot{"financeLoss":"mittel"}
+    - slot{"requested_slot":"moreTravel"}
+* question
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - utter_explain_whyMoreTravel
+    - insurance_check
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* question
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - utter_explain_whyAge
+    - insurance_check
+    - slot{"requested_slot":"age"}
+* inform{"age":"1989"}
+    - slot{"age":"1989"}
+    - slot{"age":"1989"}
+    - insurance_check
+    - slot{"age":31}
+    - slot{"requested_slot":"group"}
+ 	- insurance_check
+	- form{"name": "insurance_check"}
