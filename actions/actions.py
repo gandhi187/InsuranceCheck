@@ -229,14 +229,14 @@ class FetchCoronaAction(Action):
         destination = tracker.get_slot("destination")
         #countryCode = FindCountryCode(destination)
         data = getCoronaInformation(destination)
-        activeCases = data['countrydata'][0]['total_active_cases']
-        seriousCases = data['countrydata'][0]['total_serious_cases']
-        totalCases = activeCases+seriousCases
-        dangerRank = data['countrydata'][0]['total_danger_rank']
+        activeCases = data['active']
+        deaths = data['deaths']
+        #deaths = data['countrydata'][0]['total_serious_cases']
+        #dangerRank = data['countrydata'][0]['total_danger_rank']
         
-        dispatcher.utter_message("In " + destination + " gibt es derzeit " + str(totalCases) + " aktive Corona Fälle. \n Das Land befindet sich auf Rang " + str(dangerRank) + " auf der Weltrangliste." )
+        dispatcher.utter_message("In " + destination + " gibt es derzeit " + str(activeCases) + " aktive Corona Fälle. \n Seit Ausbruch gab es " + str(deaths) + " Todesfälle." )
 
-        return [SlotSet("coronaCases",totalCases)]
+        return [SlotSet("coronaCases",activeCases)]
 
 class FetchTravelWarning(Action):
     def name (self):

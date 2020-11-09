@@ -53,7 +53,7 @@ def GetContinentFromCountry(country_code):
 def getCoronaInformation(country):
 
     countryCode = FindCountryCode(country)
-    resp = requests.get('https://api.thevirustracker.com/free-api?countryTotal='+countryCode)
+    resp = requests.get('https://disease.sh/v3/covid-19/countries/'+countryCode)
     if resp.status_code != 200:
     # This means something went wrong.
         raise ApiError('GET /tasks/ {}'.format(resp.status_code))
@@ -94,5 +94,3 @@ def getRandomDogImage():
 wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
 
-#print(getJsonData())
-print(getRandomDogImage())
