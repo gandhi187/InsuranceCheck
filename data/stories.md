@@ -153,5 +153,32 @@
     - insurance_check
     - slot{"age":31}
     - slot{"requested_slot":"group"}
- 	- insurance_check
-	- form{"name": "insurance_check"}
+  	- insurance_check
+  	- form{"name": "insurance_check"}
+
+## interactive_story_1
+* affirm
+    - insurance_check
+    - form{"name": "insurance_check"}
+    - slot{"requested_slot": "destination"}
+* question
+    - utter_explain_whyDestination
+    - insurance_check
+    - slot{"requested_slot": "destination"}
+* form: inform{"destination": "Türkei"}
+    - slot{"destination": "Türkei"}
+    - form: insurance_check
+    - slot{"destination": "Türkei"}
+    - slot{"requested_slot": "travel_days"}
+* question
+    - utter_explain_whyTravelDays
+    - insurance_check
+    - slot{"requested_slot": "travel_days"}
+* form: travel_days{"duration": 3}
+    - form: insurance_check
+    - slot{"travel_days": 3}
+    - slot{"requested_slot": "luggage"}
+* question
+    - utter_explain_whyBaggeLoss
+    - insurance_check
+    - slot{"requested_slot": "luggage"}

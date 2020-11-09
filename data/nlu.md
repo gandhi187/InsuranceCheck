@@ -157,6 +157,7 @@
 - Wat ?
 - Hä ?
 - Check ich nicht
+- warum ?
 
 ## intent:product
 - [Auslandsreisekrankenversicherung Einmalig Gruppen](product)
@@ -218,6 +219,7 @@
 - [Indien](destination)
 - [frankreich](destination)
 - [japan](destination)
+- [Türkei](destination)
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -527,6 +529,7 @@
 - 4 Wochen
 - drei Wochen
 - fünf Monate
+- drei Tage
 
 ## intent:happy
 - Wow

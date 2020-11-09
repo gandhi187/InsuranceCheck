@@ -1,12 +1,94 @@
-session_config:
-  session_expiration_time: 0
-  carry_over_slots_to_new_session: true
-intents:
-- dontKnow
-- affirm
-- inform
+actions:
+- action_fetch_continent
+- action_fetch_corona
+- action_fetch_travel_warning
+- action_moreInfo_buttons
+- action_query_knowledge_base
+- action_reset_destination
+- action_reset_productslot
+- action_reset_travel_days
+- action_response_insult
+- action_restart_bot
+- utter_answerDestination_insideEurope
+- utter_answerDestination_outsideEurope
+- utter_ask_age
+- utter_ask_baggage
+- utter_ask_continent
+- utter_ask_continue
+- utter_ask_destination
+- utter_ask_familyStatus
+- utter_ask_financeLoss
+- utter_ask_group
+- utter_ask_luggage
+- utter_ask_restart
+- utter_ask_travel_days
+- utter_explain_age
+- utter_explain_whyAge
+- utter_explain_whyBaggeLoss
+- utter_explain_whyDestination
+- utter_explain_whyFinanceLoss
+- utter_explain_whyGroup
+- utter_explain_whyMoreTravel
+- utter_explain_whyTravelDays
+- utter_goodbye
+- utter_greet
+- utter_noInsuranceCover
+- utter_respond_insult
+- utter_respond_love
+- utter_response_architecture
+- utter_response_provocate
+- utter_response_provocate2
+- utter_response_research_question
+- utter_slot_values
+- utter_tooYoung
+- utter_whats_covered
+entities:
+- 5 Sterne Schutz Einmalig Einzelnd
+- 5 Sterne Schutz Einmalig Jahres
+- 5 Sterne Schutz Gruppe Einzel
+- 5 Sterne Schutz Gruppe Jahres
+- Auslandsreisekrankenversicherung Einmalig Einzeln
+- Auslandsreisekrankenversicherung Einmalig Gruppen
+- Auslandsreisekrankenversicherung Jahres Einzeln
+- Auslandsreisekrankenversicherung Jahres Gruppen
+- Auslandsversicherung ab 35 Jahre
+- Auslandsversicherung bis 35 Jahre Deluxe
+- Auslandsversicherung für  bis 35 Jahre
+- Reisegepäckversicherung Einmalig Einzeln
+- Reisegepäckversicherung Einmalig Gruppen
+- Reiserücktritt Einmalig Einzeln
+- Reiserücktritt Einmalig Gruppen
+- Reiserücktritt Jahres Einzeln
+- Reiserücktritt Jahres Gruppen
+- age
+- attribute
+- continent
+- days
 - destination
+- familyStatus
+- financeLoss
+- format
+- group
+- luggage
+- mention
+- moreTravel
+- object_type
+- occasion
+- occasionDetails
+- product
+- travelWarning
 - travel_days
+- typeMessage
+- versichert
+forms:
+- insurance_check
+intents:
+- travel_days
+- affirm
+- question
+- inform
+- dontKnow
+- destination
 - travel_weeks
 - travel_years
 - days
@@ -22,7 +104,6 @@ intents:
 - bot_challenge
 - metoo
 - greet_user
-- question
 - out_of_scope
 - changeDestination
 - weather
@@ -41,44 +122,185 @@ intents:
 - product
 - changeTravelDays
 - happy
-entities:
-- Auslandsreisekrankenversicherung Einmalig Gruppen
-- Auslandsreisekrankenversicherung Einmalig Einzeln
-- Auslandsreisekrankenversicherung Jahres Gruppen
-- Auslandsreisekrankenversicherung Jahres Einzeln
-- Reisegepäckversicherung Einmalig Gruppen
-- Reisegepäckversicherung Einmalig Einzeln
-- Reiserücktritt Einmalig Gruppen
-- Reiserücktritt Einmalig Einzeln
-- Reiserücktritt Jahres Gruppen
-- Reiserücktritt Jahres Einzeln
-- 5 Sterne Schutz Einmalig Einzelnd
-- 5 Sterne Schutz Gruppe Jahres
-- 5 Sterne Schutz Gruppe Einzel
-- 5 Sterne Schutz Einmalig Jahres
-- Auslandsversicherung für  bis 35 Jahre
-- Auslandsversicherung bis 35 Jahre Deluxe
-- Auslandsversicherung ab 35 Jahre
-- product
-- age
-- attribute
-- continent
-- destination
-- familyStatus
-- financeLoss
-- luggage
-- mention
-- moreTravel
-- group
-- object_type
-- occasion
-- occasionDetails
-- travelWarning
-- travel_days
-- days
-- versichert
-- format
-- typeMessage
+responses:
+  utter_answerDestination_insideEurope:
+  - text: -{destination} liegt innerhalb Europas
+  utter_answerDestination_outsideEurope:
+  - text: -{destination} liegt außerhalb Europas
+  utter_answer_happy:
+  - text: Ich bin genauso begeistert wie du :)
+  utter_answer_outofscope:
+  - text: Das kann ich dir leider (noch) nicht beantworten. Bitte entschuldige.
+  utter_ask_age:
+  - text: In welchem Jahr bist du geboren ?
+  utter_ask_baggage:
+  - text: Wie hoch schätzt du den Wert deines Gepäcks ein ?
+  utter_ask_continent:
+  - buttons:
+    - payload: /inform{"continent":"Nordamerika"}'
+      title: Nordamerika
+    - payload: '/inform{"continent": "Südamerika"}'
+      title: Südamerika
+    - payload: '/inform{"continent": "Asien"}'
+      title: Asien
+    - payload: '/inform{"continent": "Australien"}'
+      title: Australien
+    - payload: '/inform{"continent": "Afrika"}'
+      title: Afrika
+    - payload: '/inform{"continent": "Europa"}'
+      title: Europa
+    text: Schade, weißt du denn ansonsten auf welchen Kontinent ?
+  utter_ask_continue:
+  - text: Möchtest du den Versicherungscheck fortführen ?
+  utter_ask_destination:
+  - text: In welches Land möchtest du vereisen ?
+  utter_ask_familyStatus:
+  - buttons:
+    - payload: /inform{"familyStatus":"Single"}
+      title: Single
+    - payload: '/inform{"familyStatus": "Paar"}'
+      title: Paar
+    - payload: '/inform{"familyStatus": "Verheiratet"}'
+      title: Verheiratet
+    text: 'Familienstatus ? '
+  utter_ask_financeLoss:
+  - buttons:
+    - payload: /inform{"financeLoss":"niedrig"}
+      title: Nicht schlimm
+    - payload: '/inform{"financeLoss": "mittel"}'
+      title: Mäßig schlimm
+    - payload: '/inform{"financeLoss": "hoch"}'
+      title: Sehr schlimm
+    text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nichtantritt deiner
+      Reise in dein Reiseland:   {destination} ? '
+  utter_ask_group:
+  - buttons:
+    - payload: /affirm
+      title: Ja
+    - payload: /deny
+      title: Nein
+    text: Möchtest deinen Lebenspartner oder Kinder unter 25 mitversichern ?
+  utter_ask_luggage:
+  - buttons:
+    - payload: /inform{"luggage":"niedrig"}
+      title: Nicht schlimm
+    - payload: '/inform{"luggage": "mittel"}'
+      title: Mäßig schlimm
+    - payload: '/inform{"luggage": "hoch"}'
+      title: Sehr schlimm
+    text: 'Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ? '
+  utter_ask_moreTravel:
+  - buttons:
+    - payload: /affirm
+      title: Ja
+    - payload: /deny
+      title: Nein
+    text: Wirst du dieses Jahr noch öfters verreisen ?
+  utter_ask_occasion:
+  - buttons:
+    - payload: /affirm
+      title: Ja
+    - payload: /deny
+      title: Nein
+    text: Verreist du geschäftlich ?
+  utter_ask_occasionDetails:
+  - text: Was ist der Zweck deiner Reise ?
+  utter_ask_rephrase:
+  - text: Das habe ich leider nicht verstanden. Kannst du bitte deine Frage wiederholen?
+  - text: Kannst du bitte deine Frage wiederholen ?
+  utter_ask_restart:
+  - buttons:
+    - payload: /affirm
+      title: Ja
+    text: Willst du neustarten ?
+  utter_ask_travel_days:
+  - text: Wie lange wirst du verreisen ?
+  utter_begin:
+  - text: Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können.
+      ⛱  **Möchtest du beginnen ?**
+  utter_default:
+  - text: Leider habe ich dich nicht verstanden. Bitte versuche es erneut
+  utter_explain_age:
+  - text: Da wir auch spezielle Tarife für Studenten anbieten, benötige ich dein Geburtsjahr
+  utter_explain_whatspossible:
+  - text: Ich kann dich über **Reiseversicherungen** beraten. \n Ich befinde mich
+      jedoch noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen
+      ! 😀
+  utter_explain_whyAge:
+  - text: Es gibt spezielle Tarife für Studenten und Personen unter 35 :)
+  utter_explain_whyBaggeLoss:
+  - text: Für den Fall dass dein Gepäck auf deiner Reise aufgrund der versicherten
+      Gründe beschädigt wird, gibt es die Möglichkeit eine Reisegepäckversicherung
+      abzuschließen
+  utter_explain_whyDestination:
+  - text: Dein Reiseziel hat Auswirkungen auf meine Tarifempfehlungen. Zudem kann
+      ich dir Informationen (Corona Fallzahlen oder Reisewarnungen) zum jeweiligen
+      Zielland liefern.
+  utter_explain_whyFinanceLoss:
+  - text: Falls du plötzlich krank wirst oder aus anderen versicherten Gründen nicht
+      verreisen kannst, gibt es die Möglichkeit eine Reiserücktrittsversicherung abzuschließen
+  utter_explain_whyGroup:
+  - text: Falls du mit deinem Lebenspartner/in und Kindern untetr 25 verreisen möchtest,
+      gibt es die Möglichkeit diese in die Versicherung miteinzuschließen
+  utter_explain_whyMoreTravel:
+  - text: Für den Fall, dass du dieses Jahr öfter verreisen möchte, bieten wir dir
+      spezielle Jahrestarife an
+  utter_explain_whyTravelDays:
+  - text: Ich benötige deine Reisedauer, um dich optimal beraten zu können.
+  utter_finished_check:
+  - text: Du kannst mir gerne noch weitere Fragen stellen.
+  utter_goodbye:
+  - text: Tschüssiii
+  - text: Ciao
+  - text: Auf Wiedersehen
+  - text: Wiedersehen macht Freude !
+  utter_greet:
+  - text: Moin, ich bin Dave dein persönlicher Reiseberater. Ich werde dir nun ein
+      paar Fragen stellen. Möchtest du beginnen ?
+  utter_noInsuranceCover:
+  - text: Leider bieten wir keinen Versicherungsschutz für eine Reise in dein Zielgebiet
+      an.
+  utter_respond_insult:
+  - text: Das war aber gemein.
+  utter_respond_love:
+  - text: Ich liebe alle meine Nutzer !
+  - text: Es gibt nichts Schöneres als geliebt zu werden, geliebt um seiner selbst
+      willen oder vielmehr trotz seiner selbst.
+  - text: Was du liebst, lass frei. Kommt es zurück, gehört es dir - für immer.
+  - text: Nicht die Vollkommenen, sondern die Unvollkommenen brauchen unsere Liebe.
+  utter_response_architecture:
+  - image: https://i.imgur.com/yMzWxRR.png
+    text: Das ist meine DNA
+  utter_response_provocate:
+  - text: Conversational AI - bitte :) Meine Wurzeln reichen zurück bist ins Jahr
+      1966 !
+  utter_response_provocate2:
+  - text: Das Startup Lemonade wickelt übrigends knapp 1/3 aller Schadenfälle über
+      einen Chatbot ab (Rekord bei 3 Sekunden)  !
+  utter_response_research_question:
+  - text: Wie lässt sich eine technische Implementierung umsetzen, um mittels einer
+      Conversational AI  Marktdynamiken sowie Trends im Versicherungsumfeld flexibel
+      zu anzipieren
+  utter_response_research_question_simple:
+  - text: Durch mich sollen Unternehmen neue Kundenanforderungen/Trends erkennen und
+      diese durch meine flexible Architektur (CI) schnell implementieren können (Corona
+      Infos etc.). Mein größter Konkurrent ist dabei der Fragebogen.
+  utter_slot_values:
+  - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days},
+      Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage}, Reiserücktritt {financeLoss}
+  utter_tooYoung:
+  - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
+      bei deinen Eltern an.
+  utter_whats_covered:
+  - buttons:
+    - payload: Versicherte Leistungen in  {product} ?
+      title: Was ist versichert ?
+    - payload: Corona Situation in meinem Land
+      title: Corona Situation
+    text: Auswahl
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 0
 slots:
   5 Sterne Schutz Einmalig Einzelnd:
     type: unfeaturized
@@ -117,14 +339,16 @@ slots:
   Reiserücktritt Jahres Gruppen:
     type: unfeaturized
   age:
-    type: float
     max_value: 1.0
     min_value: 0.0
+    type: float
   attribute:
     type: unfeaturized
   continent:
     type: unfeaturized
   coronaCases:
+    type: unfeaturized
+  days:
     type: unfeaturized
   destination:
     type: unfeaturized
@@ -162,233 +386,7 @@ slots:
     type: unfeaturized
   travel_days:
     type: unfeaturized
-  days:
-    type: unfeaturized
   typeMessage:
     type: unfeaturized
   versichert:
     type: unfeaturized
-responses:
-  utter_answerDestination_insideEurope:
-  - text: -{destination} liegt innerhalb Europas
-  utter_answerDestination_outsideEurope:
-  - text: -{destination} liegt außerhalb Europas
-  utter_ask_age:
-  - text: In welchem Jahr bist du geboren ?
-  utter_ask_baggage:
-  - text: Wie hoch schätzt du den Wert deines Gepäcks ein ?
-  utter_ask_continent:
-  - buttons:
-    - payload: /inform{"continent":"Nordamerika"}'
-      title: Nordamerika
-    - payload: '/inform{"continent": "Südamerika"}'
-      title: Südamerika
-    - payload: '/inform{"continent": "Asien"}'
-      title: Asien
-    - payload: '/inform{"continent": "Australien"}'
-      title: Australien
-    - payload: '/inform{"continent": "Afrika"}'
-      title: Afrika
-    - payload: '/inform{"continent": "Europa"}'
-      title: Europa
-    text: Schade, weißt du denn ansonsten auf welchen Kontinent ?
-  utter_ask_restart:
-  - buttons:
-    - payload: /affirm
-      title: Ja
-    text: Willst du neustarten ?
-  utter_ask_continue:
-  - text: Möchtest du den Versicherungscheck fortführen ?
-  utter_ask_destination:
-  - text: In welches Land möchtest du vereisen ?
-  utter_ask_occasionDetails:
-  - text: Was ist der Zweck deiner Reise ?
-  utter_noInsuranceCover:
-  - text: Leider bieten wir keinen Versicherungsschutz für eine Reise in dein Zielgebiet
-      an.
-  utter_ask_familyStatus:
-  - buttons:
-    - payload: /inform{"familyStatus":"Single"}
-      title: Single
-    - payload: '/inform{"familyStatus": "Paar"}'
-      title: Paar
-    - payload: '/inform{"familyStatus": "Verheiratet"}'
-      title: Verheiratet
-    text: 'Familienstatus ? '
-  utter_ask_financeLoss:
-  - buttons:
-    - payload: /inform{"financeLoss":"niedrig"}
-      title: Nicht schlimm
-    - payload: '/inform{"financeLoss": "mittel"}'
-      title: Mäßig schlimm
-    - payload: '/inform{"financeLoss": "hoch"}'
-      title: Sehr schlimm
-    text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nichtantritt deiner
-      Reise in dein Reiseland:   {destination} ? '
-  utter_whats_covered:
-  - buttons:
-    - payload: Versicherte Leistungen in  {product} ?
-      title: Was ist versichert ?
-    - payload: Corona Situation in meinem Land
-      title: Corona Situation
-    text: Auswahl
-  utter_ask_group:
-  - buttons:
-    - payload: /affirm
-      title: Ja
-    - payload: /deny
-      title: Nein
-    text: Möchtest deinen Lebenspartner oder Kinder unter 25 mitversichern ?
-  utter_ask_luggage:
-  - buttons:
-    - payload: /inform{"luggage":"niedrig"}
-      title: Nicht schlimm
-    - payload: '/inform{"luggage": "mittel"}'
-      title: Mäßig schlimm
-    - payload: '/inform{"luggage": "hoch"}'
-      title: Sehr schlimm
-    text: 'Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ? '
-  utter_ask_moreTravel:
-  - buttons:
-    - payload: /affirm
-      title: Ja
-    - payload: /deny
-      title: Nein
-    text: Wirst du dieses Jahr noch öfters verreisen ?
-  utter_ask_occasion:
-  - buttons:
-    - payload: /affirm
-      title: Ja
-    - payload: /deny
-      title: Nein
-    text: Verreist du geschäftlich ?
-  utter_ask_rephrase:
-  - text: Das habe ich leider nicht verstanden. Kannst du bitte deine Frage wiederholen?
-  - text: Kannst du bitte deine Frage wiederholen ?
-  utter_default:
-  - text: Leider habe ich dich nicht verstanden. Bitte versuche es erneut
-  utter_ask_travel_days:
-  - text: Wie lange wirst du verreisen ?
-  utter_explain_age:
-  - text: Da wir auch spezielle Tarife für Studenten anbieten, benötige ich dein Geburtsjahr
-  utter_explain_whatspossible:
-  - text: Ich kann dich über **Reiseversicherungen** beraten. \n Ich befinde mich
-      jedoch noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen
-      ! 😀
-  utter_explain_whyDestination:
-  - text: Dein Reiseziel hat Auswirkungen auf meine Tarifempfehlungen. Zudem kann
-      ich dir Informationen (Corona Fallzahlen oder Reisewarnungen) zum jeweiligen
-      Zielland liefern.
-  utter_explain_whyTravelDays:
-  - text: Ich benötige deine Reisedauer, um dich optimal beraten zu können.
-  utter_explain_whyMoreTravel:
-  - text: Für den Fall, dass du dieses Jahr öfter verreisen möchte, bieten wir dir
-      spezielle Jahrestarife an
-  utter_explain_whyFinanceLoss:
-  - text: Falls du plötzlich krank wirst oder aus anderen versicherten Gründen nicht
-      verreisen kannst, gibt es die Möglichkeit eine Reiserücktrittsversicherung abzuschließen
-  utter_explain_whyBaggeLoss:
-  - text: Für den Fall dass dein Gepäck auf deiner Reise aufgrund der versicherten
-      Gründe beschädigt wird, gibt es die Möglichkeit eine Reisegepäckversicherung
-      abzuschließen
-  utter_explain_whyGroup:
-  - text: Falls du mit deinem Lebenspartner/in und Kindern untetr 25 verreisen möchtest,
-      gibt es die Möglichkeit diese in die Versicherung miteinzuschließen
-  utter_explain_whyAge:
-  - text: Es gibt spezielle Tarife für Studenten und Personen unter 35 :)
-  utter_goodbye:
-  - text: Tschüssiii
-  - text: Ciao
-  - text: Auf Wiedersehen
-  - text: Wiedersehen macht Freude !
-  utter_greet:
-  - text: Moin, ich bin Dave dein persönlicher Reiseberater. Ich werde dir nun ein
-      paar Fragen stellen. Möchtest du beginnen ?
-  utter_begin:
-  - text: Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können.
-      ⛱  **Möchtest du beginnen ?**
-  utter_respond_insult:
-  - text: Das war aber gemein.
-  utter_finished_check:
-  - text: Du kannst mir gerne noch weitere Fragen stellen.
-  utter_respond_love:
-  - text: Ich liebe alle meine Nutzer !
-  - text: Es gibt nichts Schöneres als geliebt zu werden, geliebt um seiner selbst
-      willen oder vielmehr trotz seiner selbst.
-  - text: Was du liebst, lass frei. Kommt es zurück, gehört es dir - für immer.
-  - text: Nicht die Vollkommenen, sondern die Unvollkommenen brauchen unsere Liebe.
-  utter_slot_values:
-  - text: Du möchtest nach {destination} in {continent} verreisen. Tage - {travel_days},
-      Weitere Reisen ? {moreTravel}, Gepäckverlust {luggage}, Reiserücktritt {financeLoss}
-  utter_tooYoung:
-  - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
-      bei deinen Eltern an.
- 
-  utter_answer_happy:
-  - text: Ich bin genauso begeistert wie du :)
-
-  utter_answer_outofscope:
-  - text: Das kann ich dir leider (noch) nicht beantworten. Bitte entschuldige.
-
-  utter_response_provocate:
-  - text: Conversational AI - bitte :) Meine Wurzeln reichen zurück bist ins Jahr 1966 ! 
-  
-  utter_response_provocate2:
-  - text: Das Startup Lemonade wickelt übrigends knapp 1/3 aller Schadenfälle über einen Chatbot ab (Rekord bei 3 Sekunden)  !
-
-  utter_response_research_question:
-  - text: Wie lässt sich eine technische Implementierung umsetzen, um mittels einer Conversational AI  Marktdynamiken sowie Trends im Versicherungsumfeld flexibel zu anzipieren
-
-  utter_response_research_question_simple:
-  - text: Durch mich sollen Unternehmen neue Kundenanforderungen/Trends erkennen und diese durch meine flexible Architektur (CI) schnell implementieren können (Corona Infos etc.). Mein größter Konkurrent ist dabei der Fragebogen.
-
-  utter_response_architecture:
-  - text: Das ist meine DNA
-    image: "https://i.imgur.com/yMzWxRR.png"
-
-actions:
-- utter_response_provocate2
-- utter_response_provocate
-- utter_response_research_question
-- utter_response_architecture
-- action_reset_travel_days
-- action_fetch_continent
-- action_fetch_corona
-- action_fetch_travel_warning
-- action_reset_productslot
-- action_response_insult
-- action_query_knowledge_base
-- utter_answerDestination_insideEurope
-- action_reset_destination
-- utter_answerDestination_outsideEurope
-- utter_ask_age
-- utter_ask_baggage
-- action_moreInfo_buttons
-- utter_ask_continent
-- utter_ask_continue
-- utter_ask_destination
-- utter_ask_familyStatus
-- utter_ask_financeLoss
-- utter_ask_luggage
-- utter_ask_travel_days
-- utter_explain_age
-- utter_whats_covered
-- utter_explain_whyDestination
-- utter_explain_whyTravelDays
-- utter_explain_whyFinanceLoss
-- utter_explain_whyMoreTravel
-- utter_explain_whyBaggeLoss
-- utter_explain_whyGroup
-- utter_explain_whyAge
-- utter_goodbye
-- utter_greet
-- utter_respond_insult
-- utter_respond_love
-- utter_slot_values
-- utter_tooYoung
-- utter_noInsuranceCover
-- utter_ask_group
-- utter_ask_restart
-- action_restart_bot
-forms:
-- insurance_check

@@ -204,7 +204,7 @@ class InsuranceCheck(FormAction):
 
 
     def tag_convo(self,tracker: Tracker, label: Text) -> None:
-        endpoint = f"https://dave-chatbot.de/api/conversations/{tracker.sender_id}/tags"
+        endpoint = f"https://admin.dave-chatbot.de/api/conversations/{tracker.sender_id}/tags"
         requests.post(url=endpoint, data=label)
         return
 

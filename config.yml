@@ -25,7 +25,7 @@ pipeline:
               ["low", "title", "upper"]
             ]
   - name: "DucklingHTTPExtractor"
-    url: "http://localhost:8000"
+    url: "http://34.107.51.226:8000"
     dimensions: ["duration", "travel_days"]
     locale: "de_DE"
     timezone: "Europe/Berlin"
