@@ -100,6 +100,5 @@ def getWeather(country):
     return temperature
 
 
-wb = openpyxl.load_workbook("wiki_countrys.xlsx")
+wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
-print(getWeather("Mexiko"))
