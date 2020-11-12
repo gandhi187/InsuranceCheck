@@ -434,4 +434,4 @@ class customAction(Action):
             dispatcher.utter_message(
             text=" Die Temperatur beträgt " + str(temperature) + " in deinem Reiseland " + destination)
 
-        return []
+            return []
