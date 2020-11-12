@@ -431,9 +431,9 @@ class WeatherUpdate(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             destination = tracker.get_slot('destination')
             # Hier die API-Abfrage
-            temperature = getWeather(destination)
+            weather = getWeather (destination)
             # Hier die Antwort
             dispatcher.utter_message(
-            text=   " Die Temperatur beträgt " + str(temperature) + " in deinem Reiseland " + destination)
+            text= " Die Temperatur beträgt " + str(temperature) + " in deinem Reiseland " + destination)
 
             return []
