@@ -90,8 +90,7 @@ def getTravelWarning(country):
     return data
 
 
-def getActualWeatherInformation(country):
-   
+def getWeather(country):
     resp = requests.get('http://api.openweathermap.org/data/2.5/weather?q=' + country + '&APPID=b712235f9081bcad992862190928df22&units=metric')
     if resp.status_code != 200:
     # This means something went wrong.
@@ -99,8 +98,8 @@ def getActualWeatherInformation(country):
     data =  resp.json()
     temperature = data["main"]["temp"]
     return temperature
-   
 
 
-wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
+wb = openpyxl.load_workbook("wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
+print(getWeather("Mexiko"))
