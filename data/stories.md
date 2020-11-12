@@ -182,3 +182,8 @@
 ## corona
 * corona 
  - action_fetch_corona
+
+
+## weather
+* ask_weather
+ - action_response_weather

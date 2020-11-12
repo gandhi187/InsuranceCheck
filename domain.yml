@@ -350,6 +350,7 @@ responses:
       title: Corona Situation
     text: Auswahl
 actions:
+- action_response_weather
 - action_fetch_continent
 - action_fetch_corona
 - action_fetch_travel_warning

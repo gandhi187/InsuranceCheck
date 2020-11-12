@@ -50,6 +50,26 @@ def GetContinentFromCountry(country_code):
     return continent
 
 
+def getJsonData():
+
+    resp = requests.get('https://api.npoint.io/6b1f7a75909bda025ff9')
+    if resp.status_code != 200:
+    # This means something went wrong.
+        raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+    data =  resp.json()
+    data = json.dumps(data)
+    return data
+
+    
+def getRandomDogImage():
+    resp = requests.get('https://some-random-api.ml/img/dog')
+    if resp.status_code != 200:
+    # This means something went wrong.
+        raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+    data =  resp.json()
+    link = data["link"]
+    return link
+
 def getCoronaInformation(country):
 
     countryCode = FindCountryCode(country)
@@ -69,28 +89,18 @@ def getTravelWarning(country):
     data =  resp.json()
     return data
 
-def getJsonData():
 
-    resp = requests.get('https://api.npoint.io/6b1f7a75909bda025ff9')
+def getActualWeatherInformation(country):
+   
+    resp = requests.get('http://api.openweathermap.org/data/2.5/weather?q=' + country + '&APPID=b712235f9081bcad992862190928df22&units=metric')
     if resp.status_code != 200:
     # This means something went wrong.
         raise ApiError('GET /tasks/ {}'.format(resp.status_code))
     data =  resp.json()
-    data = json.dumps(data)
-    return data
-
-def getRandomDogImage():
-    resp = requests.get('https://some-random-api.ml/img/dog')
-    if resp.status_code != 200:
-    # This means something went wrong.
-        raise ApiError('GET /tasks/ {}'.format(resp.status_code))
-    data =  resp.json()
-    link = data["link"]
-    print(link)
-    return link
+    temperature = data["main"]["temp"]
+    return temperature
    
 
 
 wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
-
