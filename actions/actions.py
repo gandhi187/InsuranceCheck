@@ -432,6 +432,6 @@ class customAction(Action):
             destination = tracker.get_slot('destination')
             temperature = getActualWeatherInformation(destination)
             dispatcher.utter_message(
-            text=" Die Temperatur beträgt " + temperature + " in deinem Reiseland " + destination)
+            text=" Die Temperatur beträgt " + str(temperature) + " in deinem Reiseland " + destination)
 
         return []
