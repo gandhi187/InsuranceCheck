@@ -47,10 +47,6 @@
 * travelWarning
  - action_fetch_travel_warning
 
-## corona
-* corona 
- - action_fetch_corona
-
 ## Kath
 * product
     - action_moreInfo_buttons
@@ -182,3 +178,7 @@
     - utter_explain_whyBaggeLoss
     - insurance_check
     - slot{"requested_slot": "luggage"}
+
+## corona
+* corona 
+ - action_fetch_corona

@@ -1,87 +1,6 @@
-actions:
-- action_fetch_continent
-- action_fetch_corona
-- action_fetch_travel_warning
-- action_moreInfo_buttons
-- action_query_knowledge_base
-- action_reset_destination
-- action_reset_productslot
-- action_reset_travel_days
-- action_response_insult
-- action_restart_bot
-- utter_answerDestination_insideEurope
-- utter_answerDestination_outsideEurope
-- utter_ask_age
-- utter_ask_baggage
-- utter_ask_continent
-- utter_ask_continue
-- utter_ask_destination
-- utter_ask_familyStatus
-- utter_ask_financeLoss
-- utter_ask_group
-- utter_ask_luggage
-- utter_ask_restart
-- utter_ask_travel_days
-- utter_explain_age
-- utter_explain_whyAge
-- utter_explain_whyBaggeLoss
-- utter_explain_whyDestination
-- utter_explain_whyFinanceLoss
-- utter_explain_whyGroup
-- utter_explain_whyMoreTravel
-- utter_explain_whyTravelDays
-- utter_goodbye
-- utter_greet
-- utter_noInsuranceCover
-- utter_respond_insult
-- utter_respond_love
-- utter_response_architecture
-- utter_response_provocate
-- utter_response_provocate2
-- utter_response_research_question
-- utter_slot_values
-- utter_tooYoung
-- utter_whats_covered
-entities:
-- 5 Sterne Schutz Einmalig Einzelnd
-- 5 Sterne Schutz Einmalig Jahres
-- 5 Sterne Schutz Gruppe Einzel
-- 5 Sterne Schutz Gruppe Jahres
-- Auslandsreisekrankenversicherung Einmalig Einzeln
-- Auslandsreisekrankenversicherung Einmalig Gruppen
-- Auslandsreisekrankenversicherung Jahres Einzeln
-- Auslandsreisekrankenversicherung Jahres Gruppen
-- Auslandsversicherung ab 35 Jahre
-- Auslandsversicherung bis 35 Jahre Deluxe
-- Auslandsversicherung für  bis 35 Jahre
-- Reisegepäckversicherung Einmalig Einzeln
-- Reisegepäckversicherung Einmalig Gruppen
-- Reiserücktritt Einmalig Einzeln
-- Reiserücktritt Einmalig Gruppen
-- Reiserücktritt Jahres Einzeln
-- Reiserücktritt Jahres Gruppen
-- age
-- attribute
-- continent
-- days
-- destination
-- familyStatus
-- financeLoss
-- format
-- group
-- luggage
-- mention
-- moreTravel
-- object_type
-- occasion
-- occasionDetails
-- product
-- travelWarning
-- travel_days
-- typeMessage
-- versichert
-forms:
-- insurance_check
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
 intents:
 - travel_days
 - affirm
@@ -122,9 +41,141 @@ intents:
 - product
 - changeTravelDays
 - happy
+entities:
+- 5 Sterne Schutz Einmalig Einzelnd
+- 5 Sterne Schutz Einmalig Jahres
+- 5 Sterne Schutz Gruppe Einzel
+- 5 Sterne Schutz Gruppe Jahres
+- Auslandsreisekrankenversicherung Einmalig Einzeln
+- Auslandsreisekrankenversicherung Einmalig Gruppen
+- Auslandsreisekrankenversicherung Jahres Einzeln
+- Auslandsreisekrankenversicherung Jahres Gruppen
+- Auslandsversicherung ab 35 Jahre
+- Auslandsversicherung bis 35 Jahre Deluxe
+- Auslandsversicherung für  bis 35 Jahre
+- Reisegepäckversicherung Einmalig Einzeln
+- Reisegepäckversicherung Einmalig Gruppen
+- Reiserücktritt Einmalig Einzeln
+- Reiserücktritt Einmalig Gruppen
+- Reiserücktritt Jahres Einzeln
+- Reiserücktritt Jahres Gruppen
+- age
+- attribute
+- continent
+- days
+- destination
+- familyStatus
+- financeLoss
+- format
+- group
+- luggage
+- mention
+- moreTravel
+- object_type
+- occasion
+- occasionDetails
+- product
+- travelWarning
+- travel_days
+- typeMessage
+- versichert
+- duration
+- 'destination '
+slots:
+  5 Sterne Schutz Einmalig Einzelnd:
+    type: unfeaturized
+  5 Sterne Schutz Einmalig Jahres:
+    type: unfeaturized
+  5 Sterne Schutz Gruppe Einzel:
+    type: unfeaturized
+  5 Sterne Schutz Gruppe Jahres:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Einmalig Einzeln:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Einmalig Gruppen:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Jahres Einzeln:
+    type: unfeaturized
+  Auslandsreisekrankenversicherung Jahres Gruppen:
+    type: unfeaturized
+  Auslandsversicherung ab 35 Jahre:
+    type: unfeaturized
+  Auslandsversicherung bis 35 Jahre Deluxe:
+    type: unfeaturized
+  Auslandsversicherung für  bis 35 Jahre:
+    type: unfeaturized
+  Reisegepäckversicherung Einmalig Einzeln:
+    type: unfeaturized
+  Reisegepäckversicherung Einmalig Gruppen:
+    type: unfeaturized
+  Reiserücktritt Einmalig Einzeln:
+    type: unfeaturized
+  Reiserücktritt Einmalig Gruppen:
+    type: unfeaturized
+  Reiserücktritt Jahres Einzeln:
+    type: unfeaturized
+  Reiserücktritt Jahres Gruppen:
+    type: unfeaturized
+  age:
+    type: float
+    max_value: 1.0
+    min_value: 0.0
+  attribute:
+    type: unfeaturized
+  continent:
+    type: unfeaturized
+  coronaCases:
+    type: unfeaturized
+  days:
+    type: unfeaturized
+  destination:
+    type: unfeaturized
+  familyStatus:
+    type: unfeaturized
+  financeLoss:
+    type: unfeaturized
+  format:
+    type: unfeaturized
+  group:
+    type: bool
+  knowledge_base_last_object:
+    type: unfeaturized
+  knowledge_base_last_object_type:
+    type: unfeaturized
+  knowledge_base_listed_objects:
+    type: unfeaturized
+  luggage:
+    type: unfeaturized
+  mention:
+    type: unfeaturized
+  moreTravel:
+    type: bool
+  object_type:
+    type: unfeaturized
+  occasion:
+    type: bool
+  occasionDetails:
+    type: unfeaturized
+  product:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+  travelWarning:
+    type: unfeaturized
+  travel_days:
+    type: unfeaturized
+  typeMessage:
+    type: unfeaturized
+  versichert:
+    type: unfeaturized
 responses:
   utter_answerDestination_insideEurope:
   - text: -{destination} liegt innerhalb Europas
+  - text: Der Corona-Schutz ist eine Reiserücktrittsversicherung, welche dir deine
+      Reisekosten erstattet, im Falle einer Corona-Erkrankung oder falls dein Zielland
+      zum Risikogebiet erklärt wird.”
   utter_answerDestination_outsideEurope:
   - text: -{destination} liegt außerhalb Europas
   utter_answer_happy:
@@ -298,95 +349,50 @@ responses:
     - payload: Corona Situation in meinem Land
       title: Corona Situation
     text: Auswahl
-session_config:
-  carry_over_slots_to_new_session: true
-  session_expiration_time: 0
-slots:
-  5 Sterne Schutz Einmalig Einzelnd:
-    type: unfeaturized
-  5 Sterne Schutz Einmalig Jahres:
-    type: unfeaturized
-  5 Sterne Schutz Gruppe Einzel:
-    type: unfeaturized
-  5 Sterne Schutz Gruppe Jahres:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung Einmalig Einzeln:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung Einmalig Gruppen:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung Jahres Einzeln:
-    type: unfeaturized
-  Auslandsreisekrankenversicherung Jahres Gruppen:
-    type: unfeaturized
-  Auslandsversicherung ab 35 Jahre:
-    type: unfeaturized
-  Auslandsversicherung bis 35 Jahre Deluxe:
-    type: unfeaturized
-  Auslandsversicherung für  bis 35 Jahre:
-    type: unfeaturized
-  Reisegepäckversicherung Einmalig Einzeln:
-    type: unfeaturized
-  Reisegepäckversicherung Einmalig Gruppen:
-    type: unfeaturized
-  Reiserücktritt Einmalig Einzeln:
-    type: unfeaturized
-  Reiserücktritt Einmalig Gruppen:
-    type: unfeaturized
-  Reiserücktritt Jahres Einzeln:
-    type: unfeaturized
-  Reiserücktritt Jahres Gruppen:
-    type: unfeaturized
-  age:
-    max_value: 1.0
-    min_value: 0.0
-    type: float
-  attribute:
-    type: unfeaturized
-  continent:
-    type: unfeaturized
-  coronaCases:
-    type: unfeaturized
-  days:
-    type: unfeaturized
-  destination:
-    type: unfeaturized
-  familyStatus:
-    type: unfeaturized
-  financeLoss:
-    type: unfeaturized
-  format:
-    type: unfeaturized
-  group:
-    type: bool
-  knowledge_base_last_object:
-    type: unfeaturized
-  knowledge_base_last_object_type:
-    type: unfeaturized
-  knowledge_base_listed_objects:
-    type: unfeaturized
-  luggage:
-    type: unfeaturized
-  mention:
-    type: unfeaturized
-  moreTravel:
-    type: bool
-  object_type:
-    type: unfeaturized
-  occasion:
-    type: bool
-  occasionDetails:
-    type: unfeaturized
-  product:
-    type: unfeaturized
-  requested_slot:
-    type: unfeaturized
-  travelWarning:
-    type: unfeaturized
-  travel_days:
-    type: unfeaturized
-  typeMessage:
-    type: unfeaturized
-  versichert:
-    type: unfeaturized
+actions:
+- action_fetch_continent
+- action_fetch_corona
+- action_fetch_travel_warning
+- action_moreInfo_buttons
+- action_query_knowledge_base
+- action_reset_destination
+- action_reset_productslot
+- action_reset_travel_days
+- action_response_insult
+- action_restart_bot
+- utter_answerDestination_insideEurope
+- utter_answerDestination_outsideEurope
+- utter_ask_age
+- utter_ask_baggage
+- utter_ask_continent
+- utter_ask_continue
+- utter_ask_destination
+- utter_ask_familyStatus
+- utter_ask_financeLoss
+- utter_ask_group
+- utter_ask_luggage
+- utter_ask_restart
+- utter_ask_travel_days
+- utter_explain_age
+- utter_explain_whyAge
+- utter_explain_whyBaggeLoss
+- utter_explain_whyDestination
+- utter_explain_whyFinanceLoss
+- utter_explain_whyGroup
+- utter_explain_whyMoreTravel
+- utter_explain_whyTravelDays
+- utter_goodbye
+- utter_greet
+- utter_noInsuranceCover
+- utter_respond_insult
+- utter_respond_love
+- utter_response_architecture
+- utter_response_provocate
+- utter_response_provocate2
+- utter_response_research_question
+- utter_slot_values
+- utter_tooYoung
+- utter_whats_covered
+- utter_response_corona
+forms:
+- insurance_check

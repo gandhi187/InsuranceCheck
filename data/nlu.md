@@ -219,7 +219,6 @@
 - [Indien](destination)
 - [frankreich](destination)
 - [japan](destination)
-- [Türkei](destination)
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
