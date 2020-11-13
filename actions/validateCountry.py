@@ -89,18 +89,18 @@ def getTravelWarning(country):
     data =  resp.json()
     return data
 
-def getWeather(country):
-    resp = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+country+'&APPID=b712235f9081bcad992862190928df22&units=metric')
-    if resp.status_code != 200:
-    # This means something went wrong.
+
+## Hier die Methode implementieren (getWeather())
+def getWeather(country: str):
+    response = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+country+'&APPID=b712235f9081bcad992862190928df22&units=metric')
+    if response.status_code != 200:
         raise ApiError('GET /tasks/ {}'.format(resp.status_code))
-    data =  resp.json()
-    link = data["main"]["temp"]
-    return link
+    return response.json()['main']['temp']
 
 
 
-
-wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
+wb = openpyxl.load_workbook("wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
+
+## Testen der Methode 
 print(getWeather('Türkei'))

@@ -50,8 +50,8 @@ class InsuranceCheck(FormAction):
             - intent: value pairs
             - a whole message
             or a list of them, where a first match will be picked"""
-        #print(self.get_entity_value("travel_days"))
-        #print(tracker.latest_message['entities'][0]['value'])
+        # print(self.get_entity_value("travel_days"))
+        # print(tracker.latest_message['entities'][0]['value'])
 
         return {
 
@@ -429,11 +429,10 @@ class WeatherUpdate(Action):
             tracker: Tracker,
 
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            destination = tracker.get_slot('destination')
-            # Hier die API-Abfrage
-            weather = getWeather (destination)
-            # Hier die Antwort
-            dispatcher.utter_message(
-            text= " Die Temperatur beträgt " + str(temperature) + " in deinem Reiseland " + destination)
-
-            return []
+        destination = tracker.get_slot('destination')
+        # Hier die API-Abfrage
+        temp = getWeathher(destination)
+        # Hier die Antwort
+        dispatcher.utter_message(
+            text = "Die Temperatur beträgt" + str(temp) + " in deinem Reiseland " + destination)
+        return []
