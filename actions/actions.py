@@ -113,13 +113,12 @@ class InsuranceCheck(FormAction):
         if value is None:
             return {"destination": "Null"}
         if (value == 'Deutschland' or value == "deutschland"):
-            dispatcher.utter_message(template="utter_noInsuranceCover")
-            return None
-        print("destination: " + value)
+            dispatcher.utter_message(text="Ein Urlaub in der Heimat - Sehr schön :) ")
         countryCode = FindCountryCode(value)
-        print(countryCode)
         continent = GetContinentFromCountry(countryCode)
-        print(continent)
+        data = getCoronaInformation(value)
+        activeCases = data['active']
+        deaths = data['deaths']
 
         if (continent == "Europa"):
             dispatcher.utter_message(
