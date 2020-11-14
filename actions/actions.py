@@ -433,5 +433,5 @@ class WeatherUpdate(Action):
         destination = tracker.get_slot('destination')
         weather = getWeather (destination)
         dispatcher.utter_message(
-            text = "Die Temperatur beträgt " + str(weather) + "Grad Celsius in deinem Reiseland " + destination)
+            text = "Die Temperatur beträgt " + str(weather) + " Grad Celsius in deinem Reiseland " + destination)
         return []
