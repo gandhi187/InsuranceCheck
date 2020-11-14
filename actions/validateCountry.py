@@ -67,7 +67,7 @@ def getRandomDogImage():
     # This means something went wrong.
         raise ApiError('GET /tasks/ {}'.format(resp.status_code))
     data =  resp.json()
-    link = data["link"]
+    link = data["link"] 
     return link
 
 def getCoronaInformation(country):
@@ -91,13 +91,15 @@ def getTravelWarning(country):
 
 
 ## Hier die Methode implementieren (getWeather())
-def getWeather(country: str):
-    response = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+country+'&APPID=b712235f9081bcad992862190928df22&units=metric')
-    if response.status_code != 200:
+
+def getWeather(country):
+    resp = requests.get('http://api.openweathermap.org/data/2.5/weather?q='+country+'&APPID=b712235f9081bcad992862190928df22&units=metric')
+    if resp.status_code != 200:
+    # This means something went wrong.
         raise ApiError('GET /tasks/ {}'.format(resp.status_code))
-    return response.json()['main']['temp']
-
-
+    data =  resp.json()
+    weather = data["main"]["temp"]
+    return weather
 
 wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
