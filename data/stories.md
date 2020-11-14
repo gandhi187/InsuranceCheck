@@ -183,7 +183,47 @@
 * corona 
  - action_fetch_corona
 
-
 ## weather
 * ask_weather
  - action_response_weather
+
+## InsuranceCHeck
+
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* inform{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - action_fetch_corona
+    - slot{"coronaCases":480682}
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+* travel_days{"duration":2}
+    - insurance_check
+    - slot{"travel_days":2}
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"luggage":"mittel"}
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - insurance_check
+    - slot{"financeLoss":"mittel"}
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* inform{"age":"1988"}
+    - slot{"age":"1988"}
+    - insurance_check
+    - slot{"age":32}
+    - slot{"requested_slot":"group"}
+* deny
+    - insurance_check
+    - slot{"group":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}

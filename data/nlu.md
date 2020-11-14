@@ -20,6 +20,8 @@
 - Moin!
 - moin
 - hi
+- hui
+- Hallo?
 
 ## intent:goodbye
 - Schönen Abend noch
@@ -122,6 +124,12 @@
 - Ja
 - Jap
 - los
+- jka
+- Hi Dave. Let's go!
+- Das war englisch fuer: Lass uns beginnen!
+- Lass uns beginnen
+- Ich moechte eine Reise planen
+- Ich will beginnen
 
 ## intent:ask_weather
 - Wie wird das Wetter ?
@@ -130,6 +138,12 @@
 - Wird es warm ?
 - Wird es schön ?
 - Wettervorhersage
+- wettre
+- wetter
+- wie ist das wetter?
+- wie ist das wetter
+- Wie ist das Wetter
+- wie wird das Wetter ?
 
 ## intent:deny
 - niemals
@@ -219,6 +233,17 @@
 - [Indien](destination)
 - [frankreich](destination)
 - [japan](destination)
+- [1934](age)
+- [usa](destination)
+- [1849](age)
+- [spanien](destination)
+- [CHina](destination)
+- [china](destination)
+- [1966](age)
+- Schottland
+- [türkei](destination)
+- Ukraine
+- ukraine
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -426,6 +451,7 @@
 - corona situation
 - wie siehts mit corona dort aus ?
 - wie ist die lage in italien
+- Was ist mit Corona?
 
 ## intent:dontKnow
 - Weiß ich nicht
@@ -449,6 +475,7 @@
 - Bist du Single ?
 - Heirate mich
 - Was ist Liebe ?
+- ich liebe dich
 
 ## intent:insult
 - Arschloch
@@ -467,6 +494,9 @@
 - bitch
 - katharina ist doof
 - du arschloch
+- ganz doof bist du
+- Nevermind. Ich erkundige mich an anderer Stelle zum verreisen
+- der Urlaub ist hinüber
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -476,6 +506,7 @@
 - was kannst du
 - ^(1[89]|[2-9][0-9])$
 - Was kannst du
+- und jetzt?
 
 ## intent:changeDestination
 - Ich möcht das Reiseland ändern
@@ -529,6 +560,20 @@
 - drei Wochen
 - fünf Monate
 - drei Tage
+- zwei Wochen
+- 3 woche
+- 6 jahre
+- 30 tage
+- 30 Tage
+- [30](age)
+- 45 Tage
+- [55](age)
+- 95
+- 5
+- 5 Tage
+- 25 Tage
+- Immernoch 5 Tage
+- 12 Tage
 
 ## intent:happy
 - Wow
@@ -538,10 +583,24 @@
 - Heftig
 - Nice
 
-
-
 ## intent:destination
 - Dubai
+
+## intent:play_music
+- Kannst Du auch Musik spielen?
+
+## intent:bot_challenge
+- Du musst noch viel lernen.. Das ist schon okay. Du bist ja auch knapp 38 Jahre juenger als ich
+
+## intent:beer
+- Trinken wir ein Bier in Hong-Kong?
+- Trinken wir ein Bier=
+- Möchtest du ein Bier mit mir trinken
+- Trinken wir ein Bier?
+
+## intent:insuranceChoice
+- Ok, welche Reiseversicherung soll ich abschließen?
+- Welche Reiseversicherung soll ich abschließen?
 
 ## synonym:1
 - ersten
