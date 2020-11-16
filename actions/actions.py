@@ -87,6 +87,12 @@ class InsuranceCheck(FormAction):
 
         unit = tracker.latest_message['entities'][0]['additional_info']['unit']
         print(unit)
+        if unit is None:
+            dispatcher.utter_message(
+            "Ich benötige genauere Angaben von dir, meinst du mit " + value + " Tage, Wochen oder Monate ? ")
+
+            return {"travel_days": None}  
+
         print (value)
         oldValue = value
         newValue = self.calculateDays(value, unit)
