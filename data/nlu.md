@@ -130,6 +130,8 @@
 - Lass uns beginnen
 - Ich moechte eine Reise planen
 - Ich will beginnen
+- Bist du noch da, Dave?
+- Vielleicht.
 
 ## intent:ask_weather
 - Wie wird das Wetter ?
@@ -150,6 +152,7 @@
 - nein
 - ne
 - /deny
+- Kein Interesse
 
 ## intent:out_of_scope
 - warte
@@ -242,8 +245,15 @@
 - [1966](age)
 - Schottland
 - [türkei](destination)
-- Ukraine
+- Ukrain[e](destination)
 - ukraine
+- Dubai
+- [USA](destination)
+- [Usa](destination)
+- [Ägypten](destination)
+- Russland
+- [Dänemark](destination)
+- Kroatien
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -497,6 +507,7 @@
 - ganz doof bist du
 - Nevermind. Ich erkundige mich an anderer Stelle zum verreisen
 - der Urlaub ist hinüber
+- David ist ein Hund
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -574,6 +585,7 @@
 - 25 Tage
 - Immernoch 5 Tage
 - 12 Tage
+- Ein halbes Jahr
 
 ## intent:happy
 - Wow
@@ -582,9 +594,7 @@
 - Find ich gut
 - Heftig
 - Nice
-
-## intent:destination
-- Dubai
+- Danke
 
 ## intent:play_music
 - Kannst Du auch Musik spielen?
@@ -599,10 +609,14 @@
 - Trinken wir ein Bier=
 - Möchtest du ein Bier mit mir trinken
 - Trinken wir ein Bier?
+- Möchtest du ein Bier trinken?
 
 ## intent:insuranceChoice
 - Ok, welche Reiseversicherung soll ich abschließen?
 - Welche Reiseversicherung soll ich abschließen?
+
+## intent:money
+- Wieviel kostet es?
 
 ## synonym:1
 - ersten
