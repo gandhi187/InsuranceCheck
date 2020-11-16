@@ -600,6 +600,7 @@
 - Kannst Du auch Musik spielen?
 - Spiele Musik
 - Musik bitte
+- Music
 
 ## intent:bot_challenge
 - Du musst noch viel lernen.. Das ist schon okay. Du bist ja auch knapp 38 Jahre juenger als ich
