@@ -243,17 +243,17 @@
 - [CHina](destination)
 - [china](destination)
 - [1966](age)
-- Schottland
+- [Schottland] (destination)
 - [türkei](destination)
-- Ukrain[e](destination)
-- ukraine
-- Dubai
+- [Ukraine](destination)
+- [ukraine](destination)
+- [Dubai](destination)
 - [USA](destination)
-- [Usa](destination)
+- [usa](destination)
 - [Ägypten](destination)
-- Russland
+- [Russland](destination)
 - [Dänemark](destination)
-- Kroatien
+- [Kroatien] (destination)
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -576,9 +576,9 @@
 - 6 jahre
 - 30 tage
 - 30 Tage
-- [30](age)
+- 30
 - 45 Tage
-- [55](age)
+- 55
 - 95
 - 5
 - 5 Tage

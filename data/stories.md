@@ -47,6 +47,14 @@
 * travelWarning
  - action_fetch_travel_warning
 
+## Beer
+* beer
+ - utter_response_beer
+
+## Music
+* play_music
+- utter_play_music
+
 ## Kath
 * product
     - action_moreInfo_buttons

@@ -28,7 +28,9 @@ intents:
 - weather
 - travelWarning
 - whatsPossible
+- play_music
 - query_knowledge_base
+- play_music
 - ask_weather
 - provocate
 - researchquestion
@@ -265,7 +267,10 @@ responses:
       title: Ja
     text: Willst du neustarten ?
   utter_ask_travel_days:
-  - text: Wie lange wirst du verreisen ?
+  - buttons:
+    - payload: /question
+      title: Warum ?
+    text: Wie lange wirst du verreisen ?
   utter_begin:
   - text: Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können.
       ⛱  **Möchtest du beginnen ?**
@@ -273,6 +278,9 @@ responses:
   - text: Leider habe ich dich nicht verstanden. Bitte versuche es erneut
   utter_explain_age:
   - text: Da wir auch spezielle Tarife für Studenten anbieten, benötige ich dein Geburtsjahr
+  utter_play_music:
+  - text: "Mein Lieblingssong:"
+    attachment: { "type":"video", "payload":{ "src": "https://www.youtube.com/watch?v=OQIYEPe6DWY" } }
   utter_explain_whatspossible:
   - text: Ich kann dich über **Reiseversicherungen** beraten. \n Ich befinde mich
       jedoch noch in der Entwicklung und mein Schöpfer muss mir noch viel beibringen
@@ -342,6 +350,8 @@ responses:
   utter_tooYoung:
   - text: Leider bist du zu jung für einen Versicherungscheck. Frag doch gerne mal
       bei deinen Eltern an.
+  utter_response_beer:
+  - text: Klar, das Bier in {destination} geht auf mich bzw. auf meinen Schöpfer ! 
   utter_whats_covered:
   - buttons:
     - payload: Versicherte Leistungen in  {product} ?
