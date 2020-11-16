@@ -123,10 +123,15 @@ class InsuranceCheck(FormAction):
         if (continent == "Europa"):
             dispatcher.utter_message(
                 template="utter_answerDestination_insideEurope")
+            dispatcher.utter_message("In " + destination + " gibt es derzeit " + str(activeCases) +
+            " aktive Corona Fälle. \n Seit Ausbruch gab es " + str(deaths) + " Todesfälle.")
+
             return {"destination": value}
         else:
             dispatcher.utter_message(
                 template="utter_answerDestination_outsideEurope")
+            dispatcher.utter_message("In " + destination + " gibt es derzeit " + str(activeCases) +
+            " aktive Corona Fälle. \n Seit Ausbruch gab es " + str(deaths) + " Todesfälle.")
             return {"destination": value}
 
     def validate_age(
