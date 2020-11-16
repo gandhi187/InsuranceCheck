@@ -398,6 +398,7 @@ actions:
 - utter_slot_values
 - utter_tooYoung
 - utter_whats_covered
+- utter_play_music
 - utter_response_corona
 forms:
 - insurance_check

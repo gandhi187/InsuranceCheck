@@ -47,10 +47,6 @@
 * travelWarning
  - action_fetch_travel_warning
 
-## Beer
-* beer
- - utter_response_beer
-
 ## Music
 * play_music
 - utter_play_music
@@ -235,4 +231,3 @@
     - slot{"group":false}
     - form{"name":null}
     - slot{"requested_slot":null}
- 
