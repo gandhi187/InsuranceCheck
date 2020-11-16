@@ -309,6 +309,9 @@ responses:
   - text: Ciao
   - text: Auf Wiedersehen
   - text: Wiedersehen macht Freude !
+  utter_play_music:
+  - text: "Hier - Mein Lieblingssong:"
+    attachment: { "type":"video", "payload":{ "src": "https://youtube.com/embed/9C1Km6xfdMA" } }
   utter_greet:
   - text: Moin, ich bin Dave dein persönlicher Reiseberater. Ich werde dir nun ein
       paar Fragen stellen. Möchtest du beginnen ?
