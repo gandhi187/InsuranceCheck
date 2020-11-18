@@ -49,7 +49,7 @@
 
 ## Music
 * play_music
-- utter_play_music
+ - utter_play_music
 
 ## Kath
 * product
@@ -231,3 +231,93 @@
     - slot{"group":false}
     - form{"name":null}
     - slot{"requested_slot":null}
+
+## Story from conversation with cfb4364acde549928496f18285135128 on November 18th 2020
+
+* greet
+    - utter_greet
+* affirm
+    - insurance_check
+    - action_fetch_continent
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* question
+    - utter_explain_whyDestination
+    - insurance_check
+    - slot{"requested_slot":"destination"}
+* inform{"destination":"USA"}
+    - slot{"destination":"USA"}
+    - slot{"destination":"USA"}
+    - insurance_check
+    - slot{"destination":"USA"}
+    - slot{"requested_slot":"travel_days"}
+* question
+    - slot{"destination":"USA"}
+    - utter_explain_whyTravelDays
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+* travel_days{"duration":2}
+    - insurance_check
+    - slot{"travel_days":14}
+    - slot{"requested_slot":"luggage"}
+* question
+    - slot{"destination":"USA"}
+    - utter_explain_whyBaggeLoss
+    - insurance_check
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"luggage":"mittel"}
+    - slot{"requested_slot":"financeLoss"}
+* question
+    - slot{"destination":"USA"}
+    - slot{"luggage":"mittel"}
+    - utter_explain_whyFinanceLoss
+    - insurance_check
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - insurance_check
+    - slot{"financeLoss":"mittel"}
+    - slot{"requested_slot":"moreTravel"}
+* question
+    - slot{"destination":"USA"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - utter_explain_whyMoreTravel
+    - insurance_check
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* inform{"age":"1977"}
+    - slot{"age":"1977"}
+    - slot{"age":"1977"}
+    - insurance_check
+    - slot{"age":43}
+    - slot{"requested_slot":"group"}
+* question
+    - slot{"destination":"USA"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - slot{"age":"1977"}
+    - utter_explain_whyGroup
+    - insurance_check
+    - slot{"requested_slot":"group"}
+* deny
+    - insurance_check
+    - slot{"group":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - action_fetch_continent
+    - slot{"continent":"Nordamerika"}
+
+## BeerDrinking
+* beer
+ - utter_response_beer

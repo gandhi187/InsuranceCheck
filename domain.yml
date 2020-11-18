@@ -180,6 +180,7 @@ responses:
   - text: Der Corona-Schutz ist eine Reiserücktrittsversicherung, welche dir deine
       Reisekosten erstattet, im Falle einer Corona-Erkrankung oder falls dein Zielland
       zum Risikogebiet erklärt wird.”
+  - text: Klar, ich lad dich ein auf ein Bier in {destination} !
   utter_answerDestination_outsideEurope:
   - text: -{destination} liegt außerhalb Europas
   utter_answer_happy:
@@ -187,7 +188,10 @@ responses:
   utter_answer_outofscope:
   - text: Das kann ich dir leider (noch) nicht beantworten. Bitte entschuldige.
   utter_ask_age:
-  - text: In welchem Jahr bist du geboren ?
+  - buttons:
+    - payload: /question
+      title: Warum ?
+    text: In welchem Jahr bist du geboren ?
   utter_ask_baggage:
   - text: Wie hoch schätzt du den Wert deines Gepäcks ein ?
   utter_ask_continent:
@@ -208,7 +212,10 @@ responses:
   utter_ask_continue:
   - text: Möchtest du den Versicherungscheck fortführen ?
   utter_ask_destination:
-  - text: In welches Land möchtest du vereisen ?
+  - buttons:
+    - payload: /question
+      title: Warum ?
+    text: In welches Land möchtest du vereisen ?
   utter_ask_familyStatus:
   - buttons:
     - payload: /inform{"familyStatus":"Single"}
@@ -217,7 +224,9 @@ responses:
       title: Paar
     - payload: '/inform{"familyStatus": "Verheiratet"}'
       title: Verheiratet
-    text: 'Familienstatus ? '
+    - payload: /question
+      title: Warum ?
+    text: Familienstatus ?
   utter_ask_financeLoss:
   - buttons:
     - payload: /inform{"financeLoss":"niedrig"}
@@ -226,14 +235,18 @@ responses:
       title: Mäßig schlimm
     - payload: '/inform{"financeLoss": "hoch"}'
       title: Sehr schlimm
+    - payload: /question
+      title: Warum ?
     text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nichtantritt deiner
-      Reise in dein Reiseland:   {destination} ? '
+      Reise in dein Reiseland:   {destination} ?'
   utter_ask_group:
   - buttons:
     - payload: /affirm
       title: Ja
     - payload: /deny
       title: Nein
+    - payload: /question
+      title: Warum ?
     text: Möchtest deinen Lebenspartner oder Kinder unter 25 mitversichern ?
   utter_ask_luggage:
   - buttons:
@@ -243,13 +256,17 @@ responses:
       title: Mäßig schlimm
     - payload: '/inform{"luggage": "hoch"}'
       title: Sehr schlimm
-    text: 'Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ? '
+    - payload: /question
+      title: Warum ?
+    text: Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ?
   utter_ask_moreTravel:
   - buttons:
     - payload: /affirm
       title: Ja
     - payload: /deny
       title: Nein
+    - payload: /question
+      title: Warum ?
     text: Wirst du dieses Jahr noch öfters verreisen ?
   utter_ask_occasion:
   - buttons:
@@ -269,7 +286,10 @@ responses:
       title: Ja
     text: Willst du neustarten ?
   utter_ask_travel_days:
-  - text: Wie lange wirst du verreisen ?
+  - buttons:
+    - payload: /question
+      title: Warum ?
+    text: Wie lange wirst du verreisen ?
   utter_begin:
   - text: Ich werde dir nun ein paar Fragen stellen, um dich optimal beraten zu können.
       ⛱  **Möchtest du beginnen ?**
@@ -310,8 +330,11 @@ responses:
   - text: Auf Wiedersehen
   - text: Wiedersehen macht Freude !
   utter_play_music:
-  - text: "Hier - Mein Lieblingssong:"
-    attachment: { "type":"video", "payload":{ "src": "https://youtube.com/embed/9C1Km6xfdMA" } }
+  - attachment:
+      payload:
+        src: https://youtube.com/embed/OQIYEPe6DWY
+      type: video
+    text: 'Hier - Mein Lieblingssong:'
   utter_greet:
   - text: Moin, ich bin Dave dein persönlicher Reiseberater. Ich werde dir nun ein
       paar Fragen stellen. Möchtest du beginnen ?
