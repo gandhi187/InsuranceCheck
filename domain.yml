@@ -177,10 +177,6 @@ slots:
 responses:
   utter_answerDestination_insideEurope:
   - text: -{destination} liegt innerhalb Europas
-  - text: Der Corona-Schutz ist eine Reiserücktrittsversicherung, welche dir deine
-      Reisekosten erstattet, im Falle einer Corona-Erkrankung oder falls dein Zielland
-      zum Risikogebiet erklärt wird.”
-  - text: Klar, ich lad dich ein auf ein Bier in {destination} !
   utter_answerDestination_outsideEurope:
   - text: -{destination} liegt außerhalb Europas
   utter_answer_happy:
@@ -359,9 +355,9 @@ responses:
   - text: Das Startup Lemonade wickelt übrigends knapp 1/3 aller Schadenfälle über
       einen Chatbot ab (Rekord bei 3 Sekunden)  !
   utter_response_research_question:
-  - text: Wie lässt sich eine technische Implementierung umsetzen, um mittels einer
-      Conversational AI  Marktdynamiken sowie Trends im Versicherungsumfeld flexibel
-      zu anzipieren
+  - text: Wie werden Conversational  AIs nach Stand  der aktuellen Literatur im  Versicherungsumfeld
+      eingesetzt   und welche Mehrwerte hinsichtlich der Customer Experience lassen
+      sich daraus ableiten ?
   utter_response_research_question_simple:
   - text: Durch mich sollen Unternehmen neue Kundenanforderungen/Trends erkennen und
       diese durch meine flexible Architektur (CI) schnell implementieren können (Corona
@@ -379,6 +375,16 @@ responses:
     - payload: Corona Situation in meinem Land
       title: Corona Situation
     text: Auswahl
+  utter_response_beer:
+  - text: Klar, ich lade dich auf ein Bier in {destination} ein !
+  utter_response_research_question2:
+  - text: Wie lässt sich eine technische Lösung umsetzen, um mittels einer Conversational
+      AI  Marktdynamiken sowie Trends im Versicherungsumfeld flexibel antizipieren
+      zu können ?
+  utter_response_research_question3:
+  - text: "•\tWelche Mehrwerte ergeben sich durch eine Bedarfsanalyse gestützt von\
+      \ einer Conversational AI im Vergleich zu einem traditionellen Fragebogen hinsichtlich\
+      \ Erkennung und Implementierung veränderter Markttrends ?"
 actions:
 - action_response_weather
 - action_fetch_continent
@@ -425,6 +431,7 @@ actions:
 - utter_tooYoung
 - utter_whats_covered
 - utter_play_music
+- utter_response_beer
 - utter_response_corona
 forms:
 - insurance_check

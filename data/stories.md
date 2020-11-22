@@ -76,6 +76,8 @@
  - utter_explain_whatspossible
 * researchquestion
  - utter_response_research_question
+ - utter_response_research_question2
+ - utter_response_research_question3
 * question
  - utter_response_research_question_simple
 * technicaldesign
