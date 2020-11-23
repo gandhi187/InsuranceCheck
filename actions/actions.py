@@ -147,6 +147,7 @@ class InsuranceCheck(FormAction):
         else : 
             dispatcher.utter_message(
             text =  destination + " wurde vom RKI nicht als Risikogebiet klassifiziert.")
+            
         return {"destination": value}
 
 
