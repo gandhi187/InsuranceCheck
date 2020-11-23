@@ -249,7 +249,6 @@
 - [ukraine](destination)
 - [Dubai](destination)
 - [USA](destination)
-- [usa](destination)
 - [Ägypten](destination)
 - [Russland](destination)
 - [Dänemark](destination)
@@ -595,6 +594,7 @@
 - Heftig
 - Nice
 - Danke
+- Du bist doch schon ein schlaues Kerlchen ;)
 
 ## intent:play_music
 - Kannst Du auch Musik spielen?
