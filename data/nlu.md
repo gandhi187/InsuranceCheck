@@ -619,6 +619,10 @@
 ## intent:money
 - Wieviel kostet es?
 
+## intent:rki_risk
+- Ist mein Land ein Risikogebiet ? 
+- Risikogebiet laut RKI ? 
+
 ## synonym:1
 - ersten
 - eine
@@ -632,6 +636,12 @@
 
 ## synonym:versichert
 - Details
+
+## lookup:destination.csv
+  data/lookup/countrys/destination.csv
+
+## lookup:products.txt
+  data/lookup/products.txt
 
 ## lookup:destination.csv
   data/lookup/countrys/destination.csv

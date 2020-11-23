@@ -46,6 +46,7 @@
 ## travel_warning
 * travelWarning
  - action_fetch_travel_warning
+ - action_RKIWarning
 
 ## Music
 * play_music
@@ -323,3 +324,7 @@
 ## BeerDrinking
 * beer
  - utter_response_beer
+
+## RKI
+* rki_risk
+ - action_RKIWarning
