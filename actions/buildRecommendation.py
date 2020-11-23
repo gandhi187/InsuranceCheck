@@ -78,7 +78,37 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
                 return x
 
 
-queryDB("50",None,None,False,"50000",False,"asd")
+def queryDBCorona(destination):
+       
+        try:
+           
+            connection = psycopg2.connect(user="admin",
+                                    password="dyr6PGIIlRQDUvk",
+                                    host="34.107.51.226",
+                                    port="5432",
+                                    database="insurance")
+            cursor = connection.cursor()
+            postgreSQL_select_Query = "SELECT *	FROM public.corona_countries where country = '" + destination + "'"
+            print("Query : " + postgreSQL_select_Query)
+            cursor.execute(postgreSQL_select_Query)
+            print("Selecting rows from mobile table using cursor.fetchall")
+            coronaCountries = cursor.fetchall() 
+            print("Print each row and it's columns values")
+            if not coronaCountries:
+                result = "Lt. RKI wurde " + destination + " nicht als Risikogebiet klassifiziert"
+            for row in coronaCountries:
+                result = destination + " wurde vom RKI als Risikogebiet klassifiziert:  ", row[2],"\n"
+        except (Exception, psycopg2.Error) as error :
+            print ("Error while fetching data from PostgreSQL", error)
 
+        finally:
+            if(connection):
+                cursor.close()
+                connection.close()
+                print("PostgreSQL connection is closed")
+                return result
+
+#queryDB("50",None,None,False,"50000",False,"asd")
+print(queryDBCorona("Deutschland"))
 
 

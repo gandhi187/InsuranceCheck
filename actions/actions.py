@@ -389,7 +389,7 @@ class FetchActionButtons(Action):
         product = tracker.get_slot("product")
         print("Product " + product)
         buttons = [{"title": "Weitere Informationen", "payload": "Was ist versichert in " +
-                    product}, {"title": "Aktuelle Corona Lage", "payload": "Corona Situation"}]
+                    product}, {"title": "Aktuelle Corona Lage", "payload": "Corona Situation"},{"title": "Risikogebiet ?", "payload": "/rki_risk"}]
         dispatcher.utter_button_message("Was möchtest du erfahren ?", buttons)
 
         return []
@@ -444,4 +444,22 @@ class WeatherUpdate(Action):
         weather = getWeather (destination)
         dispatcher.utter_message(
             text = "Die Temperatur beträgt " + str(weather) + " Grad Celsius in deinem Reiseland " + destination)
+        return []
+
+class RKITRavelWarning(Action):
+
+    def name(self) -> Text:
+
+        return "action_RKIWarning"
+
+    def run(self, dispatcher: CollectingDispatcher,
+
+            tracker: Tracker,
+
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            
+        destination = tracker.get_slot('destination')
+        text = queryDBCorona(destination)
+        dispatcher.utter_message(
+            text = text)
         return []

@@ -104,3 +104,5 @@ def getWeather(country):
 wb = openpyxl.load_workbook("actions/wiki_countrys.xlsx")
 ws = wb.worksheets[0] 
 
+## Testen der Methode 
+print(getWeather('Türkei'))
