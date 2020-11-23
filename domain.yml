@@ -2,6 +2,10 @@ session_config:
   session_expiration_time: 0
   carry_over_slots_to_new_session: true
 intents:
+- ask_rki
+- ask_quarantaine
+- ask_corona_test_location
+- ask_corona_insurance
 - money
 - travel_days
 - affirm
@@ -45,6 +49,7 @@ intents:
 - play_music
 - beer
 - insuranceChoice
+- rki_risk
 entities:
 - 5 Sterne Schutz Einmalig Einzelnd
 - 5 Sterne Schutz Einmalig Jahres
@@ -385,6 +390,23 @@ responses:
   - text: "•\tWelche Mehrwerte ergeben sich durch eine Bedarfsanalyse gestützt von\
       \ einer Conversational AI im Vergleich zu einem traditionellen Fragebogen hinsichtlich\
       \ Erkennung und Implementierung veränderter Markttrends ?"
+  utter_answer_rki:
+  - buttons:
+    - payload: /ask_quarantaine
+      title: Kann ich mich testen  ?
+    text: Seit dem 08. November gilt die Verordnung, dass du dich in eine zehntägige
+      Quarantäne begeben musst wenn du dich in einem Risikogebiet aufgehalten hast.
+  utter_answer_coronaInsurance:
+  - text: Du kannst das Corona-Schutz-Produkt mitversichern. Dann bist du auch bei
+      einer Corona-Erkrankung (Rücktritt + Krankenversicherung) versichert !
+  utter_answer_quarantane:
+  - buttons:
+    - payload: /ask_corona_test_location
+      title: Wo ?
+    text: Nach frühestens fünf Tage, kannst du dich auf Corona testen lassen, um bei
+      einem negativen Testergebnis die Quarantänepflicht zu beenden.
+  utter_answer_coronaLocation:
+  - text: 'Hier gibt es eine Übersicht :   https://www.reisereporter.de/artikel/12315-corona-teststationen-in-deutschland-fuer-rueckkehrer-aus-urlaub-in-risikogebiet-mit-karte'
 actions:
 - action_response_weather
 - action_fetch_continent
@@ -433,5 +455,6 @@ actions:
 - utter_play_music
 - utter_response_beer
 - utter_response_corona
+- action_RKIWarning
 forms:
 - insurance_check

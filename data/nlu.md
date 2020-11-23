@@ -620,8 +620,25 @@
 - Wieviel kostet es?
 
 ## intent:rki_risk
-- Ist mein Land ein Risikogebiet ? 
-- Risikogebiet laut RKI ? 
+- Ist mein Land ein Risikogebiet ?
+- Risikogebiet laut RKI ?
+
+## intent:ask_rki
+- Kann ich trotzdem fliegen ? 
+- Was heißt das ?
+- Was bedeutet das ? 
+
+## intent:ask_corona_insurance
+- Bin ich bei einer Corona-Erkankrung versichert ?
+- Trotz Corona versichert ? 
+
+## intent:ask_quarantaine
+- Muss ich in Quarantäne ? 
+- Muss ich bei der Rückkehr in Quarantäne ?
+
+## intent:ask_corona_test_location
+- Wo sind die Corona Testzentren ? 
+- Wo kann ich mich testen lassen ? 
 
 ## synonym:1
 - ersten
