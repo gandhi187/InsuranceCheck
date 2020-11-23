@@ -24,9 +24,7 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
             postgreSQL_select_Query = "select name, image_link from insuranceproducts WHERE age >=" + str(age) + "AND luggage ="+"'" +luggage +"'" + " AND finance_loss =" + "'"+ financeLoss + "'" + " AND person_group = " + str(group) + " AND " + str(travel_days) + "  <= travel_days UNION select name, image_link from insuranceproducts where name like '%Auslandsreisekranken%' AND person_group = " + str(group) + " and  more_travel = " + str(moreTravel) + " AND " + str(travel_days) + " <= travel_days"
             print("Query : " + postgreSQL_select_Query)
             cursor.execute(postgreSQL_select_Query)
-            print("Selecting rows from mobile table using cursor.fetchall")
             mobile_records = cursor.fetchall() 
-            print("Print each row and it's columns values")
             if not mobile_records:
                 noResults = {
                 "title": "Individuelle Beratung erforderlich",
@@ -91,13 +89,12 @@ def queryDBCorona(destination):
             postgreSQL_select_Query = "SELECT *	FROM public.corona_countries where country = '" + destination + "'"
             print("Query : " + postgreSQL_select_Query)
             cursor.execute(postgreSQL_select_Query)
-            print("Selecting rows from mobile table using cursor.fetchall")
             coronaCountries = cursor.fetchall() 
-            print("Print each row and it's columns values")
             if not coronaCountries:
-                result = "Lt. RKI wurde " + destination + " nicht als Risikogebiet klassifiziert"
+                result = None
             for row in coronaCountries:
-                result = destination + " wurde vom RKI als Risikogebiet klassifiziert:  ", row[2],"\n"
+                result = destination + " wurde vom RKI als Risikogebiet klassifiziert:  " + row[2]
+                result = row[2]
         except (Exception, psycopg2.Error) as error :
             print ("Error while fetching data from PostgreSQL", error)
 

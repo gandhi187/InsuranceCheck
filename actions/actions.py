@@ -459,7 +459,11 @@ class RKITRavelWarning(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
         destination = tracker.get_slot('destination')
-        text = queryDBCorona(destination)
-        dispatcher.utter_message(
-            text = text)
+        rki = queryDBCorona(destination)
+        if rki is not None :
+            dispatcher.utter_message(
+            text =  destination + " wurde vom RKI als Risikogebiet klassifiziert: " + rki )
+        else : 
+            dispatcher.utter_message(
+            text =  destination + " wurde vom RKI nicht als Risikogebiet klassifiziert.")
         return []
