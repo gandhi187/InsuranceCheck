@@ -144,8 +144,6 @@ class InsuranceCheck(FormAction):
         if rki is not None :
             dispatcher.utter_message(
             text =  destination + " wurde vom RKI als Risikogebiet klassifiziert: " + rki )
-            buttons = [{"title": "Bedeutung ?", "payload": "ask_rki"}]
-            dispatcher.utter_button_message(destination + " wurde vom RKI als Risikogebiet klassifiziert: " + rki , buttons)
         else : 
             dispatcher.utter_message(
             text =  destination + " wurde vom RKI nicht als Risikogebiet klassifiziert.")
