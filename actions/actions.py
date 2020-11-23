@@ -125,6 +125,9 @@ class InsuranceCheck(FormAction):
         data = getCoronaInformation(value)
         activeCases = data['active']
         deaths = data['deaths']
+        destination = tracker.get_slot('destination')
+        rki = queryDBCorona(destination)
+
 
         if (continent == "Europa"):
             dispatcher.utter_message(
@@ -132,13 +135,20 @@ class InsuranceCheck(FormAction):
             dispatcher.utter_message("In " + value + " gibt es derzeit " + str(activeCases) +
             " aktive Corona Fälle. \n Seit Ausbruch gab es " + str(deaths) + " Todesfälle.")
 
-            return {"destination": value}
         else:
             dispatcher.utter_message(
                 template="utter_answerDestination_outsideEurope")
             dispatcher.utter_message("In " + value + " gibt es derzeit " + str(activeCases) +
             " aktive Corona Fälle. \n Seit Ausbruch gab es " + str(deaths) + " Todesfälle.")
-            return {"destination": value}
+
+        if rki is not None :
+            dispatcher.utter_message(
+            text =  destination + " wurde vom RKI als Risikogebiet klassifiziert: " + rki )
+        else : 
+            dispatcher.utter_message(
+            text =  destination + " wurde vom RKI nicht als Risikogebiet klassifiziert.")
+        return {"destination": value}
+
 
     def validate_age(
         self,
