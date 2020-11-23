@@ -288,6 +288,8 @@ responses:
     text: Willst du neustarten ?
   utter_ask_travel_days:
   - buttons:
+    - payload: /ask_rki
+      title: Risikogebiet ?
     - payload: /question
       title: Warum ?
     text: Wie lange wirst du verreisen ?
