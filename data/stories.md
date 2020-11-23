@@ -328,3 +328,13 @@
 ## RKI
 * rki_risk
  - action_RKIWarning
+
+## CoronaDetails
+* rki_risk 
+- action_RKIWarning
+* ask_rki 
+- utter_answer_rki
+* ask_quarantaine
+- utter_answer_quarantane
+* ask_corona_test_location
+- utter_answer_coronaLocation
