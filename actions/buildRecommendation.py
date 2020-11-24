@@ -62,6 +62,7 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
                 ]
             }
                 temp.append(y)
+                
                 print("Id = ", row[0], )
                 print("Model = ", row[1],"\n")
         except (Exception, psycopg2.Error) as error :
