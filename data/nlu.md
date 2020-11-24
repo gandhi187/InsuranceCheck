@@ -23,6 +23,7 @@
 - hui
 - Hallo?
 - Ich will eine Versicherung
+- Berate mich bitte
 
 ## intent:goodbye
 - Schönen Abend noch
@@ -286,6 +287,10 @@
 - [Deutschland](destination). Weil ich da wohne.
 - [Singapur](destination)
 - [1992](age)
+- [Österrreich](destination), Argentina, [China](destination), Romania
+- Nach [Neuseeland](destination), die Landschaft ist so schön
+- Ich möchte gern nach [Nordkorea ](destination)verreisen
+- [Nordkorea](destination)
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -555,6 +560,7 @@
 - und jetzt?
 - Was kannst Du eigentlich außer Tschüss sagen?
 - Kannst Du mir da nicht weiterhelfen?
+- Was ist der Sinn von dir?
 
 ## intent:changeDestination
 - Ich möcht das Reiseland ändern
@@ -589,6 +595,7 @@
 - Was ist Inhalt deiner Masterarbeit ?
 - Welche Forschungsfrage sollst du beantworten ?
 - Forschungsfragen
+- Was ist dein Thema?
 
 ## intent:technicaldesign
 - Wie bist du aufgebaut ?
@@ -596,6 +603,7 @@
 - Wie funktionierst du ?
 - Welche Technologien ?
 - wie läuft das technisch
+- Was für Funktionalitäten hast du?
 
 ## intent:travel_days
 - einen Monat
@@ -695,6 +703,17 @@
 
 ## intent:destination
 - Ich will nach [Brasilien](destination) reisen.
+
+## intent:travel_tipps
+- Wohin soll ich fliegen ? 
+- Wohin soll ich reisen ? 
+
+## intent:allproducts
+- Welche Produkte bietest du an ?
+- Welche Reiseversicherung bietest du an ? 
+
+## intent:meaningoflife
+- Was ist der Sinn des Lebens ? 
 
 ## synonym:1
 - ersten
