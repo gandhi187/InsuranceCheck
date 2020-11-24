@@ -56,6 +56,9 @@ intents:
 - meaningoflife
 - restart
 - travel_tipps
+- how
+- explain
+- request_restaurant
 entities:
 - 5 Sterne Schutz Einmalig Einzelnd
 - 5 Sterne Schutz Einmalig Jahres
@@ -142,6 +145,8 @@ slots:
   continent:
     type: unfeaturized
   coronaCases:
+    type: unfeaturized
+  cuisine:
     type: unfeaturized
   days:
     type: unfeaturized
@@ -416,7 +421,7 @@ responses:
   utter_answer_coronaLocation:
   - text: 'Hier gibt es eine Übersicht :   https://www.reisereporter.de/artikel/12315-corona-teststationen-in-deutschland-fuer-rueckkehrer-aus-urlaub-in-risikogebiet-mit-karte'
   utter_answer_meaningoflife:
-  - text: Ganz klar, die Antwort lautet 42 😀
+  - text: Ganz klar, die Antwort lautet 42 !
   utter_answer_destinationTipps:
   - buttons:
     - payload: Uganda
@@ -475,5 +480,6 @@ actions:
 - utter_response_beer
 - utter_response_corona
 - action_RKIWarning
+- restaurant_form
 forms:
 - insurance_check
