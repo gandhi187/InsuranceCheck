@@ -84,7 +84,7 @@
 * technicaldesign
  - utter_response_architecture
 
-## New Story
+## New Story2
 
 * affirm
     - insurance_check
@@ -338,3 +338,174 @@
 - utter_answer_quarantane
 * ask_corona_test_location
 - utter_answer_coronaLocation
+
+## Story from conversation with f72ca144a712464bad307f4bcacff42b on November 23rd 2020
+
+* greet
+    - utter_greet
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* inform{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - insurance_check
+    - slot{"destination":"Indien"}
+    - slot{"requested_slot":"travel_days"}
+* ask_rki
+    - utter_answer_rki
+* ask_quarantaine
+    - utter_answer_quarantane
+* ask_corona_test_location
+    - utter_answer_coronaLocation
+    - slot{"destination":"Indien"}
+    - utter_ask_continue
+* affirm
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+
+## Story from conversation with b81740a633bb468ebd8ffec32a96bbb2 on November 23rd 2020
+
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* inform{"destination":"italien"}
+    - slot{"destination":"italien"}
+    - slot{"destination":"italien"}
+    - insurance_check
+    - slot{"destination":"italien"}
+    - slot{"requested_slot":"travel_days"}
+* ask_rki
+    - utter_answer_rki
+* ask_quarantaine
+    - utter_answer_quarantane
+* ask_corona_test_location
+    - utter_answer_coronaLocation
+    - utter_ask_continue
+* affirm
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+* question
+    - slot{"destination":"italien"}
+    - utter_explain_whyTravelDays
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+* travel_days{"duration":2}
+    - insurance_check
+    - slot{"travel_days":60}
+    - slot{"requested_slot":"moreTravel"}
+* question
+    - slot{"destination":"italien"}
+    - utter_explain_whyMoreTravel
+    - insurance_check
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* inform{"age":"1988"}
+    - slot{"age":"1988"}
+    - slot{"age":"1988"}
+    - insurance_check
+    - slot{"age":32}
+    - slot{"requested_slot":"group"}
+* question
+    - slot{"destination":"italien"}
+    - slot{"age":"1988"}
+    - utter_explain_whyGroup
+    - insurance_check
+    - slot{"requested_slot":"group"}
+* deny
+    - insurance_check
+    - slot{"group":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+
+## New Story1
+
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* question
+    - utter_explain_whyDestination
+    - insurance_check
+    - slot{"requested_slot":"destination"}
+* inform{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - insurance_check
+    - slot{"destination":"Indien"}
+    - slot{"requested_slot":"travel_days"}
+* ask_rki
+    - utter_answer_rki
+* ask_quarantaine
+    - utter_answer_quarantane
+* ask_corona_test_location
+    - utter_answer_coronaLocation
+    - utter_ask_continue
+* affirm
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+* question
+    - slot{"destination":"Indien"}
+    - utter_explain_whyTravelDays
+    - insurance_check
+    - slot{"requested_slot":"travel_days"}
+* inform{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - insurance_check
+    - slot{"destination":"Indien"}
+    - slot{"requested_slot":"travel_days"}
+* travel_days{"duration":20}
+    - insurance_check
+    - slot{"travel_days":20}
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"luggage":"mittel"}
+    - slot{"requested_slot":"financeLoss"}
+* question
+    - slot{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - utter_explain_whyFinanceLoss
+    - insurance_check
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - insurance_check
+    - slot{"financeLoss":"mittel"}
+    - slot{"requested_slot":"moreTravel"}
+* question
+    - slot{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - utter_explain_whyMoreTravel
+    - insurance_check
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* question
+    - utter_explain_whyDestination
+    - insurance_check
+    - slot{"requested_slot":"age"}
+* inform{"age":"1987"}
+    - slot{"age":"1987"}
+    - insurance_check
+    - slot{"age":33}
+    - slot{"requested_slot":"group"}
+* deny
+    - insurance_check
+    - slot{"group":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
