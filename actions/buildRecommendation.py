@@ -16,7 +16,7 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
             temp = x['payload']['elements']
 
             connection = psycopg2.connect(user="admin",
-                                    password="dyr6PGIIlRQDUvk",
+                                    password="JbVjyX2vGfqLnL3",
                                     host="34.107.51.226",
                                     port="5432",
                                     database="insurance")
@@ -82,7 +82,7 @@ def queryDBCorona(destination):
         try:
            
             connection = psycopg2.connect(user="admin",
-                                    password="dyr6PGIIlRQDUvk",
+                                    password="JbVjyX2vGfqLnL3",
                                     host="34.107.51.226",
                                     port="5432",
                                     database="insurance")
