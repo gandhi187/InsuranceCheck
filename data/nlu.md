@@ -301,6 +301,10 @@
 - [Italien](destination)
 - [England](destination)
 - [1995](age)
+- [1900](age)
+- [Namibia](destination)
+- [1907](age)
+- [2002](age)
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -559,6 +563,7 @@
 - Warum sollte ich? Du willst mr doch was verkaufen. [Also strenge Dich gefälligst an.](destination)
 - Du bist leider ein Totalausfall.
 - creepy digga
+- aargh
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -647,6 +652,9 @@
 - 3000000000000 Jahre
 - 9 Monate
 - 300000000000000000000000000000000000000000000000 Tage
+- Fünf Tage
+- sechs tage
+- fünf tage
 
 ## intent:happy
 - Wow
@@ -662,6 +670,7 @@
 - Ich bin genauso begeistert wie du :)
 - sweeet
 - Ich sagte nur danke
+- danke dafür
 
 ## intent:play_music
 - Kannst Du auch Musik spielen?
@@ -707,6 +716,7 @@
 ## intent:ask_corona_test_location
 - Wo sind die Corona Testzentren ?
 - Wo kann ich mich testen lassen ?
+- Gibt es bald eine Impfung?
 
 ## intent:ppi
 - PPI ?
