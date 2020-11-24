@@ -70,6 +70,7 @@
 - Wir sehen uns!
 - Wir sehen uns das nächste mal
 - Ciao
+- Dann lieber nicht.
 
 ## intent:affirm
 - Alles klar.
@@ -132,6 +133,10 @@
 - Ich will beginnen
 - Bist du noch da, Dave?
 - Vielleicht.
+- Auf jeden Fall
+- Ja gerne
+- OK
+- joa
 
 ## intent:ask_weather
 - Wie wird das Wetter ?
@@ -146,6 +151,7 @@
 - wie ist das wetter
 - Wie ist das Wetter
 - wie wird das Wetter ?
+- ich möchte wissen wie das wetter in hamburg ist
 
 ## intent:deny
 - niemals
@@ -153,6 +159,7 @@
 - ne
 - /deny
 - Kein Interesse
+- Auf gar keinen Fall
 
 ## intent:out_of_scope
 - warte
@@ -245,7 +252,7 @@
 - [1966](age)
 - [Schottland] (destination)
 - [türkei](destination)
-- [Ukraine](destination)
+- Ukraine
 - [ukraine](destination)
 - [Dubai](destination)
 - [USA](destination)
@@ -253,6 +260,19 @@
 - [Russland](destination)
 - [Dänemark](destination)
 - [Kroatien] (destination)
+- Ich möchte nach [Irland](destination) verreisen.
+- Georgien
+- [USa](destination)
+- [Uganda](destination)
+- Tahiti
+- [1889](age)
+- Ich wurde im Jahr [1988](age) geboren.
+- [1970](age)
+- [Usa](destination)
+- Marshallinseln
+- Ich wil werden nach Portugal, noch nach Spanien sondern nach[ Belgin](destination) reisen.
+- Ich will nach [Afghanistan ](destination)reisen.
+- Ich will in den [Süd-Sudan](destination).
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -507,6 +527,8 @@
 - Nevermind. Ich erkundige mich an anderer Stelle zum verreisen
 - der Urlaub ist hinüber
 - David ist ein Hund
+- Keinen Mehrwert
+- Warum sollte ich? Du willst mr doch was verkaufen. [Also strenge Dich gefälligst an.](destination)
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -550,6 +572,7 @@
 - Masterarbeit
 - Was ist Inhalt deiner Masterarbeit ?
 - Welche Forschungsfrage sollst du beantworten ?
+- Forschungsfragen
 
 ## intent:technicaldesign
 - Wie bist du aufgebaut ?
@@ -585,6 +608,10 @@
 - Immernoch 5 Tage
 - 12 Tage
 - Ein halbes Jahr
+- 1 Jahr
+- 3000000000000 Jahre
+- 9 Monate
+- 300000000000000000000000000000000000000000000000 Tage
 
 ## intent:happy
 - Wow
@@ -624,21 +651,30 @@
 - Risikogebiet laut RKI ?
 
 ## intent:ask_rki
-- Kann ich trotzdem fliegen ? 
+- Kann ich trotzdem fliegen ?
 - Was heißt das ?
-- Was bedeutet das ? 
+- Was bedeutet das ?
 
 ## intent:ask_corona_insurance
 - Bin ich bei einer Corona-Erkankrung versichert ?
-- Trotz Corona versichert ? 
+- Trotz Corona versichert ?
 
 ## intent:ask_quarantaine
-- Muss ich in Quarantäne ? 
+- Muss ich in Quarantäne ?
 - Muss ich bei der Rückkehr in Quarantäne ?
 
 ## intent:ask_corona_test_location
-- Wo sind die Corona Testzentren ? 
-- Wo kann ich mich testen lassen ? 
+- Wo sind die Corona Testzentren ?
+- Wo kann ich mich testen lassen ?
+
+## intent:ppi
+- PPI ?
+
+## intent:restart
+- neustarten
+
+## intent:destination
+- Ich will nach [Brasilien](destination) reisen.
 
 ## synonym:1
 - ersten
