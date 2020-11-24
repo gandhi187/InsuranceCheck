@@ -24,8 +24,6 @@
 * whatsPossible
   - utter_explain_whatspossible
 
-
-
 ## check_continue
 > check_affirm
 * out_of_scope
@@ -511,3 +509,15 @@
     - slot{"group":false}
     - form{"name":null}
     - slot{"requested_slot":null}
+
+## MeaningOfLive
+* meaningoflive
+- utter_answer_meaningoflife
+
+## travel_tipps
+* travel_tipps
+- utter_answer_destinationTipps
+
+## Restart Bot 
+* restart
+- action_restart_bot

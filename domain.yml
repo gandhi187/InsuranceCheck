@@ -2,6 +2,7 @@ session_config:
   session_expiration_time: 0
   carry_over_slots_to_new_session: true
 intents:
+- meaningoflive
 - ask_rki
 - ask_quarantaine
 - ask_corona_test_location
@@ -50,6 +51,11 @@ intents:
 - beer
 - insuranceChoice
 - rki_risk
+- allproducts
+- ppi
+- meaningoflife
+- restart
+- travel_tipps
 entities:
 - 5 Sterne Schutz Einmalig Einzelnd
 - 5 Sterne Schutz Einmalig Jahres
@@ -409,6 +415,17 @@ responses:
       einem negativen Testergebnis die Quarantänepflicht zu beenden.
   utter_answer_coronaLocation:
   - text: 'Hier gibt es eine Übersicht :   https://www.reisereporter.de/artikel/12315-corona-teststationen-in-deutschland-fuer-rueckkehrer-aus-urlaub-in-risikogebiet-mit-karte'
+  utter_answer_meaningoflife:
+  - text: Ganz klar, die Antwort lautet 42 😀
+  utter_answer_destinationTipps:
+  - buttons:
+    - payload: Uganda
+      title: Uganda
+    - payload: Namibia
+      title: Namibia
+    - payload: Kuba
+      title: Kuba
+    text: Wie wäre es mit diesen Zielen  (Keine Risikogebiete)
 actions:
 - action_response_weather
 - action_fetch_continent

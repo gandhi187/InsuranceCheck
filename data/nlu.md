@@ -24,6 +24,7 @@
 - Hallo?
 - Ich will eine Versicherung
 - Berate mich bitte
+- Bist du noch da, Dave?
 
 ## intent:goodbye
 - Schönen Abend noch
@@ -73,6 +74,7 @@
 - Wir sehen uns das nächste mal
 - Ciao
 - Dann lieber nicht.
+- Ich höre jetzt auf, da du seit einigen Minuten buggy bist
 
 ## intent:affirm
 - Alles klar.
@@ -133,7 +135,6 @@
 - Lass uns beginnen
 - Ich moechte eine Reise planen
 - Ich will beginnen
-- Bist du noch da, Dave?
 - Vielleicht.
 - Auf jeden Fall
 - Ja gerne
@@ -143,6 +144,7 @@
 - Servus Dave, sehr gerne
 - Lets go
 - Lass uns anfangen
+- Schieß los! Ich bin bereit :)
 
 ## intent:ask_weather
 - Wie wird das Wetter ?
@@ -166,6 +168,7 @@
 - /deny
 - Kein Interesse
 - Auf gar keinen Fall
+- what? no
 
 ## intent:out_of_scope
 - warte
@@ -258,7 +261,7 @@
 - [1966](age)
 - [Schottland] (destination)
 - [türkei](destination)
-- Ukraine
+- [Ukraine](destination)
 - [ukraine](destination)
 - [Dubai](destination)
 - [USA](destination)
@@ -267,7 +270,7 @@
 - [Dänemark](destination)
 - [Kroatien] (destination)
 - Ich möchte nach [Irland](destination) verreisen.
-- Georgien
+- [Georgien](destination)
 - [USa](destination)
 - [Uganda](destination)
 - Tahiti
@@ -291,6 +294,13 @@
 - Nach [Neuseeland](destination), die Landschaft ist so schön
 - Ich möchte gern nach [Nordkorea ](destination)verreisen
 - [Nordkorea](destination)
+- DubAi
+- [Schottland](destination)
+- [Tansania](destination)
+- [Marokko](destination)
+- [Italien](destination)
+- [England](destination)
+- [1995](age)
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -548,6 +558,7 @@
 - Keinen Mehrwert
 - Warum sollte ich? Du willst mr doch was verkaufen. [Also strenge Dich gefälligst an.](destination)
 - Du bist leider ein Totalausfall.
+- creepy digga
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -648,6 +659,9 @@
 - Du bist doch schon ein schlaues Kerlchen ;)
 - Top
 - Danke für die Infos!
+- Ich bin genauso begeistert wie du :)
+- sweeet
+- Ich sagte nur danke
 
 ## intent:play_music
 - Kannst Du auch Musik spielen?
@@ -696,24 +710,40 @@
 
 ## intent:ppi
 - PPI ?
+- ppi
+- PPI
+- PPI Cross
+- PPI X
+- Bist du von PPI?
+- PPI PUL
 
 ## intent:restart
 - neustarten
 - Lass uns neustarten.
+- reset
+- neustart
 
 ## intent:destination
 - Ich will nach [Brasilien](destination) reisen.
+- Kroatien
+- Ich will nach [Kroatien](destination)
 
 ## intent:travel_tipps
-- Wohin soll ich fliegen ? 
-- Wohin soll ich reisen ? 
+- Wohin soll ich fliegen ?
+- Wohin soll ich reisen ?
+- Wohin soll ich fliegen?
 
 ## intent:allproducts
 - Welche Produkte bietest du an ?
-- Welche Reiseversicherung bietest du an ? 
+- Welche Reiseversicherung bietest du an ?
+- Welche Produkte bieten sie an?
 
 ## intent:meaningoflife
-- Was ist der Sinn des Lebens ? 
+- Was ist der Sinn des Lebens ?
+- sinn des lebens
+
+## intent:how
+- Wie alt bist du?
 
 ## synonym:1
 - ersten
