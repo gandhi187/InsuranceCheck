@@ -191,6 +191,7 @@
 - Hä ?
 - Check ich nicht
 - warum ?
+- /question
 
 ## intent:product
 - [Auslandsreisekrankenversicherung Einmalig Gruppen](product)
