@@ -50,12 +50,12 @@ def queryDB(travel_days,luggage,financeLoss,moreTravel,age,group,destination):
                 "subtitle":destination,
                 "image_url": row[1],
                 "buttons": [{
-                    "title": "Mehr",
+                    "title": "Bild",
                     "url": row[1],
                     "type": "web_url"
                 },
                     {
-                        "title": "Interessant",
+                        "title": "Mehr",
                         "type": "postback",
                         "payload": row[0]
                     }

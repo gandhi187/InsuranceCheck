@@ -195,9 +195,7 @@ class InsuranceCheck(FormAction):
         dispatcher.utter_message(attachment=jsonCarousel)
         self.tag_convo(tracker, '[{"value":"Till Submit","color":"e5ff00"}]')
         dispatcher.utter_message("Ich hoffe ich konnte dir weiterhelfen :) auf deiner Reise nach : " +
-                                 destination + ". Klicke auf  'Mehr', um weitere Informationen über das gewünschte Produkt zu erhalten")
-        dispatcher.utter_message(
-            "Du kannst dich auch nach der aktuellen Corona-Lage in deinem Zielland: " + destination + " bei mir erkundigen")
+                                 destination + ". Klicke auf  'Mehr', um weitere Informationen zu erhalten")
         return []
 
     def calculateDays(self, value, formatType):
