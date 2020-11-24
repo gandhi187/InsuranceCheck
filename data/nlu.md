@@ -22,6 +22,7 @@
 - hi
 - hui
 - Hallo?
+- Ich will eine Versicherung
 
 ## intent:goodbye
 - Schönen Abend noch
@@ -137,6 +138,10 @@
 - Ja gerne
 - OK
 - joa
+- Warum nicht.
+- Servus Dave, sehr gerne
+- Lets go
+- Lass uns anfangen
 
 ## intent:ask_weather
 - Wie wird das Wetter ?
@@ -273,6 +278,14 @@
 - Ich wil werden nach Portugal, noch nach Spanien sondern nach[ Belgin](destination) reisen.
 - Ich will nach [Afghanistan ](destination)reisen.
 - Ich will in den [Süd-Sudan](destination).
+- Ich nach [USA](destination).
+- Ich will nicht in die USA sondern nach [Polen](destination).
+- Kann ich nach [Italien](destination) reisen?
+- [1920](age)
+- Ich möchte nach [Italien](destination)
+- [Deutschland](destination). Weil ich da wohne.
+- [Singapur](destination)
+- [1992](age)
 
 ## intent:occasionDetails
 - Werde [beruflich](occasionDetails)
@@ -529,6 +542,7 @@
 - David ist ein Hund
 - Keinen Mehrwert
 - Warum sollte ich? Du willst mr doch was verkaufen. [Also strenge Dich gefälligst an.](destination)
+- Du bist leider ein Totalausfall.
 
 ## intent:whatsPossible
 - Was kannst du ?
@@ -539,6 +553,8 @@
 - ^(1[89]|[2-9][0-9])$
 - Was kannst du
 - und jetzt?
+- Was kannst Du eigentlich außer Tschüss sagen?
+- Kannst Du mir da nicht weiterhelfen?
 
 ## intent:changeDestination
 - Ich möcht das Reiseland ändern
@@ -622,12 +638,15 @@
 - Nice
 - Danke
 - Du bist doch schon ein schlaues Kerlchen ;)
+- Top
+- Danke für die Infos!
 
 ## intent:play_music
 - Kannst Du auch Musik spielen?
 - Spiele Musik
 - Musik bitte
 - Music
+- Meine Geduld ist erschöpft.
 
 ## intent:bot_challenge
 - Du musst noch viel lernen.. Das ist schon okay. Du bist ja auch knapp 38 Jahre juenger als ich
@@ -672,6 +691,7 @@
 
 ## intent:restart
 - neustarten
+- Lass uns neustarten.
 
 ## intent:destination
 - Ich will nach [Brasilien](destination) reisen.
