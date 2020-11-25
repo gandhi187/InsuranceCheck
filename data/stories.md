@@ -185,44 +185,200 @@
 * restart
 - action_restart_bot
 
-## ExplainDestination
-* affirm
-	- insurance_check
-	- form{"name": "insurance_check"}
-	- slot{"requested_slot": "destination"}
-* question
-	- utter_explain_whyDestination
-	- form{"name": "insurance_check"}
-	- slot{"requested_slot": "destination"}
-    - form{"name": null}
+## ExplaiNDestination
+* ask_whydestination
+- utter_explain_whyDestination
 
-## ExplainTravelDays2
+## New Story
+
+* affirm
+    - insurance_check
+    - form{"name":"insurance_check"}
+    - slot{"requested_slot":"destination"}
+* ask_whydestination
+    - utter_explain_whyDestination
+    - insurance_check
+    - slot{"requested_slot":"destination"}
+
+## ExplainTravelDays
+* ask_whyTravelDays
+- utter_explain_whyTravelDays
+
+## ExplainLuggage
+* ask_whyLuggage
+- utter_explain_whyBaggeLoss
+
+## ExplainFinanceLoss
+* ask_whyFinanceLoss
+- utter_explain_whyFinanceLoss
+
+## ExplainGroup
+* ask_whyGroup
+- utter_explain_whyGroup
+
+## New Story
 
 * affirm
     - insurance_check
     - form{"name":"insurance_check"}
     - slot{"requested_slot":"destination"}
 * inform{"destination":"Indien"}
-    - insurance_check
-    - slot{"requested_slot":"travel_days"}
-* question
     - slot{"destination":"Indien"}
+    - slot{"destination":"Indien"}
+    - insurance_check
+    - slot{"destination":"Indien"}
+    - slot{"requested_slot":"travel_days"}
+* ask_whyTravelDays
     - utter_explain_whyTravelDays
     - insurance_check
     - slot{"requested_slot":"travel_days"}
+* travel_days{"duration":12}
+    - insurance_check
+    - slot{"travel_days":12}
+    - slot{"requested_slot":"luggage"}
+* ask_whyLuggage
+    - utter_explain_whyBaggeLoss
+    - slot{"destination":"Indien"}
+    - insurance_check
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"luggage":"mittel"}
+    - slot{"requested_slot":"financeLoss"}
+* ask_whyFinanceLoss
+    - utter_explain_whyFinanceLoss
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - insurance_check
+    - slot{"financeLoss":"mittel"}
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* inform{"age":"1988"}
+    - slot{"age":"1988"}
+    - slot{"age":"1988"}
+    - insurance_check
+    - slot{"age":32}
+    - slot{"requested_slot":"group"}
+* ask_whyGroup
+    - utter_explain_whyGroup
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - slot{"age":"1988"}
+    - insurance_check
+    - slot{"requested_slot":"group"}
+* deny
+    - insurance_check
+    - slot{"group":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - action_fetch_continent
+    - slot{"continent":"Asien"}
 
-## ExplainTravelDays2
+## ExplainAge
+* ask_whyAge
+- utter_explain_whyAge
+
+## ExplainMoreTravel
+* ask_whyMoreTravel
+- utter_explain_whyMoreTravel
+
+## New Story
 
 * affirm
     - insurance_check
     - form{"name":"insurance_check"}
     - slot{"requested_slot":"destination"}
+* ask_whydestination
+    - utter_explain_whyDestination
+    - insurance_check
+    - slot{"requested_slot":"destination"}
 * inform{"destination":"Indien"}
     - slot{"destination":"Indien"}
+    - slot{"destination":"Indien"}
     - insurance_check
     - slot{"destination":"Indien"}
     - slot{"requested_slot":"travel_days"}
-* question
+* ask_whyTravelDays
     - utter_explain_whyTravelDays
+    - slot{"destination":"Indien"}
     - insurance_check
     - slot{"requested_slot":"travel_days"}
+* travel_days{"duration":20}
+    - insurance_check
+    - slot{"travel_days":20}
+    - slot{"requested_slot":"luggage"}
+* ask_whyLuggage
+    - utter_explain_whyBaggeLoss
+    - slot{"destination":"Indien"}
+    - insurance_check
+    - slot{"requested_slot":"luggage"}
+* inform{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"luggage":"mittel"}
+    - slot{"requested_slot":"financeLoss"}
+* ask_whyFinanceLoss
+    - utter_explain_whyFinanceLoss
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - insurance_check
+    - slot{"requested_slot":"financeLoss"}
+* inform{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - insurance_check
+    - slot{"financeLoss":"mittel"}
+    - slot{"requested_slot":"moreTravel"}
+* ask_whyMoreTravel
+    - utter_explain_whyMoreTravel
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - insurance_check
+    - slot{"requested_slot":"moreTravel"}
+* deny
+    - insurance_check
+    - slot{"moreTravel":false}
+    - slot{"requested_slot":"age"}
+* ask_whyAge
+    - utter_explain_whyAge
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - insurance_check
+    - slot{"requested_slot":"age"}
+* inform{"age":"1988"}
+    - slot{"age":"1988"}
+    - slot{"age":"1988"}
+    - insurance_check
+    - slot{"age":32}
+    - slot{"requested_slot":"group"}
+* ask_whyGroup
+    - utter_explain_whyGroup
+    - slot{"destination":"Indien"}
+    - slot{"luggage":"mittel"}
+    - slot{"financeLoss":"mittel"}
+    - slot{"age":"1988"}
+    - insurance_check
+    - slot{"requested_slot":"group"}
+* deny
+    - insurance_check
+    - slot{"group":false}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+    - action_fetch_continent
+    - slot{"continent":"Asien"}

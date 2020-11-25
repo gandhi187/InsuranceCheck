@@ -59,6 +59,14 @@ intents:
 - how
 - explain
 - request_restaurant
+- ask_whyDestination
+- ask_whydestination
+- ask_whyTravelDays
+- ask_whyLuggage
+- ask_whyFinanceLoss
+- ask_whyGroup
+- ask_whyAge
+- ask_whyMoreTravel
 entities:
 - 5 Sterne Schutz Einmalig Einzelnd
 - 5 Sterne Schutz Einmalig Jahres
@@ -201,7 +209,7 @@ responses:
   - text: Das kann ich dir leider (noch) nicht beantworten. Bitte entschuldige.
   utter_ask_age:
   - buttons:
-    - payload: /question
+    - payload: /ask_whyAge
       title: Warum ?
     text: In welchem Jahr bist du geboren ?
   utter_ask_baggage:
@@ -225,7 +233,7 @@ responses:
   - text: Möchtest du den Versicherungscheck fortführen ?
   utter_ask_destination:
   - buttons:
-    - payload: /question
+    - payload: /ask_whydestination
       title: Warum ?
     text: In welches Land möchtest du vereisen ?
   utter_ask_familyStatus:
@@ -247,7 +255,7 @@ responses:
       title: Mäßig schlimm
     - payload: '/inform{"financeLoss": "hoch"}'
       title: Sehr schlimm
-    - payload: /question
+    - payload: /ask_whyFinanceLoss
       title: Warum ?
     text: 'Wie schlimm wäre der finanzieller Verlust für dich bei Nichtantritt deiner
       Reise in dein Reiseland:   {destination} ?'
@@ -257,7 +265,7 @@ responses:
       title: Ja
     - payload: /deny
       title: Nein
-    - payload: /question
+    - payload: /ask_whyGroup
       title: Warum ?
     text: Möchtest deinen Lebenspartner oder Kinder unter 25 mitversichern ?
   utter_ask_luggage:
@@ -268,7 +276,7 @@ responses:
       title: Mäßig schlimm
     - payload: '/inform{"luggage": "hoch"}'
       title: Sehr schlimm
-    - payload: /question
+    - payload: /ask_whyLuggage
       title: Warum ?
     text: Wie schlimm wäre der Verlust oder die Beschädigung deines Gepäcks ?
   utter_ask_moreTravel:
@@ -277,7 +285,7 @@ responses:
       title: Ja
     - payload: /deny
       title: Nein
-    - payload: /question
+    - payload: /ask_whyMoreTravel
       title: Warum ?
     text: Wirst du dieses Jahr noch öfters verreisen ?
   utter_ask_occasion:
@@ -301,7 +309,7 @@ responses:
   - buttons:
     - payload: /ask_rki
       title: Risikogebiet ?
-    - payload: /question
+    - payload: /ask_whyTravelDays
       title: Warum ?
     text: Wie lange wirst du verreisen ?
   utter_begin:

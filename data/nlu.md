@@ -756,6 +756,27 @@
 ## intent:how
 - Wie alt bist du?
 
+## intent:ask_whyDestination
+- XA3929193BV
+
+## intent:ask_whyTravelDays
+- XB828193BW
+
+## intent:ask_whyLuggage
+- XB29182NX
+
+## intent:ask_whyFinanceLoss
+- XUW2921MX
+
+## intent:ask_whyGroup
+- X21922MN
+
+## intent:ask_whyAge
+- XIU91283
+
+## intent:ask_whyMoreTravel
+- XJSAJSN2
+
 ## synonym:1
 - ersten
 - eine
