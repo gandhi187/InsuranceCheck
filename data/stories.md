@@ -382,3 +382,7 @@
     - slot{"requested_slot":null}
     - action_fetch_continent
     - slot{"continent":"Asien"}
+
+## PPI
+* ppi
+- utter_answer_ppi

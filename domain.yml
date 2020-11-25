@@ -439,6 +439,8 @@ responses:
     - payload: Kuba
       title: Kuba
     text: Wie wäre es mit diesen Zielen  (Keine Risikogebiete)
+  utter_answer_ppi:
+  - text: Ich bin im Rahmen einer Masterarbeit bei der PPI AG entstanden.
 actions:
 - action_response_weather
 - action_fetch_continent
