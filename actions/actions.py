@@ -137,7 +137,7 @@ class InsuranceCheck(FormAction):
 
         else:
             dispatcher.utter_message(
-                template="utter_answerDestination_outsideEurope")
+                destination + " befindet sich in " + continent)
             dispatcher.utter_message("In " + value + " gibt es derzeit " + str(activeCases) +
             " aktive Corona Fälle. \n Seit Ausbruch gab es " + str(deaths) + " Todesfälle.")
 
