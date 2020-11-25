@@ -194,23 +194,24 @@
 - /question
 
 ## intent:product
-- [Auslandsreisekrankenversicherung Einmalig Gruppen](product)
-- [Auslandsreisekrankenversicherung Einmalig Einzel](product)
-- [Auslandsreisekrankenversicherung Jahres Gruppen](product)
-- [Auslandsreisekrankenversicherung Jahres Einzel](product)
-- [Reisegepäckversicherung Einmalig Gruppen](product)
-- [Reisegepäckversicherung Einmalig Einzel](product)
-- [Reiserücktritt Einmalig Gruppen](product)
-- [Reiserücktritt Einmalig Einzel](product)
-- [Reiserücktritt Jahres Gruppen](product)
-- [Reiserücktritt Jahres Einzel](product)
-- [5 Sterne Schutz Einzel Einmalig](product)
-- [5 Sterne Schutz Gruppen Jahres](product)
-- [5 Sterne Schutz Gruppen Einmalig](product)
-- [5 Sterne Schutz Einzel Jahres](product)
-- [Auslandsversicherung Langzeit bis 35 Jahre](product)
-- [Auslandsversicherung bis 35 Jahre Deluxe](product)
 - [Auslandsversicherung Langzeit ab 35 Jahre](product)
+- [Auslandsversicherung bis 35 Jahre Deluxe](product)
+- [Auslandsreisekrankenversicherung Einmalig Familie](product)
+- [Auslandsreisekrankenversicherung Jahres Familie](product)
+- [Reisegepäckversicherung Einmalig Familie](product)
+- [Reiserücktritt Einmalig Familie](product)
+- [Reiserücktritt Jahres Familie](product)
+- [Reiserücktritt Jahres Einzelnd](product)
+- [Auslandskranken Langzeit Familie](product)
+- [Auslandsreisekrankenversicherung Einmalig Einzel](product)
+- [Auslandsreisekrankenversicherung Jahres Einzel](product)
+- [Reisegepäckversicherung Einmalig Einzel](product)
+- [Reiserücktritt Einmalig Einzel](product)
+- [5 Sterne Schutz Einzel Jahres](product)
+- [5 Sterne Schutz Gruppen Jahres](product)
+- [5 Sterne Schutz Einzel Einmalig](product)
+- [5 Sterne Schutz Gruppe Einmalig](product)
+- [Auslandsversicherung Langzeit bis 35 Jahre](product)
 
 ## intent:inform
 - [1991](age)
@@ -616,7 +617,7 @@
 
 ## intent:technicaldesign
 - Wie bist du aufgebaut ?
-- Technische Details
+- Technisch
 - Wie funktionierst du ?
 - Welche Technologien ?
 - wie läuft das technisch
