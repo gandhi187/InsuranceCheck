@@ -744,6 +744,9 @@
 - Wohin soll ich fliegen ?
 - Wohin soll ich reisen ?
 - Wohin soll ich fliegen?
+- Hauptsache Sonne
+- Was ist dein Lieblings-Reiseziel?
+- Welche Länder kannst du empfehlen?
 
 ## intent:allproducts
 - Welche Produkte bietest du an ?
@@ -777,6 +780,16 @@
 
 ## intent:ask_whyMoreTravel
 - XJSAJSN2
+
+## intent:language
+- Verstehst du deutsch?
+- Welche Sprachen sprichst du ? 
+- Kannst du englisch sprechen ?
+
+## intent:whoareyou
+- wer ist dave
+- Wer bist du ?
+- Woher kommst du 
 
 ## synonym:1
 - ersten
