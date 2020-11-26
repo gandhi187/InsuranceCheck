@@ -87,7 +87,7 @@ def queryDBCorona(destination):
                                     port="5432",
                                     database="insurance")
             cursor = connection.cursor()
-            postgreSQL_select_Query = "SELECT *	FROM public.corona_countries where country = '" + destination + "'"
+            postgreSQL_select_Query = "SELECT *	FROM public.corona_countries where country iLike '" + destination + "'"
             print("Query : " + postgreSQL_select_Query)
             cursor.execute(postgreSQL_select_Query)
             coronaCountries = cursor.fetchall() 
@@ -97,7 +97,7 @@ def queryDBCorona(destination):
                 result = destination + " wurde vom RKI als Risikogebiet klassifiziert:  " + row[2]
                 result = row[2]
         except (Exception, psycopg2.Error) as error :
-            
+
             print ("Error while fetching data from PostgreSQL", error)
 
         finally:
