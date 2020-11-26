@@ -96,6 +96,7 @@ class InsuranceCheck(FormAction):
         print (value)
         oldValue = value
         newValue = self.calculateDays(value, unit)
+        
         print ("new Value " + str(newValue))
 
         if int(newValue) <= 5:
