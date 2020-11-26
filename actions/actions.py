@@ -98,7 +98,7 @@ class InsuranceCheck(FormAction):
         newValue = self.calculateDays(value, unit)
         print ("new Value " + str(newValue))
 
-        if int(newValue) < 5:
+        if int(newValue) <= 5:
             dispatcher.utter_message(
                 "Bei " + str(newValue) + " Tagen , wirst du wohl mit Hangepäck  nach " + destination + " reisen")
             return {"travel_days": newValue}
